@@ -1,0 +1,83 @@
+
+Feynman Lectures on Physics, Millennium Edition online
+  https://www.feynmanlectures.caltech.edu/info/
+  https://www.feynmanlectures.caltech.edu/I_90.html   Kip Thorne's forward
+  - This is the most complete and best description of how physicists
+    strive to think about their subject, from mechanics and statistical
+    physics to elementary electromagnetism and quantum mechanics.
+    Many people find it not helpful for preparing for physics tests
+    and solving class problems.  Read it for the viewpoint and clarity
+    of description - why you should believe the principles and how you
+    should think about them.  The individual chapters often don't
+    depend very strongly on previous chapters, but stand alone.
+
+Einstein
+  https://einsteinpapers.press.princeton.edu/
+  1905 Annalen der Physik
+    https://einsteinpapers.press.princeton.edu/vol2-trans/100  Photoelectric
+    https://einsteinpapers.press.princeton.edu/vol2-trans/137  Brownian motion
+    https://einsteinpapers.press.princeton.edu/vol2-trans/154  Special relativity
+    https://einsteinpapers.press.princeton.edu/vol2-trans/186  E=mc2
+    - Einstein is a spectacularly clear writer, and these are the output
+      of his Annum Mirabilis of 1905.  (Newton's Annum Mirabilis was 1666,
+      but he didn't publish any of it until 1687.)  The photoelectric effect
+      paper is what he won his Nobel Prize for.  The Brownian motion paper
+      was the coup-de-grace for any opposition to the reality of atoms -
+      the only directly observable effect of atoms until the invention of
+      the electron microscope.  The special relativity paper requires more
+      knowledge of Maxwell's equations than most high school students will
+      have, but again you don't really have to follow all the math to
+      benefit from reading it.  The E=mc2 paper is the shortest of the
+      bunch, direct and to the point, essentially an addendum to the
+      special relativity paper.
+  1916-17
+    https://einsteinpapers.press.princeton.edu/vol6-trans/224  A & B coefs
+    https://einsteinpapers.press.princeton.edu/vol6-trans/232  needle rays
+    - These are, in the opinion of many, the most important work Einstein
+      ever did.  Heisenberg began his development of quantum mechanics
+      from this starting point.  They provide a simple yet tolerably
+      complete framework for how light and atoms interact, defining
+      what the end goal of atomic physics needs to be.  They are clearer
+      than most textbook descriptions a century later (an almost
+      incredible feat), because he anticipates and addresses exactly
+      the points that are most confusing from the standpoint of Newtonian
+      mechanics.
+
+Newton
+  Principia  https://en.wikisource.org/wiki/The_Mathematical_Principles_of_Natural_Philosophy_(1846)
+  - Read System of the World addendum first - this was Newton's summary of
+    Principia written in English for popular consumption.
+  Opticks  https://gutenberg.org/ebooks/33504
+  - This is a tremendously important book, even though it is just a collection
+    of what amount to Newton's lab notebooks.  It's in the form of queries and
+    descriptions of experiments and his interpretations of his observations.
+    This is raw genius on display.  Nothing he does is hard to understand,
+    but the things he thinks to try (along with explanation of why) are
+    simply staggering.  For example, he studies the colors of soap bubbles
+    on a glass table (under a bell jar) so that he can crawl under the
+    table and see that the colors are complementary when viewed from the
+    inside.  It has mistakes of theory as well (unlike Principia), because
+    Newton did not believe light was a wave.  And yet, he measures the
+    thickness of films which produce various interference colors and
+    makes a perfect table we recognize as wavelength versus color!
+    Beyond brilliant and extremely thought provoking.
+
+Here are a couple of other things of historical interest that are not online:
+
+Galileo
+  Dialogue Concerning the Two Chief World Systems [I cant find English online?]
+  - Fantastically entertaining and well-written account of doing science.
+    He goes after his detractors in print, which is no longer the fashion
+    in science writing.  Unlike anything else on this list, there are quite
+    a few outright errors (e.g.- he demonstrates that a chain hangs in a
+    parabola, but it's really a catenary).  See if you can spot them.
+    Despite this, it's one of the most influential and important scientific
+    works ever written.
+
+https://en.wikipedia.org/wiki/Subtle_is_the_Lord
+- This is by far the best biography of Einstein, written by a friend and
+  fellow physicist (Abraham Pais).  There's a lot of physics here, since
+  Pais includes technical explanations of exactly how Einstein's work
+  influenced the subject.  There is essentially no area of modern physics
+  that doesn't have Einstein's fingerprints all over it, making him
+  utterly unique.

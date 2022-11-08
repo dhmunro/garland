@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Spacetime Geometry</title>
+  <meta name="description"
+    content="Similarity between Minkowski spacetime and Euclidean geometry.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>MathJax = {tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]] }};
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+          id="MathJax-script">
+  </script>
+  <link rel="stylesheet" href="relativity.css">
+  <!-- https://prjct-samwest.github.io/docSlider -->
+  <link rel="stylesheet" href="docSlider.css">
+</head>
+
+<body>
+
+  <div class="docSlider">
+    <section>
+      <div class="title-page">
+        <h1>Spacetime Geometry</h1>
+        <ul>
+          <li>Worldlines and simultaneity: analog of orthogonal</li>
+          <li>Spacetime interval: analog of distance (squared)</li>
+          <li>Hyperbolas: analog of circles</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+  <div class="page-text">
+    <p class="button" onclick="primedCoords(false, 0.5)">
+      Consider a clock mounted halfway between two mirrors.  When the
+      clock starts, it emits light pulses toward the mirrors.  The
+      clock stops when the light pulses return.</p>
+    <p>The pulses reflect from the mirrors at the same time; events on the
+      <span style="color: blue;">blue</span> are simultaneous.</p>
+    <p class="button" onclick="primedCoords(true, 0.5)">
+      When the apparatus is moving, the
+      <span style="color: #fc0;">gold</span> light paths have the same
+      slopes as before - like any wave.
+    </p>
+    <p>But light waves travel through empty space, so there is no way
+      to tell which apparatus is moving.  Thus, the reflections also
+      happen at the same time in the moving frame, and the $x'$
+      axis is parallel to the new <span style="color:
+      blue;">blue</span> line!
+    </p>
+  </div>
+  <div class="page-graphic">
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!-- ViewBox limits are points (pt).  Removed absolute width and height
+   width="4in"
+   height="3.5in"
+  -->
+<svg
+  width="100%"
+   viewBox="0 0 288 252"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   font-size="12">
+  <g
+     id="lab">
+    <g
+       id="xt0">
+      <text class="unselectable" x="103.79468" y="45">ct</text>
+      <text class="unselectable" x="255" y="240">x</text>
+      <g
+         id="taxis0">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="M 125,250 V 30 Z" />
+        <g>
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 131,42.487305 125,30 119,42.487305" />
+        </g>
+      </g>
+      <g
+         id="xaxis0">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="M 5,225 H 270 Z" />
+        <g>
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 257.51269,231 270,225 257.51269,219" />
+        </g>
+      </g>
+      <g
+         id="simul0">
+        <path
+           style="fill:none;stroke:#0000ff;stroke-width:1.50001;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+           d="M 15,150 H 240" />
+      </g>
+    </g>
+    <g
+       id="mirrors0">
+      <path
+         style="fill:none;stroke:#a05a2c;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="M 50,30 V 250"
+         id="mirrorL0" />
+      <path
+         style="fill:none;stroke:#a05a2c;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="M 200,30 V 250"
+         id="mirrorR0" />
+    </g>
+    <g
+       id="diamond0">
+      <path
+         style="display:inline;fill:none;stroke:#ffcc00;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="M 125,225 200,150 125,75 50,150 Z" />
+    </g>
+  </g>
+  <g
+     id="moving">
+    <g class="invisible"
+       id="xtM">
+      <g
+         id="taxisM">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="M 118.62305,250 173.62304,29.999999 Z" />
+        <g>
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="m 176.41595,43.569382 -2.79291,-13.569383 -8.84866,10.659203" />
+        </g>
+      </g>
+      <g
+         id="xaxisM">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="m 5,251.92871 265,-60 z" />
+        <g>
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 258.02294,201.49974 270,192 255.09955,188.58625" />
+        </g>
+      </g>
+    </g>
+    <g class="invisible"
+       id="mirrorsM">
+      <g
+         id="simulM">
+        <path
+           style="fill:none;stroke:#0000ff;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+           d="M 25,175 265,115" />
+      </g>
+      <text class="unselectable" x="147.8275" y="45">ct'</text>
+      <text class="unselectable" x="255" y="210">x'</text>
+      <path
+         style="fill:none;stroke:#a05a2c;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 98.751542,30 -55,220"
+         id="mirrorLM" />
+      <path
+         style="fill:none;stroke:#a05a2c;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 248.7324,30 -55,220"
+         id="mirrorRM" />
+    </g>
+    <g class="invisible"
+       id="diamondM">
+      <path
+         style="fill:none;stroke:#ffcc00;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="M 125,225 225,125 165,65 65,165 Z" />
+    </g>
+  </g>
+  <g transform="translate(0,0)"
+     id="slider">
+    <rect style="fill:#a05a2c20;stroke:none"
+          x="50" y="5" width="150" height="20" />
+    <circle class="invisible"
+       style="fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:none"
+       id="photonL"
+       cx="52.5"
+       cy="15"
+       r="2.5" />
+    <circle class="invisible"
+       style="fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:none"
+       id="photonR"
+       cx="197.5"
+       cy="15"
+       r="2.5" />
+    <g transform="rotate(0,125,15)"
+       id="clock">
+      <circle
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
+         cx="125"
+         cy="15"
+         r="10" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="M 125,15 V 5" />
+    </g>
+    <path
+       style="fill:none;stroke:#a05a2c;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 50,5 V 25"
+       id="mirrorL" />
+    <path
+       style="fill:none;stroke:#a05a2c;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 200,5 V 25"
+       id="mirrorR" />
+    <circle class="invisible"
+       style="fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:none"
+       id="photonLd"
+       cx="80"
+       cy="180"
+       r="2.5" />
+    <circle class="invisible"
+       style="fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:none"
+       id="photonRd"
+       cx="170"
+       cy="180"
+       r="2.5" />
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:none"
+       id="clockD"
+       cx="125"
+       cy="245"
+       r="2.5" />
+  </g>
+</svg>
+
+  </div>
+    </section>
+    <section>
+  <div class="page-text">
+    <p class="button" onclick="animate1aStart(0.25)">
+      For what size <span style="color: #fc0">gold</span>
+      light path diamond will the clocks in the moving and
+      stationary experiments read the same elapsed time?</p>
+    <p>Both observers must agree on the area of any figure in
+      the spacetime diagram - any difference would distinguish
+      between relative motion to the left and right.</p>
+    <p>Therefore the clocks will read the same at the end of the
+      experiments if and only if the areas of the two
+      <span style="color: #fc0;">gold</span> light path diamonds
+      are equal.</p>
+    <p>In Euclidean geometry, the invariance of area under rotation
+      is also how you compare rotated and unrotated coordinates.</p>
+  </div>
+  <div class="page-graphic">
+<!-- copied from first figure, then slider group removed by hand -->
+<svg
+  width="100%"
+   viewBox="0 30 288 252"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   font-size="12">
+  <g
+     id="lab-1">
+    <g
+       id="xt0-1">
+      <text class="unselectable faded" x="103.79468" y="45">ct</text>
+      <text class="unselectable faded" x="255" y="240">x</text>
+      <g class="faded"
+         id="taxis0-1">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="M 125,250 V 30 Z" />
+        <g>
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 131,42.487305 125,30 119,42.487305" />
+        </g>
+      </g>
+      <g class="faded"
+         id="xaxis0-1">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="M 5,225 H 270 Z" />
+        <g>
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 257.51269,231 270,225 257.51269,219" />
+        </g>
+      </g>
+      <g class="faded"
+         id="simul0-1">
+        <path
+           style="fill:none;stroke:#0000ff;stroke-width:1.50001;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+           d="M 15,150 H 240" />
+      </g>
+    </g>
+    <g class="less-faded"
+       id="diamond0-1">
+      <path
+         style="display:inline;fill:none;stroke:#ffcc00;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="M 125,225 200,150 125,75 50,150 Z" />
+    </g>
+  </g>
+  <g
+     id="moving-1">
+    <g
+       id="xtM">
+      <g
+         id="taxisM-1">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="M 118.62305,250 173.62304,29.999999 Z" />
+        <g>
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="m 176.41595,43.569382 -2.79291,-13.569383 -8.84866,10.659203" />
+        </g>
+      </g>
+      <g
+         id="xaxisM-1">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="m 5,251.92871 265,-60 z" />
+        <g>
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 258.02294,201.49974 270,192 255.09955,188.58625" />
+        </g>
+      </g>
+    </g>
+    <text class="unselectable" x="147.8275" y="45">ct'</text>
+    <text class="unselectable" x="255" y="210">x'</text>
+    <path id="simulM-1"
+          style="fill:none;stroke:#0000ff;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+          d="M 28.175,176.5875 260.555,118.4925" />
+    <path id="diamondM-1"
+          style="fill:none;stroke:#ffcc00;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+          d="M 125,225 221.825,128.175 163.73,70.08 66.905,166.905 Z" />
+  </g>
+</svg>
+
+  </div>
+    </section>
+    <section>
+  <div class="page-text">
+    <p class="button" onclick="animate2Start(0.25, set2AB)">
+      In spacetime geometry, if $(x,ct) = (a,b)$ lies on the $x'$
+      axis, then $(b, a)$ lies on the $ct'$ axis.  The coordinate
+      axes are orthogonal by definition.</p>
+    <p>In Euclidean geometry, $(-b,a)$ would have been orthogonal to
+      $(a,b)$.</p>
+    <p>The <span style="color: #5599ff;">light blue</span> figure is a
+      spacetime square.  Adjacent edges are orthogonal in the
+      spacetime sense.  The length of the spacelike edges is the
+      distance light travels in the duration of the timelike
+      edges, so the diagonals are light paths.</p>
+    <p>
+    </p>
+  </div>
+  <div class="page-graphic">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!-- Removed width="4in" height="3.25in" -->
+<svg
+   viewBox="0 0 288 234"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   font-size="12">
+  <g
+     id="lab-2"
+     style="display:inline">
+    <g
+       id="xt0-2"
+       style="display:inline"
+       transform="translate(-40,-25)">
+      <text class="unselectable"
+         x="103.79468"
+         y="45">ct</text>
+      <text class="unselectable"
+         x="303.01651"
+         y="240">x</text>
+      <g
+         id="simul0-2">
+        <path
+           style="fill:none;stroke:#0000ff;stroke-width:1.50001;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.124224"
+           d="M 50,150 H 200" />
+      </g>
+      <g
+         id="taxis0-2">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="M 125,255 V 30 Z" />
+        <g>
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 131,42.487305 125,30 119,42.487305" />
+        </g>
+      </g>
+      <g
+         id="xaxis0-2">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="M 45,225 H 320 Z" />
+        <g>
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 307.512695,231 320,225 307.51269,219" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="diamond0-2"
+       transform="translate(-40,-25)">
+      <path
+         style="display:inline;fill:none;stroke:#ffcc00;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.251165"
+         d="M 125,225 200,150 125,75 50,150 Z" />
+    </g>
+    <path
+       style="fill:none;stroke:#ffcc00;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:1.5, 4.5;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 60,225 275,10" />
+    <path
+       style="display:inline;fill:none;stroke:#ffcc00;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:1.5, 4.5;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 110,225 5,120" />
+  </g>
+  <g
+     id="moving-2"
+     style="display:inline">
+    <g
+       id="xtM-2"
+       style="display:inline"
+       transform="translate(-40,-25)">
+      <text class="unselectable" id="ttext-2"
+         x="155.772"
+         y="36.711">ct'</text>
+      <text class="unselectable" id="xtext-2"
+         x="313.289"
+         y="194.228">x'</text>
+      <path id="simulM-2"
+            style="fill:none;stroke:#0000ff;stroke-width:1.50001;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+            d="M 60,160 210,140" />
+      <g id="taxisM-2"
+        transform="rotate(7.594643,125,225)">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="M 125,255 V 30 Z" />
+        <g>
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 131,42.487305 125,30 119,42.487305" />
+        </g>
+      </g>
+      <g id="xaxisM-2"
+        transform="rotate(-7.594643,125,225)">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="M 45,225 H 320 Z" />
+        <g>
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 307.512695,231 320,225 307.51269,219" />
+        </g>
+      </g>
+    </g>
+    <g transform="translate(-40,-25)">
+      <path id="diamondM-2"
+         style="display:inline;fill:none;stroke:#ffcc00;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="M 125,225 210,140 145,75 60,160 Z" />
+    </g>
+    <g transform="translate(-40,-25)">
+    <path id="ab2ba-2"
+       style="display:inline;fill:none;stroke:#ffcc00;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:1.5, 4.5;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 275,205 145,75" />
+    <path
+       style="fill:none;stroke:#5599ff;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 125,225 275,205 295,55 145,75 Z"
+       id="square-2" />
+    <circle
+       style="fill:#5599ff;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:none"
+       id="tpoint-2"
+       cx="145"
+       cy="75"
+       r="2.5" />
+    <circle
+       style="fill:#5599ff;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:none"
+       id="xpoint-2"
+       cx="275"
+       cy="205"
+       r="2.5" />
+    <g id="abcoords-2"
+      style="display:inline"
+      transform="translate(270,219)">
+      <rect
+         style="fill:#e6e9ea;fill-opacity:0.8;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.1"
+         width="28.5"
+         height="13"
+         x="-0.3"
+         y="-10.5" />
+      <text class="unselectable">(a,b)</text>
+    </g>
+    <g id="bacoords-2"
+      style="display:inline"
+      transform="translate(130,69)">
+      <rect
+         style="fill:#e6e9ea;fill-opacity:0.8;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.1"
+         width="28.5"
+         height="13"
+         x="-0.3"
+         y="-10.5" />
+      <text class="unselectable">(b,a)</text>
+    </g>
+    </g>
+  </g>
+</svg>
+  </div>
+    </section>
+    <section>
+  <div class="page-text">
+    <p>
+      The area of the <span style="color: #5599ff;">light blue</span>
+      spacetime square is $a^2-b^2$ (the same as in Euclidean
+      geometry).</p>
+    <p>In primed coordinates, $(b,a) \mapsto (0,c\tau)$ and
+      $(a,b) \mapsto (c\tau,0),$ so the area
+      of the <span style="color: #5599ff;">light blue</span> square
+      is simply $c^2\tau^2 = a^2-b^2.$ $\tau$ is the
+      <em>proper time</em> between $(0,0)$ and $(b,a).$</p>
+    <p class="button" onclick="animate2aAfter(50)">
+      In general, the area of <em>any</em> spacetime square with one corner
+      at $(0,0)$ is the same in any coordinate system, so
+      $c^2t'^2-x'^2=c^2t^2-x^2,$ called the <em>spacetime interval</em>,
+      which is analogous to Euclidean distance squared.
+    </p>
+  </div>
+  <div class="page-graphic">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!-- Removed width="4in" height="3.25in" -->
+<svg
+   viewBox="0 0 288 234"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   font-size="12">
+  <g
+     id="lab-2a"
+     style="display:inline">
+    <g
+       id="xt0-2a"
+       style="display:inline"
+       transform="translate(-40,-25)">
+      <text class="unselectable"
+         x="103.79468"
+         y="45">ct</text>
+      <text class="unselectable"
+         x="303.01651"
+         y="240">x</text>
+      <g
+         id="taxis0-2a">
+        <path
+           style="color:#000000;fill:#808080;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="M 125,255 V 30 Z" />
+        <g>
+          <path
+             style="color:#000000;fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 131,42.487305 125,30 119,42.487305" />
+        </g>
+      </g>
+      <g
+         id="xaxis0-2"a>
+        <path
+           style="color:#000000;fill:#808080;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="M 45,225 H 320 Z" />
+        <g>
+          <path
+             style="color:#000000;fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 307.512695,231 320,225 307.51269,219" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     id="moving-2a"
+     style="display:inline">
+    <g
+       id="xtM-2a"
+       style="display:inline"
+       transform="translate(-40,-25)">
+      <text class="unselectable" id="ttext-2"
+         x="155.772"
+         y="36.711">ct'</text>
+      <text class="unselectable" id="xtext-2"
+         x="313.289"
+         y="194.228">x'</text>
+      <g id="taxisM-2a"
+        transform="rotate(7.594643,125,225)">
+        <path
+           style="color:#000000;fill:#000000;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="M 125,255 V 30 Z" />
+        <g>
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 131,42.487305 125,30 119,42.487305" />
+        </g>
+      </g>
+      <g id="xaxisM-2a"
+        transform="rotate(-7.594643,125,225)">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="M 45,225 H 320 Z" />
+        <g>
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 307.512695,231 320,225 307.51269,219" />
+        </g>
+      </g>
+    </g>
+    <g transform="translate(-40,-25)">
+    <path
+       style="fill:none;stroke:#000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 125,75 145,75 145,225"
+       id="coords0-2a" />
+    <path
+       style="fill:none;stroke:#888;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 145,75 145,75 125,225"
+       id="coordsM-2a" />
+    <path
+      style="fill:none;stroke:#ffcc00;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:1.5, 4.5;stroke-dashoffset:0;stroke-opacity:1"
+      d="M 125,225 315,35" />
+    <path id="ab2ba-2a"
+       style="display:inline;fill:none;stroke:#ffcc00;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:1.5, 4.5;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 275,205 145,75" />
+    <path
+       style="fill:none;stroke:#5599ff;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 125,225 275,205 295,55 145,75 Z"
+       id="square-2a" />
+    <circle
+       style="fill:#5599ff;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:none"
+       id="tpoint-2a"
+       cx="145"
+       cy="75"
+       r="2.5" />
+    <circle
+       style="fill:#5599ff;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:none"
+       id="xpoint-2a"
+       cx="275"
+       cy="205"
+       r="2.5" />
+    <g id="abcoords-2a"
+      style="display:inline"
+      transform="translate(270,219)">
+      <rect
+         style="fill:#e6e9ea;fill-opacity:0.8;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.1"
+         width="28.5"
+         height="13"
+         x="-0.3"
+         y="-10.5" />
+      <text class="unselectable">(a,b)</text>
+    </g>
+    <g id="bacoords-2a"
+      style="display:inline"
+      transform="translate(130,69)">
+      <rect
+         style="fill:#e6e9ea;fill-opacity:0.8;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.1"
+         width="28.5"
+         height="13"
+         x="-0.3"
+         y="-10.5" />
+      <text class="unselectable">(b,a)</text>
+    </g>
+    <text x="93" y="221" class="unselectable">(0,0)</text>
+    </g>
+  </g>
+</svg>
+  </div>
+    </section>
+</div>
+
+  <script src="docSlider.min.js"></script>
+<!-- Load d3 library.  Later should grab only pieces used.
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.4.4/d3.min.js"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.4.4/d3.min.js"></script>
+<script>
+  docSlider.init({
+    afterChange: (index, page) => {
+      if (index == 1) {
+        primedCoords(false, 0.5).then(() => primedCoords(true, 0.5));
+      } else if (index == 2) {
+        animate1aStart(0.5);
+      } else if (index == 3) {
+        animate2Start(0.25, set2AB);
+      } else if (index == 4) {
+        animate2aAfter(5000);
+      }
+    }
+  });
+
+  const fig1 = {
+    xt0: d3.select("#xt0"),
+    xtM: d3.select("#xtM"),
+    mirrors0: d3.select("#mirrors0"),
+    mirrorsM: d3.select("#mirrorsM"),
+    diamond0: d3.select("#diamond0"),
+    diamondM: d3.select("#diamondM"),
+    photonLd: d3.select("#photonLd"),
+    photonRd: d3.select("#photonRd"),
+    clockD: d3.select("#clockD"),
+    slider: d3.select("#slider"),
+    clock: d3.select("#clock"),
+    photonL: d3.select("#photonL"),
+    photonR: d3.select("#photonR")
+  };
+
+  let fig1Primed = false;
+
+  const primedCoords = (on, dt) => {
+    fig1.photonL.classed("invisible", true);
+    fig1.photonR.classed("invisible", true);
+    fig1.photonLd.classed("invisible", true);
+    fig1.photonRd.classed("invisible", true);
+    fig1.clockD.attr("cy", 250);
+    if (on) {
+      fig1.mirrors0.classed("invisible", true);
+      fig1.xt0.classed("faded", true);
+      fig1.diamond0.classed("faded", true);
+      fig1.mirrorsM.classed("invisible", false);
+      fig1.xtM.classed("invisible", false);
+      fig1.diamondM.classed("invisible", false);
+      fig1Primed = true;
+    } else {
+      fig1.mirrorsM.classed("invisible", true);
+      fig1.xtM.classed("invisible", true);
+      fig1.diamondM.classed("invisible", true);
+      fig1.mirrors0.classed("invisible", false);
+      fig1.xt0.classed("faded", false);
+      fig1.diamond0.classed("faded", false);
+      fig1Primed = false;
+    }
+    set1Time(-20);
+    if (dt) return animate1Start(dt);
+  };
+
+  // ----------------------------------------------------------------
+  // Animation of first figure.
+  // diamond0:  (125, 225)  (200, 150)  (125, 75)  (50, 150)
+  // diamondM:  (125, 225)  (225, 125)  (165, 65)  (65, 165)
+  // taxisM slope:  (40, -160)  diamond slope: (75, -75)
+  // bottom of taxisM: (118.625, 250)  -->  (-6.375, 25) from origin
+  // animation time from 245 to 35, or -20 to 180  (t = 225 - y)
+
+  const set1Time = t => {
+    let y = 225 - t;
+    let v = fig1Primed? 0.25 : 0;
+    let x = v * t;
+    let tmax = fig1Primed? 160 : 150;
+    let photsInvisible = (t < 0) || (t > tmax);
+    let gamma = fig1Primed? 4/Math.sqrt(15) : 1;
+    fig1.slider.attr("transform", `translate(${x},0)`);
+    [[fig1.photonL, fig1.photonLd], [fig1.photonR, fig1.photonRd]].forEach(
+      ([p, q]) => {
+        p.classed("invisible", photsInvisible);
+        q.classed("invisible", photsInvisible);
+        if (!photsInvisible) {
+          t = -t;  // left, right and back to original t
+          // This t is not the t in the moving frame, and relative
+          // to the slider translation, the photons are "moving" at
+          // c +- v (v = c/4 here) just as in Newtonian mechanics.
+          let xc = 125 + ((t>0)? 1-v : 1+v)*t;
+          if (xc < 50) {
+            if (fig1Primed) xc = 125 - ((t>0)? 1+v : 1-v)*(tmax + t);
+            else xc = 100 - xc;
+          } else if (xc > 200) {
+            if (fig1Primed) xc = 125 + ((t>0)? 1+v : 1-v)*(tmax - t);
+            else xc = 400 - xc;
+          }
+          p.attr("cx", xc);
+          q.attr("cx", xc).attr("cy", y);
+        }
+      });
+    fig1.clockD.attr("cy", y);
+    if (photsInvisible) {
+      fig1.clock.attr("transform", `rotate(${(t<0)? 0 : 315*gamma},125,15)`);
+    } else {
+      let a = 315 * t / tmax
+      fig1.clock.attr("transform", `rotate(${a*gamma},125,15)`);
+    }
+    animateTime = t;
+  };
+
+  let animateResolve, animateTimer, animateTime;
+
+  const animate1Start = dt => {
+    if (animateResolve) {
+      animateTimer.stop();
+      animateResolve();
+      delete animateTimer;
+      delete animateResolve;
+    }
+    set1Time(-20);
+    return new Promise(resolve => {
+      animateTimer = d3.timer(() => {
+        set1Time(animateTime + dt);
+        if (animateTime >= 180) {
+          animateTimer.stop();
+          animateResolve();
+          delete animateTimer;
+          delete animateResolve;
+        }
+      });
+      animateResolve = resolve;
+    });
+  };
+
+  // ----------------------------------------------------------------
+  // Animation of second figure.
+  // initial diamondM-1:  (125, 225)  (225, 125)  (165, 65)  (65, 165)
+  //   (0, 0) (100, -100) (40, -160) (-60, -60)
+  // normalized: (96.825, -96.825) (38.730, -154.920) (-58.095, -58.095)
+  //   (125, 225) (221.825, 128.175) (163.73, 70.08) (66.905, 166.905)
+  // initial simulM-1: (25, 175) (265, 115) --> (-100, -50) (140, -110)
+  // scaled: (28.175, 176.5875) (260.555, 118.4925)
+
+  const fig1a = {
+    diamondM: d3.select("#diamondM-1"),
+    simulM: d3.select("#simulM-1"),
+    coefs: [96.825, 58.095, -96.825, -48.4125, 135.555, -106.5075]
+  };
+
+  function set1aFactor(f) {
+    // 0.5 < f < 1.15 is reasonable range
+    let [u, v, p, q, r, s] = fig1a.coefs.map(v => f*v);
+    let [b, a] = [u-v, u+v]
+    fig1a.diamondM.attr("d", `M 125,225 ${125+u},${225-u} ${125+b},${225-a}`
+                        + ` ${125-v},${225-v} Z`);
+    fig1a.simulM.attr("d", `M ${125+p},${225+q} ${125+r},${225+s}`);
+  }
+
+  const animate1aStart = dt => {
+    if (animateResolve) {
+      animateTimer.stop();
+      animateResolve();
+      delete animateTimer;
+      delete animateResolve;
+    }
+    set1aFactor(1);
+    animateTime = 0;
+    // scale factor sequence:  1 --> 0.5 --> 1.15 --> 1
+    // total "distance" endpoints: d = [0, 0.5, 1.15, 1.3]
+    let i = 0;
+    const fvalues = [0.5, 1.15, 1];
+    const trackD = [0.5, 1.15, 1.3];
+    let [d, dd] = [0, dt*1.3/360];
+    let [f, df] = [1, -dd];
+    return new Promise(resolve => {
+      animateTimer = d3.timer(() => {
+        d += dd;
+        f += df;
+        if (d >= trackD[i]) {
+          d = trackD[i];
+          f = fvalues[i];
+          df = -df;
+          i += 1;
+          if (i >= trackD.length) {
+            set1aFactor(1);
+            animateTimer.stop();
+            animateResolve();
+            delete animateTimer;
+            delete animateResolve;
+            return;
+          }
+        }
+        set1aFactor(f);
+      });
+      animateResolve = resolve;
+    });
+  };
+
+  // ----------------------------------------------------------------
+  // Animation of third figure.
+  // Origin: (125, 225)  [all translated by (-40, -25)]
+  // Initial square: (0, 0) (150, -20) (170, -170) (20, -150)
+  // Initial diamond: (0, 0) (85, -85) (20, -150) (-65, -65)
+  //   (cos, sin) = (0.991228, 0.132164)  theta = 7.594643 deg
+  // diamond0-2: (0, 0) (75, -75) (0, -150) (-75, -75)
+  // (a, b) text offset from square corner (-5, 14)
+  // (b, a) text offset from square corner (-15, -6)
+  // taxis0-2 (125, 255) to (125, 30)  tip (0, -195)
+  //   ttext-2: (130, 35)  offset (5, 5)
+  // xaxis0-2 (45, 225) to (320, 225)  tip (195, 0)
+  //   xtext-2: (315, 220)  offset (-5, -5)
+
+  const fig2 = {
+    diamondM: d3.select("#diamondM-2"),
+    simulM: d3.select("#simulM-2"),
+    square: d3.select("#square-2"),
+    tpoint: d3.select("#tpoint-2"),
+    xpoint: d3.select("#xpoint-2"),
+    taxisM: d3.select("#taxisM-2"),
+    xaxisM: d3.select("#xaxisM-2"),
+    ttext: d3.select("#ttext-2"),
+    xtext: d3.select("#xtext-2"),
+    abcoords: d3.select("#abcoords-2"),
+    bacoords: d3.select("#bacoords-2"),
+    ab2ba: d3.select("#ab2ba-2")
+  };
+
+  function set2AB(a, b) {
+    // (a, b) relative to origin (125, 225)
+    // initially (150, 20), diamond0-2 is (150, 0)
+    // Keep a+b < 190 for square to stay completely in viewport.
+    fig2.square.attr("d", `M 125,225 ${125+a},${225-b} ${125+a+b},${225-b-a}`
+                     + ` ${125+b},${225-a} Z`);
+    fig2.abcoords.attr("transform", `translate(${120+a},${239-b})`);
+    fig2.bacoords.attr("transform", `translate(${110+b},${219-a})`);
+    fig2.tpoint.attr("cx", `${125+b}`).attr("cy", `${225-a}`);
+    fig2.xpoint.attr("cx", `${125+a}`).attr("cy", `${225-b}`);
+    fig2.ab2ba.attr("d", `M ${125+b},${225-a} ${125+a},${225-b}`);
+    let u = (a + b) / 2;
+    let v = (a - b) / 2;
+    fig2.diamondM.attr("d", `M 125,225 ${125+u},${225-u} ${125+b},${225-a}`
+                       + ` ${125-v},${225-v} Z`);
+    fig2.simulM.attr("d", `M ${125-v},${225-v} ${125+u},${225-u}`);
+    let theta = Math.atan2(b, a) * 180 / Math.PI;
+    fig2.taxisM.attr("transform", `rotate(${theta},125,225)`);
+    fig2.xaxisM.attr("transform", `rotate(${-theta},125,225)`);
+    let r = Math.sqrt(a**2 + b**2);
+    let [s, c] = [b/r, a/r];
+    fig2.xtext.attr("x", `${120+195*c}`).attr("y", `${220-195*s}`);
+    fig2.ttext.attr("x", `${130+195*s}`).attr("y", `${230-195*c}`);
+  }
+
+  const animate2Start = (dt, setAB) => {
+    if (animateResolve) {
+      animateTimer.stop();
+      animateResolve();
+      delete animateTimer;
+      delete animateResolve;
+    }
+    setAB(150, 20);
+    animateTime = 0;
+    let i = 0;
+    const track = [[150, 20], [140, 40], [120, 50], [90, 70], [80, 50],
+                   [150, 20]];
+    let d = 0;
+    const trackD = track.slice(0, -1).map(
+      ([xp, yp], i) => {
+        let [x, y] = track[i+1];
+        return Math.sqrt((x - xp)**2 + (y - yp)**2);
+      }).map(v => { d += v; return d; });
+    const dd = d / 180;  // so 180 steps with dt=1
+    d = 0;
+    return new Promise(resolve => {
+      animateTimer = d3.timer(() => {
+        d += dd*dt;
+        let [x, y] = track[i + 1];
+        if (d >= trackD[i]) {
+          i += 1;
+          if (i >= trackD.length) {
+            setAB(x, y);
+            animateTimer.stop();
+            animateResolve();
+            delete animateTimer;
+            delete animateResolve;
+            return;
+          }
+          [x, y] = track[i+1];
+        }
+        let dprev = (i > 0)? trackD[i-1] : 0;
+        let f = (d - dprev) / (trackD[i] - dprev);
+        let [xp, yp] = track[i];
+        [x, y] = [xp + f*(x - xp), yp + f*(y - yp)];
+        setAB(x, y);
+      });
+      animateResolve = resolve;
+    });
+  };
+
+  // ----------------------------------------------------------------
+  // Animation of fourth figure.
+  // Shares animate2Start with third
+
+  const fig2a = {
+    square: d3.select("#square-2a"),
+    tpoint: d3.select("#tpoint-2a"),
+    xpoint: d3.select("#xpoint-2a"),
+    coords0: d3.select("#coords0-2a"),
+    coordsM: d3.select("#coordsM-2a"),
+    abcoords: d3.select("#abcoords-2a"),
+    bacoords: d3.select("#bacoords-2a"),
+    ab2ba: d3.select("#ab2ba-2a")
+  };
+
+  function reset2a(on, fromSet=false) {
+    if (!fromSet) set2aAB(150, 20, true);
+    if (on) {
+      fig2a.abcoords.classed("invisible", false);
+      fig2a.bacoords.classed("invisible", false);
+    } else {
+      fig2a.abcoords.classed("invisible", true);
+      fig2a.bacoords.classed("invisible", true);
+    }
+  }
+
+  function set2aAB(a, b, fromReset=false) {
+    // (a, b) relative to origin (125, 225)
+    // initially (150, 20), diamond0-2 is (150, 0)
+    // Keep a+b < 190 for square to stay completely in viewport.
+    if (!fromReset && a == 150 && b == 20) reset2a(false, true);
+    fig2a.square.attr("d", `M 125,225 ${125+a},${225-b} ${125+a+b},${225-b-a}`
+                      + ` ${125+b},${225-a} Z`);
+    fig2a.tpoint.attr("cx", `${125+b}`).attr("cy", `${225-a}`);
+    fig2a.xpoint.attr("cx", `${125+a}`).attr("cy", `${225-b}`);
+    fig2a.ab2ba.attr("d", `M ${125+b},${225-a} ${125+a},${225-b}`);
+    fig2a.coords0.attr("d",  `M 125,${225-a} ${125+b},${225-a} ${125+b},225`);
+    let [etx, ett] = [20, 150];
+    let tau = Math.sqrt(ett**2 - etx**2);
+    etx /= tau;
+    ett /= tau;
+    let [etDotAB, exDotAB] = [b*ett - a*etx, a*ett - b*etx];
+    let [p, q] = [ett*etDotAB, etx*etDotAB];
+    let [r, s] = [etx*exDotAB, ett*exDotAB];
+    fig2a.coordsM.attr("d",  `M ${125+p},${225-q} ${125+b},${225-a}`
+                       + ` ${125+r},${225-s}`);
+  }
+
+  function animate2aAfter(ms) {
+    return new Promise(resolve => d3.timeout(resolve, ms))
+      .then(() => animate2Start(0.25, set2aAB))
+      .then(() => new Promise(resolve => d3.timeout(resolve, 2000)))
+      .then(() => reset2a(true));
+  }
+
+</script>
+
+</body>
+</html>

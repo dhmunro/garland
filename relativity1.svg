@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="4in"
+   height="3.5in"
+   viewBox="0 0 288 252"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (1:1.2.1+202210291244+9c6d41e410)"
+   sodipodi:docname="relativity1.svg"
+   inkscape:export-filename="relativity1p.svg"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     showgrid="true"
+     inkscape:zoom="2.3880208"
+     inkscape:cx="190.32497"
+     inkscape:cy="168.13086"
+     inkscape:window-width="1622"
+     inkscape:window-height="1017"
+     inkscape:window-x="243"
+     inkscape:window-y="32"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="xt0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid402"
+       units="pt"
+       spacingx="1"
+       spacingy="1"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="lab">
+    <g
+       id="xt0"
+       inkscape:label="#xt0"
+       style="display:inline">
+      <text
+         xml:space="preserve"
+         style="font-size:12px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.75"
+         x="103.79468"
+         y="45"
+         id="text2208"><tspan
+           sodipodi:role="line"
+           id="tspan2206"
+           style="font-size:12px;stroke-width:0.75"
+           x="103.79468"
+           y="45">ct</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:12px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.75"
+         x="255"
+         y="240"
+         id="text2212"><tspan
+           sodipodi:role="line"
+           id="tspan2210"
+           style="font-size:12px;stroke-width:0.75"
+           x="255"
+           y="240">x</tspan></text>
+      <g
+         id="simul0"
+         inkscape:label="#simul0">
+        <path
+           style="fill:none;stroke:#0000ff;stroke-width:1.50001;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+           d="M 15,150 H 240"
+           id="path1895"
+           inkscape:label="#path1895" />
+      </g>
+      <g
+         id="taxis0"
+         inkscape:label="#taxis0">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="M 125,250 V 30 Z"
+           id="path1962"
+           sodipodi:nodetypes="ccc" />
+        <g
+           id="g1954">
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 131,42.487305 125,30 119,42.487305"
+             id="path1956"
+             sodipodi:nodetypes="ccc" />
+        </g>
+      </g>
+      <g
+         id="xaxis0"
+         inkscape:label="#xaxis0">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           d="M 5,225 H 270 Z"
+           id="path1932"
+           sodipodi:nodetypes="ccc" />
+        <g
+           id="g1924">
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 257.51269,231 270,225 257.51269,219"
+             id="path1926"
+             sodipodi:nodetypes="ccc" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="mirrors0"
+       inkscape:label="#mirrors0">
+      <path
+         style="fill:none;stroke:#a05a2c;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 50,30 0,220"
+         id="mirrorL0"
+         inkscape:label="#mirrorL0"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;stroke:#a05a2c;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 200,30 0,220"
+         id="mirrorR0"
+         inkscape:label="#mirrorR0"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <g
+       id="diamond0"
+       inkscape:label="#diamond0">
+      <path
+         style="display:inline;fill:none;stroke:#ffcc00;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="M 125,225 200,150 125,75 50,150 Z"
+         id="path18011"
+         inkscape:label="#path18011" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="moving">
+    <g
+       id="xtM"
+       inkscape:label="#xtM">
+      <g
+         id="taxisM"
+         inkscape:label="#taxisM">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-opacity:1;stroke-width:1.5;stroke-dasharray:none;stroke-linecap:round;stroke-linejoin:round"
+           d="M 118.62305,250 173.62304,29.999999 Z"
+           id="path1944"
+           sodipodi:nodetypes="ccc" />
+        <g
+           id="g1936">
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="m 176.41595,43.569382 -2.79291,-13.569383 -8.84866,10.659203"
+             id="path1938"
+             sodipodi:nodetypes="ccc" />
+        </g>
+      </g>
+      <g
+         id="xaxisM"
+         inkscape:label="#xaxisM">
+        <path
+           style="color:#000000;fill:#808080;stroke:#808080;stroke-opacity:1;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5;stroke-dasharray:none"
+           d="m 5,251.92871 265,-60 z"
+           id="path1920"
+           sodipodi:nodetypes="ccc" />
+        <g
+           id="g1912">
+          <path
+             style="color:#000000;fill:none;stroke:#808080;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="M 258.02294,201.49974 270,192 255.09955,188.58625"
+             id="path1914"
+             sodipodi:nodetypes="ccc" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="mirrorsM"
+       inkscape:label="#mirrorsM">
+      <g
+         id="simulM"
+         inkscape:label="#simulM">
+        <path
+           style="fill:none;stroke:#0000ff;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
+           d="M 25,175 265,115"
+           id="path1896" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:12px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.75"
+         x="147.8275"
+         y="45"
+         id="text2216"><tspan
+           sodipodi:role="line"
+           id="tspan2214"
+           style="stroke-width:0.75"
+           x="147.8275"
+           y="45">ct'</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:12px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.75"
+         x="255"
+         y="210"
+         id="text2220"><tspan
+           sodipodi:role="line"
+           id="tspan2218"
+           style="stroke-width:0.75"
+           x="255"
+           y="210">x'</tspan></text>
+      <path
+         style="fill:none;stroke:#a05a2c;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 98.751542,30 -55,220"
+         id="mirrorLM"
+         inkscape:label="#mirrorLM"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;stroke:#a05a2c;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 248.7324,30 -55,220"
+         id="mirrorRM"
+         inkscape:label="#mirrorRM"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <g
+       id="diamondM"
+       inkscape:label="#diamondM">
+      <path
+         style="fill:none;stroke:#ffcc00;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
+         d="M 125,225 225,125 165,65 65,165 Z"
+         id="path18111"
+         inkscape:label="#path18111" />
+    </g>
+  </g>
+  <g
+     inkscape:label="slider"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:none"
+       id="photonL"
+       cx="52.5"
+       cy="15"
+       r="2.5"
+       inkscape:label="#photonL" />
+    <circle
+       style="fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:none"
+       id="photonR"
+       cx="197.5"
+       cy="15"
+       r="2.5"
+       inkscape:label="#photonR" />
+    <g
+       id="clock"
+       inkscape:label="#clock"
+       transform="translate(-25,-35)">
+      <circle
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none"
+         id="path237"
+         cx="150"
+         cy="50"
+         r="10" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="M 150,50 V 40"
+         id="path964" />
+    </g>
+    <path
+       style="fill:none;stroke:#a05a2c;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 50,5 V 25"
+       id="mirrorL"
+       inkscape:label="#mirrorL" />
+    <path
+       style="fill:none;stroke:#a05a2c;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 200,5 V 25"
+       id="mirrorR"
+       inkscape:label="#mirrorR" />
+    <circle
+       style="fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:none"
+       id="photonLd"
+       cx="80"
+       cy="180"
+       r="2.5"
+       inkscape:label="#photonLd" />
+    <circle
+       style="fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:none"
+       id="photonRd"
+       cx="170"
+       cy="180"
+       r="2.5"
+       inkscape:label="#photonRd" />
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:none"
+       id="clockD"
+       cx="125"
+       cy="180"
+       r="2.5"
+       inkscape:label="#clockD" />
+  </g>
+</svg>
