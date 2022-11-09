@@ -45,6 +45,20 @@ body {
     padding: 2%;
 }
 
+.page-half {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    display: inline-block;
+    vertical-align: top;
+    width: 47%;
+    padding: 0 1%;
+}
+
+.page-half p {
+    margin: 0.67em 0;
+}
+
 .button {
     padding: 0.5vw;
     border-radius: 1vw;
