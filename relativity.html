@@ -968,7 +968,9 @@
   docSlider.init({
     afterChange: (index, page) => {
       if (index == 1) {
-        primedCoords(false, 0.5).then(() => primedCoords(true, 0.5));
+        primedCoords(false, 0.5)
+          .then(() => new Promise(resolve => d3.timeout(resolve, 2000)))
+          .then(() => primedCoords(true, 0.5));
       } else if (index == 2) {
         animate1aStart(0.5);
       } else if (index == 3) {
