@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Free Precession</title>
+  <meta name="description"
+    content="Free precession and the intermediate moment of inertia.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>MathJax = {
+  loader: {load: ['[tex]/physics']},
+  tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]],
+         packages: {'[+]': ['physics']}}};
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+          id="MathJax-script">
+  </script>
+  <link rel="stylesheet" href="precession.css">
+  <!-- https://prjct-samwest.github.io/docSlider -->
+  <link rel="stylesheet" href="docSlider.css">
+</head>
+
+<body>
+
+  <div class="docSlider">
+    <section>
+      <div class="title-page">
+        <h1>Free Precession</h1>
+        <p style="width:50%; text-align:center;">
+          Using Conservation Laws and Modeling to Understand
+          Unexpected Dynamics</p>
+      </div>
+    </section>
+    <section>
+      <div class="slide-title">The case of the spinning T-handle</div>
+      <div class="page-half">
+        <ul>
+    <li>The unexpected behavior of this T-handle is a striking example
+      of <em>free precession</em> - a subject usually covered in upper
+      division Classical Mechanics courses.</li>
+    <li>Attempts to explain the dynamics of a spinning rigid body using
+      $F=ma$ such as Tao's are not very satisfactory (see the 2019
+      update in Tao's post).</li>
+    <li>A simple and more correct explanation using conservation of
+      energy and angular momentum leads to a quantitative
+      model of the dynamics.</li>
+    <li>The answer turn out to be elliptic functions - relatives
+      of the circular trigonometric functions - which pop up in many
+      wonderful bits of math and physics.</li>
+        </ul>
+  </div>
+  <div class="page-half">
+    <iframe width="560" height="315" style="display: block; margin: 5vh auto;"
+            src="https://www.youtube.com/embed/1n-HMSCDYtM"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    <p style="margin: 0 2vw;">See physics educator Derek Muller's
+      <a href="https://www.youtube.com/watch?v=1VPfZ_XzisU" target="_blank">
+        video</a>, which is based on mathematician Terrence Tao's
+        <a href="https://mathoverflow.net/questions/81960/the-dzhanibekov-effect-an-exercise-in-mechanics-or-fiction-explain-mathemat/82020#82020" target="_blank">
+          post</a>.</p>
+  </div>
+    </section>
+    <section>
+      <div class="slide-title">Angular momentum and energy of a
+        spinning body</div>
+      <div class="page-full">
+        <div>
+          <div ></div>
+<svg
+  style="width: 35vw; height: 25vw; float: right;"
+   viewBox="0 0 350 250"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <path
+     style="fill:none;stroke:#c57826;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     d="m 70.543087,226.36756 c -2.834419,-4.08785 -8.648888,-12.79116 -14.420848,-20.12134 -5.771961,-7.33019 -12.062794,-14.17717 -15.989524,-22.57953 -3.926729,-8.40235 -5.526063,-19.28042 -4.020329,-27.32757 1.505734,-8.04715 5.466514,-13.38249 9.107003,-20.19174 3.64049,-6.80925 6.134858,-13.78337 11.019343,-24.41679 4.884486,-10.63343 12.785456,-26.052003 19.672707,-35.300566 6.88725,-9.248563 14.678595,-14.64029 23.913922,-18.607898 9.235329,-3.967608 22.613639,-8.021746 32.763169,-11.52725 10.14954,-3.505504 17.36458,-6.528025 26.50676,-8.709861 9.14218,-2.181836 21.27923,-3.600022 32.71482,-3.899519 11.43558,-0.299497 23.50313,0.356758 32.90547,2.74542 9.40235,2.388661 18.59379,8.024151 25.25066,15.13284 6.65687,7.108689 12.85867,16.934323 19.53126,26.43874 6.67258,9.504417 13.79771,18.65687 20.50338,27.469634 6.70567,8.81276 13.5444,18.03617 15.01787,29.50226 1.47347,11.46609 -0.90988,27.54997 -6.60906,37.72408 -5.69917,10.17411 -15.06496,14.79197 -24.87686,19.82663 -9.8119,5.03466 -20.80534,10.87422 -29.87332,16.4184 -9.06798,5.54419 -19.45581,12.84688 -29.51148,16.20589 -10.05567,3.35901 -22.5444,4.53931 -34.70368,4.84923 -12.15928,0.30991 -24.2607,-0.22548 -37.23231,0.55418 -12.97161,0.77966 -26.98926,2.91081 -37.97134,3.82077 -10.982082,0.90997 -20.938651,0.55849 -24.871977,-0.53422 -3.933325,-1.09271 -5.991217,-3.38394 -8.825636,-7.47179 z"
+     id="path1891" />
+  <path
+     style="color:#000000;fill:#000000;fill-opacity:1;-inkscape-stroke:none"
+     d="M 320.0625,22.609375 8.1269531,238.00391 10.400391,241.29687 322.33398,25.900391 Z" />
+  <path
+     d="M 310.22601,18.221171 341.93476,9.9365351 322.95395,36.653738 c 0.90113,-8.550471 -4.39688,-16.223027 -12.72794,-18.432567 z"
+     style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:2.8" />
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24px;line-height:1.25;font-family:MathJax_Math;-inkscape-font-specification:'MathJax_Math Bold Italic';letter-spacing:0px;word-spacing:0px;stroke-width:0.75"
+     x="327.50278"
+     y="46.736935"><tspan
+       id="tspan1315"
+       x="327.50278"
+       y="46.736935">ω</tspan></text>
+  <path
+     style="fill:none;stroke:#e6e9ea;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     d="m 230.34476,-201.65127 a 25.301783,9.3465786 0 0 1 3.58085,11.12287 25.301783,9.3465786 0 0 1 -27.87995,4.40445 25.301783,9.3465786 0 0 1 -19.29844,-8.63982 25.301783,9.3465786 0 0 1 17.0003,-9.27522"
+     transform="rotate(52.640324)" />
+  <path
+     style="color:#000000;fill:#808080;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none"
+     d="m 286.52808,37.430207 c -3.82083,-3.868704 -7.56888,-6.643987 -10.85408,-8.108296 -1.6426,-0.732147 -3.17446,-1.141468 -4.5807,-1.149557 -1.40623,-0.0081 -2.7171,0.425257 -3.66814,1.365393 -1.90209,1.880272 -2.04174,5.080925 -1.15325,8.856666 0.88851,3.775743 2.88821,8.264707 5.85444,12.969567 5.93246,9.409733 14.22525,17.44904 20.92083,19.894157 1.67389,0.611286 3.17626,0.839525 4.5048,0.634953 1.32855,-0.204564 2.47357,-0.895031 3.20921,-1.95367 1.47127,-2.11728 1.45439,-5.364664 0.2579,-9.495129 a 1,1 0 0 0 -1.23909,-0.683183 1,1 0 0 0 -0.68318,1.239085 c 1.11396,3.845546 0.89581,6.539335 0.0214,7.797758 -0.43724,0.629211 -1.00108,0.984822 -1.87098,1.118775 -0.86991,0.133945 -2.05667,-0.006 -3.5145,-0.538338 -5.83133,-2.129518 -14.16596,-9.959565 -19.91656,-19.080837 -2.87531,-4.56064 -4.78232,-8.894811 -5.59766,-12.359638 -0.81533,-3.464819 -0.45669,-5.922613 0.61146,-6.978526 0.53406,-0.527998 1.23714,-0.793472 2.25156,-0.787631 1.01441,0.0058 2.3101,0.323236 3.77881,0.977886 2.93742,1.309284 6.54939,3.945035 10.24459,7.686538 a 1,1 0 0 0 1.41458,0.0086 1,1 0 0 0 0.009,-1.414575 z" />
+  <path
+     d="m 294.96572,64.016899 1.09404,-16.35001 9.66371,13.23376 c -3.91225,-1.78183 -8.39017,-0.48468 -10.75775,3.11625 z"
+     style="fill:#808080;fill-rule:evenodd;stroke-width:1.4" />
+  <g
+     style="fill:#f1d8c0;fill-opacity:0.728797;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1">
+    <path
+       style="fill:#f1d8c0;fill-opacity:0.728797;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 221.92501,151.97006 13.44368,3.95172 v 18.764 l -13.44368,-5.11635 z"
+       points="235.36869,155.92178 235.36869,174.68578 221.92501,169.56943 221.92501,151.97006 " />
+    <path
+       style="fill:#f1d8c0;fill-opacity:0.728797;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 205.84819,155.17451 v 19.54241 l 16.07682,-5.14749 v -17.59937 z"
+       points="205.84819,174.71692 221.92501,169.56943 221.92501,151.97006 205.84819,155.17451 " />
+    <path
+       style="fill:#f1d8c0;fill-opacity:0.728797;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 205.84819,174.71692 13.84775,6.10406 15.67275,-6.1352 -13.44368,-5.11635 z"
+       points="219.69594,180.82098 235.36869,174.68578 221.92501,169.56943 205.84819,174.71692 " />
+    <path
+       style="fill:#f1d8c0;fill-opacity:0.728797;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 205.84819,155.17451 13.84775,4.65751 15.67275,-3.91024 -13.44368,-3.95172 z"
+       points="219.69594,159.83202 235.36869,155.92178 221.92501,151.97006 205.84819,155.17451 " />
+    <path
+       style="fill:#f1d8c0;fill-opacity:0.728797;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 219.69594,159.83202 v 20.98896 l 15.67275,-6.1352 v -18.764 z"
+       points="219.69594,180.82098 235.36869,174.68578 235.36869,155.92178 219.69594,159.83202 " />
+    <path
+       style="fill:#f1d8c0;fill-opacity:0.728797;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 205.84819,155.17451 13.84775,4.65751 v 20.98896 l -13.84775,-6.10406 z"
+       points="219.69594,159.83202 219.69594,180.82098 205.84819,174.71692 205.84819,155.17451 " />
+  </g>
+  <path
+     style="color:#000000;fill:#2c89a0;fill-opacity:1;-inkscape-stroke:none"
+     d="m 227.7793,118.03125 -8.57032,49.51172 3.94141,0.68359 8.57031,-49.51367 z" />
+  <path
+     d="m 189.19499,160.7354 31.98382,7.1495 -29.10553,15.06481 c 4.71527,-7.18949 3.51718,-16.4362 -2.87829,-22.21431 z"
+     style="fill:#0000ff;fill-opacity:1;fill-rule:evenodd;stroke-width:2.8" />
+  <path
+     d="m 217.75869,121.97935 16.28935,-28.438299 5.7824,32.259009 c -5.47322,-6.63072 -14.66059,-8.22109 -22.07175,-3.82071 z"
+     style="fill:#2c89a0;fill-opacity:1;fill-rule:evenodd;stroke-width:2.8" />
+  <path
+     style="color:#000000;fill:#0000ff;fill-opacity:1;stroke-width:1;-inkscape-stroke:none"
+     d="M 206.74986,168.16144 87.994141,183.54792 88.453047,187.0918 207.20878,171.70532 Z" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:'MathJax_Main Bold';letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke-width:0.75"
+     x="176.4037"
+     y="192.95979"><tspan
+       x="176.4037"
+       y="192.95979">r</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:'MathJax_Main Bold';letter-spacing:0px;word-spacing:0px;fill:#2c89a0;fill-opacity:1;stroke-width:0.75"
+     x="242.43381"
+     y="126.59869"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24px;font-family:MathJax_Main;-inkscape-font-specification:'MathJax_Main Bold';fill:#2c89a0;fill-opacity:1;stroke-width:0.75"
+       x="242.43381"
+       y="126.59869">v</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:24px;line-height:1.25;font-family:MathJax_Math;-inkscape-font-specification:MathJax_Math;letter-spacing:0px;word-spacing:0px;fill:#c57826;fill-opacity:1;stroke-width:0.75"
+     x="231.81424"
+     y="192.96635"><tspan
+       style="fill:#c57826;fill-opacity:1;stroke-width:0.75"
+       x="231.81424"
+       y="192.96635">dm</tspan></text>
+</svg>
+
+        <ul>
+          <li>Velocity $\vb{v} = \vb*{\omega}\times\vb{r}$</li>
+          <li>Angular momentum $\vb{L} = \int dm\, \vb{r}\times\vb{v}$</li>
+          <li>Energy $E = \frac{1}{2} \int dm\, \vb{v}\cdot\vb{v} =
+            \frac{1}{2} \vb*{\omega}\cdot\vb{L}$</li>
+          <li>Since $\vb{L}$ is a linear function of $\vb*{\omega}$,
+            \[
+            \begin{pmatrix}L_x \\ L_y \\ L_z\end{pmatrix} =
+            \begin{pmatrix}I_{xx} & I_{xy} & I_{xz} \\
+            I_{yx} & I_{yy} & I_{yz} \\ I_{zx} & I_{zy} & I_{zz}\end{pmatrix}
+            \begin{pmatrix}\omega_x \\ \omega_y \\ \omega_z\end{pmatrix}
+            \]
+          </li>
+          <li>Working out the $I_{ij}$ from the definition of $\vb{L}$ you
+            find the moment of inertia matrix is symmetric:
+            \[ I_{xx} = \int dm\, (y^2+z^2),\quad
+            I_{xy} = I_{yx} = -\int dm\, x y,\quad ... \]
+          </li>
+          <li>Energy $E = \frac{1}{2} \int dm\, \vb{v}\cdot\vb{v} =
+            \frac{1}{2} \vb*{\omega}\cdot\vb{L}$</li>
+          <li>Since $E \geq 0$, $I_{jk}$ is a positive definite matrix</li>
+        </ul>
+      </div>
+      </div>
+    </section>
+    <section>
+      <div class="slide-title">Spinning bodies have three principal axes</div>
+      <div class="page-full">
+        <div>
+<svg
+  style="float: right;"
+   width="35vw"
+   height="25vw"
+   viewBox="0 0 350 249.99999"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <path
+     style="color:#000000;fill:#808080;stroke-linecap:round;-inkscape-stroke:none"
+     d="m 25.462891,167.89453 a 0.75,0.75 0 0 0 -0.455079,0.34961 0.75,0.75 0 0 0 0.273438,1.02344 l 73.921875,42.72461 a 0.75,0.75 0 0 0 1.025395,-0.27344 0.75,0.75 0 0 0 -0.275395,-1.02539 L 26.033203,167.96875 a 0.75,0.75 0 0 0 -0.570312,-0.0742 z" />
+  <path
+     style="color:#000000;fill:#808080;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none"
+     d="m 96.023437,204.02148 a 0.95840502,0.95840502 0 0 0 -0.708984,0.19336 0.95840502,0.95840502 0 0 0 -0.169922,1.34375 l 4.511719,5.83008 -7.304688,-1 a 0.95840502,0.95840502 0 0 0 -1.078125,0.82031 0.95840502,0.95840502 0 0 0 0.81836,1.07813 l 9.626953,1.31836 a 0.95850086,0.95850086 0 0 0 0.88867,-1.53711 l -5.947264,-7.68359 a 0.95840502,0.95840502 0 0 0 -0.636719,-0.36329 z" />
+  <path
+     style="color:#000000;fill:#808080;stroke-linecap:round;-inkscape-stroke:none"
+     d="m 39.308594,106.44531 a 0.75,0.75 0 0 0 -0.75,0.75 v 89.44336 a 0.75,0.75 0 0 0 0.75,0.75 0.75,0.75 0 0 0 0.75,-0.75 v -89.44336 a 0.75,0.75 0 0 0 -0.75,-0.75 z" />
+  <path
+     style="color:#000000;fill:#808080;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none"
+     d="m 39.308594,103.61523 a 0.95850086,0.95850086 0 0 0 -0.886719,0.59571 l -3.675781,8.99414 a 0.95840502,0.95840502 0 0 0 0.523437,1.24805 0.95840502,0.95840502 0 0 0 1.25,-0.52344 l 2.789063,-6.82227 2.791015,6.82227 a 0.95840502,0.95840502 0 0 0 1.25,0.52344 0.95840502,0.95840502 0 0 0 0.523438,-1.24805 l -3.675781,-8.99414 a 0.95850086,0.95850086 0 0 0 -0.888672,-0.59571 z" />
+  <path
+     style="color:#000000;fill:#808080;stroke-linecap:round;-inkscape-stroke:none"
+     d="M 105.74023,158.09961 24.916016,179.8125 a 0.75,0.75 0 0 0 -0.529297,0.91992 0.75,0.75 0 0 0 0.917968,0.5293 l 80.824223,-21.71289 a 0.75,0.75 0 0 0 0.52929,-0.91992 0.75,0.75 0 0 0 -0.91797,-0.5293 z" />
+  <path
+     style="color:#000000;fill:#808080;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none"
+     d="m 98.947266,155.97461 a 0.95840502,0.95840502 0 0 0 -1.072266,0.83203 0.95840502,0.95840502 0 0 0 0.832031,1.07031 l 7.312499,0.92383 -5.86523,4.46484 a 0.95840502,0.95840502 0 0 0 -0.183597,1.3418 0.95840502,0.95840502 0 0 0 1.343747,0.1836 l 7.73243,-5.88477 a 0.95850086,0.95850086 0 0 0 -0.46094,-1.71289 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 39.561761,176.65509 153.49676,242.4355 328.94339,195.42471 V 34.489172"
+ />
+  <path
+     style="fill:none;stroke:#0000ff;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 39.561761,176.65509 87.535282,204.35261 231.98258,166.05265 V 8.9041005" />
+  <path
+     style="color:#000000;fill:#000000;stroke-linecap:round;-inkscape-stroke:none"
+     d="m 307.35937,43.943359 a 2,2 0 0 0 -1.52734,0.09375 L 39.236328,174.26758 a 2,2 0 0 0 -0.917969,2.67578 2,2 0 0 0 2.673828,0.91992 L 307.58789,47.630859 a 2,2 0 0 0 0.91797,-2.673828 2,2 0 0 0 -1.14649,-1.013672 z" />
+  <path
+     d="M 296.76207,38.229148 329.35256,34.773709 306.594,58.356075 c 2.16819,-8.31995 -1.92436,-16.697783 -9.83193,-20.126927 z"
+     style="fill:#000000;fill-rule:evenodd;stroke-width:2.8" />
+  <path
+     style="color:#000000;fill:#0000ff;stroke-linecap:round;-inkscape-stroke:none"
+     d="M 211.38477,24.353516 39.082031,174.30078 a 2,2 0 0 0 -0.195312,2.82031 2,2 0 0 0 2.822265,0.19727 L 214.00977,27.369141 a 2,2 0 0 0 0.19726,-2.820313 2,2 0 0 0 -2.82226,-0.195312 z" />
+  <path
+     d="M 201.1207,21.088971 231.70712,9.3181853 215.82577,37.986337 c -0.0585,-8.597625 -6.17949,-15.631153 -14.70507,-16.897366 z"
+     style="fill:#0000ff;fill-rule:evenodd;stroke-width:2.8" />
+  <text
+     xml:space="preserve"
+     style="font-size:24px;line-height:1.25;font-family:MathJax_Math;-inkscape-font-specification:MathJax_Math;letter-spacing:0px;word-spacing:0px;stroke-width:0.75"
+     x="88.957123"
+     y="227.05196"><tspan
+       style="stroke-width:0.75"
+       x="88.957123"
+       y="227.05196">x</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:24px;line-height:1.25;font-family:MathJax_Math;-inkscape-font-specification:MathJax_Math;letter-spacing:0px;word-spacing:0px;stroke-width:0.75"
+     x="111.17237"
+     y="162.13956"><tspan
+       style="stroke-width:0.75"
+       x="111.17237"
+       y="162.13956">y</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:24px;line-height:1.25;font-family:MathJax_Math;-inkscape-font-specification:MathJax_Math;letter-spacing:0px;word-spacing:0px;stroke-width:0.75"
+     x="33.376324"
+     y="100.91444"><tspan
+       style="stroke-width:0.75"
+       x="33.376324"
+       y="100.91444">z</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:24px;line-height:1.25;font-family:MathJax_Math;-inkscape-font-specification:MathJax_Math;letter-spacing:0px;word-spacing:0px;stroke-width:0.75"
+     x="294.99875"
+     y="70.813438"><tspan
+       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:MathJax_Math;-inkscape-font-specification:'MathJax_Math Bold Italic';stroke-width:0.75"
+       x="294.99875"
+       y="70.813438">ω</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:24px;line-height:1.25;font-family:MathJax_Math;-inkscape-font-specification:MathJax_Math;letter-spacing:0px;word-spacing:0px;stroke-width:0.75"
+     x="131.41818"
+     y="227.97423"><tspan
+       style="stroke-width:0.75"
+       x="131.41818"
+       y="227.97423">ω<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan17523">x</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:24px;line-height:1.25;font-family:MathJax_Math;-inkscape-font-specification:MathJax_Math;letter-spacing:0px;word-spacing:0px;stroke-width:0.75"
+     x="265.80087"
+     y="226.46442"><tspan
+       style="stroke-width:0.75"
+       x="265.80087"
+       y="226.46442">ω<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan17519">y</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:24px;line-height:1.25;font-family:MathJax_Math;-inkscape-font-specification:MathJax_Math;letter-spacing:0px;word-spacing:0px;stroke-width:0.75"
+     x="304.29877"
+     y="127.74372"><tspan
+       style="stroke-width:0.75"
+       x="304.29877"
+       y="127.74372">ω<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan17517">z</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:'MathJax_Main Bold';letter-spacing:0px;word-spacing:0px;fill:#0000ff;stroke-width:0.75"
+     x="184.83308"
+     y="30.685772"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:MathJax_Main;-inkscape-font-specification:'MathJax_Main Bold';fill:#0000ff;stroke-width:0.75"
+       x="184.83308"
+       y="30.685772">L</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:24px;line-height:1.25;font-family:MathJax_Math;-inkscape-font-specification:MathJax_Math;letter-spacing:0px;word-spacing:0px;fill:#0000ff;stroke-width:0.75"
+     x="69.945839"
+     y="192.7807"><tspan
+       style="fill:#0000ff;stroke-width:0.75"
+       x="69.945839"
+       y="192.7807"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main;fill:#0000ff">L</tspan><tspan
+         style="font-size:65%;baseline-shift:sub;fill:#0000ff">x</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:24px;line-height:1.25;font-family:MathJax_Math;-inkscape-font-specification:MathJax_Math;letter-spacing:0px;word-spacing:0px;fill:#0000ff;stroke-width:0.75"
+     x="177.23262"
+     y="198.84404"><tspan
+       style="fill:#0000ff;stroke-width:0.75"
+       x="177.23262"
+       y="198.84404"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main;fill:#0000ff">L</tspan><tspan
+         style="font-size:65%;baseline-shift:sub;fill:#0000ff">y</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:24px;line-height:1.25;font-family:MathJax_Math;-inkscape-font-specification:MathJax_Math;letter-spacing:0px;word-spacing:0px;fill:#0000ff;stroke-width:0.75"
+     x="207.20348"
+     y="126.24424"><tspan
+       style="fill:#0000ff;stroke-width:0.75"
+       x="207.20348"
+       y="126.24424"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main;fill:#0000ff">L</tspan><tspan
+         style="font-size:65%;baseline-shift:sub;fill:#0000ff">z</tspan></tspan></text>
+</svg>
+
+        <ul>
+          <li>$I_{ij}$ has three orthogonal directions for which the
+            vectors $\vb{L}$ and $\vb*{\omega}$ are parallel
+            (<em>eigenvectors</em>)</li>
+          <li>Assume the $x$, $y$, and $z$ axes are along
+            these <em>principal axes</em> of the body, so
+            \[ (L_x,L_y,L_z) = (I_x\omega_x,I_y\omega_y,I_z\omega_z) \]
+            Also assume $I_x \leq I_y \leq I_z$</li>
+          <li>Since the body is spinning, these $(x, y, z)$ axes are
+            rotating - but this is the only way to make the components
+            of $I_{ij}$ constant</li>
+          <li>The total angular momentum $L = ||\vb{L}||$ is
+            \[ L^2 = L_x^2 + L_y^2 + L_z^2 \]</li>
+          <li>The total kinetic energy $E$ is
+            \[ 2E = L_x^2/I_x + L_y^2/I_y + L_z^2/I_z \]</li>
+        </ul>
+      </div>
+      </div>
+    </section>
+    <section>
+      <div class="slide-title">Relating rotating and stationary vector
+        coordinates</div>
+      <div class="page-full">
+        <div>
+<svg
+   width="35vw"
+  height="25vw"
+  style="float: right;"
+   viewBox="0 0 350 250"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <path
+     style="color:#000000;fill:#000000;fill-opacity:1;-inkscape-stroke:none"
+     d="M 320.0625,22.609375 8.1269531,238.00391 10.400391,241.29687 322.33398,25.900391 Z" />
+  <path
+     d="M 310.22601,18.221171 341.93476,9.9365351 322.95395,36.653738 c 0.90113,-8.550471 -4.39688,-16.223027 -12.72794,-18.432567 z"
+     style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:2.8" />
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24px;line-height:1.25;font-family:MathJax_Math;-inkscape-font-specification:'MathJax_Math Bold Italic';letter-spacing:0px;word-spacing:0px;stroke-width:0.75"
+     x="327.50278"
+     y="46.736935"><tspan
+       x="327.50278"
+       y="46.736935">ω</tspan></text>
+  <path
+     style="fill:none;stroke:#e6e9ea;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     d="m 230.34476,-201.65127 a 25.301783,9.3465786 0 0 1 3.58085,11.12287 25.301783,9.3465786 0 0 1 -27.87995,4.40445 25.301783,9.3465786 0 0 1 -19.29844,-8.63982 25.301783,9.3465786 0 0 1 17.0003,-9.27522"
+     transform="rotate(52.640324)" />
+  <path
+     style="color:#000000;fill:#808080;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none"
+     d="m 286.52808,37.430207 c -3.82083,-3.868704 -7.56888,-6.643987 -10.85408,-8.108296 -1.6426,-0.732147 -3.17446,-1.141468 -4.5807,-1.149557 -1.40623,-0.0081 -2.7171,0.425257 -3.66814,1.365393 -1.90209,1.880272 -2.04174,5.080925 -1.15325,8.856666 0.88851,3.775743 2.88821,8.264707 5.85444,12.969567 5.93246,9.409733 14.22525,17.44904 20.92083,19.894157 1.67389,0.611286 3.17626,0.839525 4.5048,0.634953 1.32855,-0.204564 2.47357,-0.895031 3.20921,-1.95367 1.47127,-2.11728 1.45439,-5.364664 0.2579,-9.495129 a 1,1 0 0 0 -1.23909,-0.683183 1,1 0 0 0 -0.68318,1.239085 c 1.11396,3.845546 0.89581,6.539335 0.0214,7.797758 -0.43724,0.629211 -1.00108,0.984822 -1.87098,1.118775 -0.86991,0.133945 -2.05667,-0.006 -3.5145,-0.538338 -5.83133,-2.129518 -14.16596,-9.959565 -19.91656,-19.080837 -2.87531,-4.56064 -4.78232,-8.894811 -5.59766,-12.359638 -0.81533,-3.464819 -0.45669,-5.922613 0.61146,-6.978526 0.53406,-0.527998 1.23714,-0.793472 2.25156,-0.787631 1.01441,0.0058 2.3101,0.323236 3.77881,0.977886 2.93742,1.309284 6.54939,3.945035 10.24459,7.686538 a 1,1 0 0 0 1.41458,0.0086 1,1 0 0 0 0.009,-1.414575 z" />
+  <path
+     d="m 294.96572,64.016899 1.09404,-16.35001 9.66371,13.23376 c -3.91225,-1.78183 -8.39017,-0.48468 -10.75775,3.11625 z"
+     style="fill:#808080;fill-rule:evenodd;stroke-width:1.4" />
+  <path
+     style="color:#000000;fill:#2c89a0;fill-opacity:1;-inkscape-stroke:none"
+     d="m 227.7793,118.03125 -8.57032,49.51172 3.94141,0.68359 8.57031,-49.51367 z" />
+  <path
+     d="m 189.19499,160.7354 31.98382,7.1495 -29.10553,15.06481 c 4.71527,-7.18949 3.51718,-16.4362 -2.87829,-22.21431 z"
+     style="fill:#0000ff;fill-opacity:1;fill-rule:evenodd;stroke-width:2.8" />
+  <path
+     d="m 217.75869,121.97935 16.28935,-28.438299 5.7824,32.259009 c -5.47322,-6.63072 -14.66059,-8.22109 -22.07175,-3.82071 z"
+     style="fill:#2c89a0;fill-opacity:1;fill-rule:evenodd;stroke-width:2.8" />
+  <path
+     style="color:#000000;fill:#0000ff;fill-opacity:1;stroke-width:1;-inkscape-stroke:none"
+     d="M 206.74986,168.16144 87.994141,183.54792 88.453047,187.0918 207.20878,171.70532 Z" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:'MathJax_Main Bold';letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke-width:0.75"
+     x="175.91275"
+     y="197.8163"><tspan
+       x="175.91275"
+       y="197.8163">A</tspan></text>
+  <g
+     transform="translate(-2.1341264,-4.9331895)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:'MathJax_Main Bold';letter-spacing:0px;word-spacing:0px;fill:#2c89a0;fill-opacity:1;stroke-width:0.75"
+       x="274.33905"
+       y="144.72545"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24px;font-family:MathJax_Main;-inkscape-font-specification:'MathJax_Main Bold';fill:#2c89a0;fill-opacity:1;stroke-width:0.75"
+         x="274.33905"
+         y="144.72545">A</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24px;line-height:1.25;font-family:MathJax_Math;-inkscape-font-specification:'MathJax_Math Bold Italic';letter-spacing:0px;word-spacing:0px;fill:#2c89a0;fill-opacity:1;stroke-width:0.75"
+       x="234.58488"
+       y="144.72545"><tspan
+         x="234.58488"
+         y="144.72545">ω×</tspan></text>
+  </g>
+</svg>
+
+        <ul>
+          <li>Imagine a stationary coordinate frame $(x',y',z')$ to go
+            along with our rotating body frame $(x,y,z)$</li>
+          <li>Relative to these primed coordinates, the time rate of
+            change of the coordinates of any vector are
+            \[ \dot{\vb{A}}' = \dot{\vb{A}} + \vb*{\omega}\times\vb{A} \]
+          </li>
+          <br/>
+          <li><em><span style="color:red">Warning!</span></em>  Don't
+            the vectors $\vb{L}$, $\vb*{\omega}$, and $\vb{v}$ really
+            belong to the stationary primed system?  Hint: Yes, but at
+            any single instant of time, we can put
+            $(x',y',z')=(x,y,z)$...</li>
+          <li>Conservation of angular momentum is $\dot{\vb{L}}'=0$, or
+            \[ \dot{\vb{L}} = -\vb*{\omega}\times\vb{L} \]
+            That is, $\vb{L}$ in the spinning frame must change so that
+            $\vb{L}'$ stays fixed.
+          </li>
+        </ul>
+      </div>
+      </div>
+    </section>
+    <section>
+      <div class="slide-title">Spin must change to conserve angular
+        momentum</div>
+      <div class="page-full">
+        <ul>
+          <li>The components of $\dot{\vb{L}} = -\vb*{\omega}\times\vb{L}$ are
+            the three equations
+            \[ \dot{L}_i = (1/I_k - 1/I_j) L_j L_k = J_{kj} L_j L_k \]
+            where $ijk$ are $xyz$ or cyclic permutations $yzx$ or $zxy$,
+            and $J_{kj} \equiv 1/I_k - 1/I_j.$</li>
+          <li>Important checks: $\dot{(L^2)}=2\vb{L}\cdot\dot{\vb{L}}=0$ <br/>
+            Using components you can check that $\dot{E}=0$ as well.</li>
+          <li>In $(L_x,L_y,L_z)$ space, $L^2$ constant is a sphere and
+            $E$ constant is an ellipsoid.  The $\vb{L}$ vector can
+            only move along their intersection.</li>
+          <li>The three projections into the $xy$, $yz$, and $zx$
+            planes are just conics:
+            \[ \begin{aligned}
+            J_{xz}L_x^2 + J_{yz}L_y^2 &= 2E - L^2/I_z \\
+            J_{xy}L_x^2 - J_{yz}L_z^2 &= 2E - L^2/I_y \\
+            J_{xy}L_y^2 + J_{xz}L_z^2 &= L^2/I_x - 2E
+            \end{aligned} \]
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <div class="slide-title">Now the T-handle's motion makes sense...</div>
+      <div class="page-thin">
+        <ul>
+          <li>In the rotating frame, the $\vb{L}$ vector traces some
+            curve on the sphere, depending on the value of $E$.</li>
+          <li>When $\vb{L}$ starts very close to any of the principal
+            axes, it changes very slowly since $\dot{\vb{L}}$ is near
+            zero.</li>
+          <li>The projections of these paths into the $xy$ and $yz$ planes
+            are ellipses, but the projection into the $zx$ plane is a
+            hyperbola!</li>
+          <li>When $\vb{L}$ starts very near the $+y$ axis, its
+            hyperbola eventually takes it to the $-y$ axis.  It moves
+            quickly from plus to minus or minus to plus, and slowly when
+            close to either $y$ direction.</li>
+        </ul>
+      </div>
+      <div class="page-wide">
+        <div style="width:50vw;height:50vw;margin: auto;background:red;border:1vh
+        solid green;"></div>
+      </div>
+    </section>
+    <section>
+      <div class="slide-title">Here's one way to build a numerical model</div>
+      <div class="page-thin">
+        <p>Plan (many other possibilities!):</p>
+        <ol>
+          <li>If $2E \ge L^2/I_y$, choose $k$ to be $z$, otherwise
+            $x$, so that
+            \[ |J_{ik}|L_i^2 + |J_{jk}|L_j^2 = |2E - L^2/I_k| \]</li>
+          <li>Step $(L_i, L_j)$ forward in time to second order:
+            \[ \Delta L_i = (\dot{L_i} +
+            \tfrac{1}{2}\ddot{L_i}\Delta t)\Delta t \]</li>
+          <li>Renormalize $(L_i, L_j)$ back onto its ellipse to avoid slowly
+            accumulating numerical error.</li>
+          <li>Update $L_k$ so that $L^2$ remains unchanged.</li>
+        </ol>
+      </div>
+      <div class="page-wide">
+        <div style="width:50vw;height:50vw;margin: auto;background:red;border:1vh
+        solid green;"></div>
+      </div>
+    </section>
+    <section>
+      <div class="slide-title">Studying your model</div>
+      <div class="page-full">
+      <ol>
+        <li>With the T-handle, you can explore changing the various
+          parameters: the moments of inertia $I_i$, the $E$ and $L^2$,
+          and the initial values of $(L_x,L_y,L_z)$.</li>
+        <li>In addition to being positive, the moments of inertia of
+          any real body must satisfy the triangle inequalities
+          $I_i \le I_j+I_k$ for all permutations $ijk$ of $xyz$.</li>
+        <li>Pay attention to scaling.  For example, you can change your
+          mass and length units to make, say, $I_z=1$.  When you do that,
+          $E$ and $L$ scale by the same factor.  You can now change
+          your time units to make, say, $L=1$.  That doesn't affect
+          any of the $I_i$, but it changes $E$ by the square of that
+          factor.</li>
+        <li>No real body is perfectly rigid.  When the angular
+          velocity vector changes in body fixed (rotating)
+          coordinates, changing stresses cause the body to flex
+          slightly.  This flexing generates a small amount of heat
+          which slowly reduces $E$.  You can add ad hoc energy loss
+          terms (say proportional to $|\dot{\vb*{\omega}}|$) to
+          explore how energy loss changes the dynamics.
+        </li>
+      </ol>
+      </div>
+    </section>
+    <section>
+      <div class="slide-title">Elliptic functions crop up in other places</div>
+      <div class="page-full">
+        <p>There is an elegant solution to the equations for $\vb{L}$
+          involving the Jacobi elliptic functions - doubly periodic
+          analytic functions that generalize trig and exponential
+          functions.</p>
+      </div>
+      <div class="page-half">
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+  style="display: block; margin: 0 auto 1vh auto;"
+   width="30vw"
+   height="30vw"
+   viewBox="0 0 250 250"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <g>
+    <path
+       style="fill:none;stroke:#808080;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 125,9.9999998 V 244.99999" />
+    <path
+       style="fill:none;stroke:#808080;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 242.49999,125 H 7.4999974" />
+    <g id="pendulum">
+      <circle
+         style="fill:#0000ff;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         cx="124.99999"
+         cy="124.99998"
+         r="7.5578566" />
+      <path
+         style="fill:#ff6600;stroke:#ff6600;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="M 125,125 H 20" />
+      <circle
+         style="fill:#ff6600;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         cx="20"
+         cy="124.99999"
+         r="15" />
+    </g>
+  </g>
+</svg>
+          <p style="text-align: center">
+            A rigid pendulum with an amplitude near 180 degrees
+            turns out to be an exact analog of the spinning T-handle.</p>
+      </div>
+      <div class="page-half">
+          <img src="peirce-tiled4.jpg" alt="peirce quincuncial map"
+               style="width: 30vw; height: 30vw;
+                      margin: 0 auto 1vh auto; display: block;">
+          <p style="text-align: center">
+            Finally, one of my favorite map projections - the Peirce
+            quincuncial - is based on elliptic functions.</p>
+      </div>
+    </section>
+</div>
+
+  <script src="docSlider.min.js"></script>
+<!-- Load d3 library.  Later should grab only pieces used.
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.4.4/d3.min.js"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.4.4/d3.min.js"></script>
+<script>
+  docSlider.init({
+    afterChange: (index, page) => {
+      if (index == 1) {
+      } else if (index == 2) {
+      } else if (index == 3) {
+      } else if (index == 4) {
+      } else if (index == 5) {
+      } else if (index == 6) {
+      }
+    }
+  });
+
+</script>
+
+</body>
+</html>

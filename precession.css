@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Merriweather', serif; */
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 2vw;
+    background: #e6e9ea;  /* for button effect #dde1e7 */
+}
+
+.title-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.title-page h1 {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: bold;
+    font-size: 200%;
+    color: #228;
+    text-shadow: 0.3vw 0.3vw 0.3vw #2224;
+}
+
+.slide-title {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    width: 80vw;
+    margin: 1vh auto;
+    text-align: center;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: bold;
+    font-size: 150%;
+    color: #228;
+    border-bottom: 0.5vh solid;
+}
+
+.page-thin {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    display: inline-block;
+    vertical-align: top;
+    width: 37%;
+    padding: 1%;
+}
+
+.page-wide {
+    display: inline-block;
+    vertical-align: top;
+    width: 56%;
+    padding: 1%;
+}
+
+.page-full {
+    display: inline-block;
+    vertical-align: top;
+    width: 84%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.page-half {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    display: inline-block;
+    vertical-align: top;
+    width: 47%;
+    padding: 1%;
+}
+
+.page-thin p, .page-half p, .page-wide p {
+    margin: 0.67em 0;
+}
+
+.button {
+    padding: 0.5vw;
+    border-radius: 1vw;
+    box-shadow: -0.3vw -0.3vw 0.5vw #ffffff80, 0.3vw 0.3vw 0.5vw #4646462e;
+}
+
+.button:hover {
+    box-shadow: -0.3vw -0.3vw 0.5vw #ffffff80, 0.3vw 0.3vw 0.5vw #4646464e;
+    transform: translateY(-0.2vw);
+}
+
+.button:active {
+    box-shadow: inset -0.3vw -0.3vw 0.5vw #ffffff80,
+                inset 0.3vw 0.3vw 0.5vw #4646462e;
+    transform: translateY(0.2vw);
+}
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    opacity: 0;
+}
+
+.faded {
+    opacity: 0.20;
+}
+
+.less-faded {
+    opacity: 0.40;
+}
+
+.unselectable {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
