@@ -24,6 +24,8 @@
   <div class="docSlider">
     <section>
       <div class="title-page">
+        <a href="https://github.com/dhmunro/garland">
+          <img decoding="async" loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_white_ffffff.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
         <h1>Free Precession</h1>
         <p style="width:50%; text-align:center;">
           Using Conservation Laws and Modeling to Understand
@@ -512,8 +514,29 @@
         </ul>
       </div>
       <div class="page-wide">
-        <div style="width:50vw;height:50vw;margin: auto;background:red;border:1vh
-        solid green;"></div>
+<svg
+  id="fig6"
+  style="display: block; margin: 0 auto 1vh auto;"
+   width="50vw"
+   height="50vw"
+   viewBox="-250 -250 500 500"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+  <g id="back6">
+    <circle r="50" cx="150" cy="0"
+            style="fill:#ffcc00;stroke:#000000;stroke-width:4;" />
+    <circle r="50" cy="-150" cx="0"
+            style="fill:#00ccff;stroke:#000000;stroke-width:4;" />
+  </g>
+  <circle r="240" style="fill:#ffffffe0;stroke:#666;stroke-width:4;" />
+  <g id="front6">
+    <circle r="50" cx="-150" cy="0"
+            style="fill:#00ccff;stroke:#000000;stroke-width:4;" />
+    <circle r="50" cy="150" cx="0"
+            style="fill:#ffcc00;stroke:#000000;stroke-width:4;" />
+  </g>
+</svg>
       </div>
     </section>
     <section>
@@ -533,22 +556,44 @@
         </ol>
       </div>
       <div class="page-wide">
-        <div style="width:50vw;height:50vw;margin: auto;background:red;border:1vh
-        solid green;"></div>
+<svg
+  id="fig7"
+  style="display: block; margin: 0 auto 1vh auto;"
+   width="50vw"
+   height="50vw"
+   viewBox="-250 -250 500 500"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+  <g id="back7">
+    <circle r="50" cx="-150" cy="0"
+            style="fill:#0cf;stroke:#000000;stroke-width:4;" />
+    <circle r="50" cy="150" cx="0"
+            style="fill:#fc0;stroke:#000000;stroke-width:4;" />
+  </g>
+  <circle r="240"
+          style="fill:#ffffffe0;stroke:#666;stroke-width:4;" />
+  <g id="front7">
+    <circle r="50" cx="150" cy="0"
+            style="fill:#fc0;stroke:#000000;stroke-width:4;" />
+    <circle r="50" cy="-150" cx="0"
+            style="fill:#0cf;stroke:#000000;stroke-width:4;" />
+  </g>
+</svg>
       </div>
     </section>
     <section>
       <div class="slide-title">Studying your model</div>
       <div class="page-full">
       <ol>
-        <li>With the T-handle, you can explore changing the various
-          parameters: the moments of inertia $I_i$, the $E$ and $L^2$,
-          and the initial values of $(L_x,L_y,L_z)$.</li>
+        <li>With the model, you can explore changing the various
+          parameters: the moments of inertia $I_i$, and the value of
+          $2E-L^2/I_y$.</li>
         <li>In addition to being positive, the moments of inertia of
           any real body must satisfy the triangle inequalities
           $I_i \le I_j+I_k$ for all permutations $ijk$ of $xyz$.</li>
         <li>Pay attention to scaling.  For example, you can change your
-          mass and length units to make, say, $I_z=1$.  When you do that,
+          mass and length units to make, say, $I_y=1$.  When you do that,
           $E$ and $L$ scale by the same factor.  You can now change
           your time units to make, say, $L=1$.  That doesn't affect
           any of the $I_i$, but it changes $E$ by the square of that
@@ -585,15 +630,15 @@
   <g>
     <path
        style="fill:none;stroke:#808080;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 125,9.9999998 V 244.99999" />
+       d="M 125,7.5 V 242.5" />
     <path
        style="fill:none;stroke:#808080;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 242.49999,125 H 7.4999974" />
+       d="M 242.5,125 H 7.5" />
     <g id="pendulum">
       <circle
          style="fill:#0000ff;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         cx="124.99999"
-         cy="124.99998"
+         cx="125"
+         cy="125"
          r="7.5578566" />
       <path
          style="fill:#ff6600;stroke:#ff6600;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
@@ -601,7 +646,7 @@
       <circle
          style="fill:#ff6600;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
          cx="20"
-         cy="124.99999"
+         cy="125"
          r="15" />
     </g>
   </g>
@@ -629,15 +674,202 @@
 <script>
   docSlider.init({
     afterChange: (index, page) => {
-      if (index == 1) {
-      } else if (index == 2) {
-      } else if (index == 3) {
-      } else if (index == 4) {
-      } else if (index == 5) {
-      } else if (index == 6) {
+      if (index == 6) {
+      } else if (index == 7) {
+      } else if (index == 9) {
+        pendulumStart();
       }
+    },
+    beforeChange: (index, page) => {
+      animatorStop();
     }
   });
+
+  let animator;
+
+  const animatorStop = () => {
+    if (animator) {
+      animator.timer.stop();
+      animator.resolve();
+      delete animator.timer;
+      delete animator.resolve;
+      animator = undefined;  // delete leaves empty Object??
+    }
+  }
+
+  //------------------------------------------------------------------------
+  // Free precession calculator - evolve state (Lx, Ly, Lz)
+  // Given Ix, Iy, Iz
+  // Assume L=1, Iy=1 (as described on "Studying your model" page)
+  //   so that Ix <= 1 <= Iz
+  // Triangle inequalities for moments means that Iz <= 1 + Ix <= 2
+  //   (the other two are guaranteed)
+  // Jxy = 1/Ix - 1,   Jyz = 1 - 1/Iz,   Jxz = 1/Ix - 1/Iz = Jxy + Jyz
+  // 1/Iz <= 2E <= 1/Ix  or  -Jyz <= 2E - 1 <= Jxy
+  //   2E - 1/Iz = Jyz + Je  and  1/Ix - 2E = Jxy - Je  where  Je = 2E - 1
+  //     Je = (Lx**2/Ix + Ly**2 + Lz**2/Iz) - 1
+  //        = Jxy*Lx**2 - Jyz*Ly**2
+  //
+  // If Je < 0, use the xy ellipse  Jxz*Lx**2 + Jyz*Ly**2 = Jyz + Je
+  // if Je >= 0, use the yz ellipse  Jxy*Ly**2 + Jxz*Lz**2 = Jxy - Je
+  //
+  // dLi/dt = Jkj * Lj * Lk
+  //   d2Li/dt2 = Jkj * (Lk * dLj/dt + Lj * dLk/dt)
+  //            = Jkj * (Lk * Jik*Lk*Li + Lj * Jji*Li*Lj)
+  //            = Jkj * Li * (Jik*Lk**2 + Jji*Lj**2)
+  // or specifically
+  // dLx/dt = -Jyz * Ly * Lz
+  //   d2Lx/dt2 = -Jyz * Lx * (Jxz*Lz**2 - Jxy*Ly**2)
+  // dLy/dt = Jxz * Lz * Lx
+  //   d2Ly/dt2 = -Jxz * Ly * (Jxy*Lx**2 + Jyz*Lz**2)
+  // dLz/dt = -Jxy * Lx * Ly
+  //   d2Lz/dt2 = Jxy * Lz * (Jyz*Ly**2 - Jxz*Lx**2)
+  const rotator = {
+    Ix: 0.75, Iz: 1.25,  // iy = 1 assumed
+    Jxy: 1/3, Jyz: 1/5, Jxz: 8/15,
+    Lx: null, Ly: null, Lz: null,
+    Je: null,  // = 2E-1 = Jxy*Lx**2 - Jyz*Lz**2,  -Jyz <= Je <= Jxy
+    tstep: 0.01  // animation timestep
+  }
+
+  const rotatorInit = (Lx, Ly, Lz) => {
+    // Allow for setting rotator.Ix and rotator.Iz externally
+    rotator.Jxy = 1/rotator.Ix - 1;
+    rotator.Jyz = 1 - 1/rotator.Iz;
+    rotator.Jxz = rotator.Jxy + rotator.Jyz;
+    if (Lx === undefined) [Lx, Ly, Lz] = [0.6, 0.8, 0];
+    let Lx2 = Lx**2;
+    let L = Lx2 + Ly**2;
+    if (Lz === undefined) Lz = Math.sqrt(Math.max(1 - L, 0));
+    let Lz2 = Lz**2;
+    L = Math.sqrt(L + Lz2);
+    [Lx, Ly, Lz] = [Lx/L, Ly/L, Lz/L];
+    [rotator.Lx, rotator.Ly, rotator.Lz] = [Lx, Ly, Lz];
+    rotator.Je = rotator.Jxy*Lx2 - rotator.Jyz*Lz2
+  };
+
+  const rotatorReset = () => {
+    rotator.Ix = 0.75;
+    rotator.Iz = 1.25;
+    rotatorInit();
+  };
+
+  rotatorReset();
+
+  const rotatorStep = () => {
+    let {Jxy, Jyz, Jxz, Lx, Ly, Lz, Je} = rotator;
+    let dt = rotator.tstep;
+    let norm;
+    let Ly0 = Ly;
+    Ly += Jxz*(Lz*Lx - 0.5*Ly*(Jxy*Lx**2 + Jyz*Lz**2)*dt)*dt;
+    if (Je < 0) {  // Jxz*Lx**2 + Jyz*Ly**2 = Jyz + Je
+      Lx -= Jyz*(Ly0*Lz + 0.5*Lx*(Jxz*Lz**2 - Jxy*Ly0**2)*dt)*dt;
+      // Adjust step to exactly conserve energy
+      norm = Math.sqrt((Jyz + Je) / (Jxz*Lx**2 + Jyz*Ly**2));
+      Lx *= norm;
+      Ly *= norm;
+      // Set Lz to exactly conserve angular momentum
+      Lz = Math.sqrt(Math.max(1 - Lx**2 - Ly**2, 0)) * Math.sign(Lz);
+    } else {  // Jxy*Ly**2 + Jxz*Lz**2 = Jxy - Je
+      Lz -= Jxy*(Lx*Ly0 - 0.5*Lz*(Jyz*Ly0**2 - Jxz*Lx**2)*dt)*dt;
+      // Adjust step to exactly conserve energy
+      norm = Math.sqrt((Jxy - Je) / (Jxy*Ly**2 + Jxz*Lz**2));
+      Ly *= norm;
+      Lz *= norm;
+      // Set Lx to exactly conserve angular momentum
+      Lx = Math.sqrt(Math.max(1 - Ly**2 - Lz**2, 0)) * Math.sign(Lx);
+    }
+    if (norm>1.02 || norm<0.98) {
+      throw "inaccurate integration, timestep too large?";
+    }
+    [rotator.Lx, rotator.Ly, rotator.Lz] = [Lx, Ly, Lz];
+
+    // TO DO: Should also integrate some vector perpendicular to L
+    //        and fixed in non-rotating coordinates.  Without this
+    //        you cannot compute the orientation of the body in
+    //        non-rotating coordinates - so you can't actually simulate
+    //        the T-handle video.
+  };
+
+  //------------------------------------------------------------------------
+  // Manipulate fig6 (on slide 6) and fig7 (on slide7)
+  // These figures are synchronized to a common orientation and rotator model:
+  // rotator: model parameters I and current L (and animation time step)
+  //   see rotatorInit, rotatorReset, rotatorStep
+  // orientation: 3D viewing direction
+  //   (x, y, z) are body-fixed L-space
+  const fig6 = {
+    all: d3.select("#fig6"),
+    back: d3.select("#back6"),
+    front: d3.select("#front6")
+  };
+  const fig7 = {
+    all: d3.select("#fig7"),
+    back: d3.select("#back7"),
+    front: d3.select("#front7")
+  };
+
+  //------------------------------------------------------------------------
+  // Rigid Pendulum on final slide
+  // center is at (125, 125)
+  // mgh      =  L*g*(1 - cos(theta))     where theta is angle from vertical
+  // mv**2/2  =  L**2*(dtheta/dt)**2/2
+  // energy = mv**2/2 + mgh
+  //    => E/(g*L) = (L/g)*(dtheta/dt)**2/2 + 1 - cos(theta)
+  //       (L/g)*(dtheta/dt/2)**2 = E/(2*g*L) - sin(theta/2)**2
+  // When E/(2*g*L) < 1, so that the pendulum swings back and forth instead
+  // of orbiting, it is numerically easier to integrate using a different
+  // variable than theta.  Namely, construct a smaller circle of radius
+  // E/(2*g) resting on the same base as the pendulum circle of radius L.
+  // Define alpha as the angle from the top of this smaller circle to a point
+  // on its perimeter which is the same height as the pendulum bob.  As theta
+  // oscillates back and forth, alpha spins around -- this transformation
+  // connects a pendulum that is oscillating with one that is spinning.
+  // E/(2*g)*(1 - cos(2*alpha)) = L*(1 - cos(theta))
+  // sin(alpha)**2 = 2*g*L/E * sin(theta/2)**2
+  // ==> (L/g)*(dtheta/dt/2)**2 = E/(2*g*L) * cos(alpha)**2
+  //     dtheta/dt/2 = sqrt(E/2)/L * cos(alpha)
+  // and cos(alpha) * dalpha/dt = sqrt(2*g*L/E) * cos(theta/2) * dtheta/dt/2
+  // so  dalpha/dt = sqrt(g/L) * cos(theta/2)
+  //               = sqrt(g/L) * sqrt(1 - E/(2*g*L) * sin(alpha)**2)
+  // This is an elliptic integral with parameter m = E/(2*g*L) < 1.
+  // Here we take g/L = 1
+  const pendulum = {
+    group: d3.select("#pendulum"),
+    alpha: null,  // filled in below
+    m: 0.9999,  // elliptic integral parameter = E/(2*g*L), here 1/2<m<1
+    tstep: 0.02  // time step (speed at bottom independent of m)
+  };
+  // Initially in precession4.svg, theta/2 = -pi/4, so sin(theta/2)=-1/sqrt(2)
+  // sin(alpha)**2 = - 1/(2*m)  [this initial value is only reason why m>1/2]
+  pendulum.alpha = Math.asin(-Math.sqrt(0.5/pendulum.m));
+
+  const pendulumStep = () => {
+    const m = pendulum.m;
+    const dt = pendulum.tstep;
+    let alpha = pendulum.alpha;
+    // Step forward in time, not worrying about accuracy, except to
+    // prevent alpha from growing so large to cause rounding errors.
+    alpha += Math.sqrt(1 - m*Math.sin(alpha)**2) * dt;
+    if (alpha > 2*Math.PI) alpha -= 2*Math.PI;
+    pendulum.alpha = alpha;
+    let theta = 2 * Math.asin(Math.sqrt(m) * Math.sin(alpha));
+    theta *= 180/Math.PI;  // css rotate wants degrees
+    // Initial position was theta = -90 degrees, which was probably dumb
+    // because the rotate transform is now relative to that position...
+    // css rotation also clockwise positive...
+    pendulum.group.attr("transform", `rotate(${-90 - theta}, 125, 125)`);
+  }
+
+  const pendulumStart = () => {
+    animatorStop();
+    return new Promise(resolve => {
+      animator = {
+        timer: d3.timer(() => pendulumStep()),
+        resolve: resolve
+      }
+    });
+  };
 
 </script>
 

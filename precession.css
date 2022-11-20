@@ -24,6 +24,11 @@ body {
     color: #228;
     text-shadow: 0.3vw 0.3vw 0.3vw #2224;
 }
+.attachment-full {  /* Github fork me badge */
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 
 .slide-title {
     -webkit-user-select: none; /* Safari */
