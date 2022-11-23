@@ -24,6 +24,12 @@ body {
     text-shadow: 0.3vw 0.3vw 0.3vw #2224;
 }
 
+.attachment-full {  /* Github fork me badge */
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 .page-text {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
