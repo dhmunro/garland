@@ -504,7 +504,8 @@
           <li>When $\vb{L}$ starts very close to any of the principal
             axes, it changes very slowly since $\dot{\vb{L}}$ is near
             zero.</li>
-          <li>The projections of these paths into the $xy$ and $yz$ planes
+          <li class="button" onclick="threeNodStart()">
+            The projections of these paths into the $xy$ and $yz$ planes
             are ellipses, but the projection into the $zx$ plane is a
             hyperbola!</li>
           <li>When $\vb{L}$ starts very near the $+y$ axis, its
@@ -522,20 +523,42 @@
    viewBox="-250 -250 500 500"
    version="1.1"
    xmlns="http://www.w3.org/2000/svg"
-  xmlns:svg="http://www.w3.org/2000/svg">
+  xmlns:svg="http://www.w3.org/2000/svg"
+  text-anchor="middle"
+  font-family="MathJax_Math"
+  font-style="italic"
+  font-weight="bold"
+  font-size="24">
+  <text style="line-height:1.25;fill:#000;" x="-210" y="-230">
+    I<tspan style="font-size:65%;baseline-shift:sub;">z</tspan></text>
+  <text style="line-height:1.25;fill:#000;" x="-210" y="240">
+    I<tspan style="font-size:65%;baseline-shift:sub;">x</tspan></text>
   <g id="back6">
-    <circle r="50" cx="150" cy="0"
-            style="fill:#ffcc00;stroke:#000000;stroke-width:4;" />
-    <circle r="50" cy="-150" cx="0"
-            style="fill:#00ccff;stroke:#000000;stroke-width:4;" />
   </g>
-  <circle r="240" style="fill:#ffffffe0;stroke:#666;stroke-width:4;" />
+  <line id="xaxis6" x2="-160" y2="90"
+        style="stroke:#f60;stroke-width:2;stroke-linecap:round" />
+  <line id="yaxis6" x2="160" y2="90"
+        style="stroke:#999;stroke-width:2;stroke-linecap:round" />
+  <line id="zaxis6" x2="0" y2="-180"
+        style="stroke:#0cf;stroke-width:2;stroke-linecap:round" />
+  <circle r="235" style="fill:#ffffffd0;stroke:#777;stroke-width:2;" />
   <g id="front6">
-    <circle r="50" cx="-150" cy="0"
-            style="fill:#00ccff;stroke:#000000;stroke-width:4;" />
-    <circle r="50" cy="150" cx="0"
-            style="fill:#ffcc00;stroke:#000000;stroke-width:4;" />
   </g>
+  <circle id="zdot6" r="5" cx="0" cy="-180"
+          style="fill:#0cf;stroke:none;" />
+  <circle id="xdot6" r="5" cx="-160" cy="90"
+          style="fill:#f60;stroke:none;" />
+  <circle id="ydot6" r="5" cx="160" cy="90"
+          style="fill:#000;stroke:none;" />
+  <text id="zlabel6b" x="0" y="-195"
+        style="fill:none;stroke:#fff;stroke-width:6;">z</text>
+  <text id="zlabel6" x="0" y="-195" style="fill:#0cf;">z</text>
+  <text id="xlabel6b" x="-180" y="100"
+        style="fill:none;stroke:#fff;stroke-width:6;">x</text>
+  <text id="xlabel6" x="-180" y="100" style="fill:#f60;">x</text>
+  <text id="ylabel6b" x="180" y="100"
+        style="fill:none;stroke:#fff;stroke-width:6;">y</text>
+  <text id="ylabel6" x="180" y="100" style="fill:#000;">y</text>
 </svg>
       </div>
     </section>
@@ -564,21 +587,39 @@
    viewBox="-250 -250 500 500"
    version="1.1"
    xmlns="http://www.w3.org/2000/svg"
-  xmlns:svg="http://www.w3.org/2000/svg">
+  xmlns:svg="http://www.w3.org/2000/svg"
+  text-anchor="middle"
+  font-family="MathJax_Math"
+  font-style="italic"
+  font-weight="bold"
+  font-size="24">
   <g id="back7">
-    <circle r="50" cx="-150" cy="0"
-            style="fill:#0cf;stroke:#000000;stroke-width:4;" />
-    <circle r="50" cy="150" cx="0"
-            style="fill:#fc0;stroke:#000000;stroke-width:4;" />
   </g>
-  <circle r="240"
+  <line id="xaxis7" x2="-160" y2="90"
+        style="stroke:#f60;stroke-width:2;stroke-linecap:round" />
+  <line id="yaxis7" x2="160" y2="90"
+        style="stroke:#999;stroke-width:2;stroke-linecap:round" />
+  <line id="zaxis7" x2="0" y2="-180"
+        style="stroke:#0cf;stroke-width:2;stroke-linecap:round" />
+  <circle r="235"
           style="fill:#ffffffe0;stroke:#666;stroke-width:4;" />
   <g id="front7">
-    <circle r="50" cx="150" cy="0"
-            style="fill:#fc0;stroke:#000000;stroke-width:4;" />
-    <circle r="50" cy="-150" cx="0"
-            style="fill:#0cf;stroke:#000000;stroke-width:4;" />
   </g>
+  <circle id="zdot7" r="5" cx="0" cy="-180"
+          style="fill:#0cf;stroke:none;" />
+  <circle id="xdot7" r="5" cx="-160" cy="90"
+          style="fill:#f60;stroke:none;" />
+  <circle id="ydot7" r="5" cx="160" cy="90"
+          style="fill:#000;stroke:none;" />
+  <text id="zlabel7b" x="0" y="-195"
+        style="fill:none;stroke:#fff;stroke-width:6;">z</text>
+  <text id="zlabel7" x="0" y="-195" style="fill:#0cf;">z</text>
+  <text id="xlabel7b" x="-180" y="100"
+        style="fill:none;stroke:#fff;stroke-width:6;">x</text>
+  <text id="xlabel7" x="-180" y="100" style="fill:#f60;">x</text>
+  <text id="ylabel7b" x="180" y="100"
+        style="fill:none;stroke:#fff;stroke-width:6;">y</text>
+  <text id="ylabel7" x="180" y="100" style="fill:#000;">y</text>
 </svg>
       </div>
     </section>
@@ -675,22 +716,23 @@
   docSlider.init({
     afterChange: (index, page) => {
       if (index == 6) {
+        threeNodStart();
       } else if (index == 7) {
       } else if (index == 9) {
         pendulumStart();
       }
     },
     beforeChange: (index, page) => {
-      animatorStop();
+      animatorStop(true);
     }
   });
 
   let animator;
 
-  const animatorStop = () => {
+  const animatorStop = (cancel=false) => {
     if (animator) {
       animator.timer.stop();
-      animator.resolve();
+      animator.resolve(cancel);
       delete animator.timer;
       delete animator.resolve;
       animator = undefined;  // delete leaves empty Object??
@@ -737,6 +779,10 @@
     rotator.Jxy = 1/rotator.Ix - 1;
     rotator.Jyz = 1 - 1/rotator.Iz;
     rotator.Jxz = rotator.Jxy + rotator.Jyz;
+    if (rotator.Jxz == 0) {  // avoid singularities later
+      rotator.Iz = 1.0001;
+      rotator.Jyz = rotator.Jxy = 1 - 1/rotator.Iz;
+    }
     if (Lx === undefined) [Lx, Ly, Lz] = [0.6, 0.8, 0];
     let Lx2 = Lx**2;
     let L = Lx2 + Ly**2;
@@ -798,16 +844,324 @@
   //   see rotatorInit, rotatorReset, rotatorStep
   // orientation: 3D viewing direction
   //   (x, y, z) are body-fixed L-space
+  //   There are four pre-programmed orientations:
+  //     - a "normal view" looking from a body direction (1, 1, 1)
+  //     - one view looking down each axis
+  //   Clicking on an axis in normal view animates to that axis view.
+  //   Clicking on an axis in axis view animates back to normal view.
   const fig6 = {
     all: d3.select("#fig6"),
     back: d3.select("#back6"),
-    front: d3.select("#front6")
+    front: d3.select("#front6"),
+    xdot: d3.select("#xdot6"),
+    ydot: d3.select("#ydot6"),
+    zdot: d3.select("#zdot6"),
+    xlabel: d3.select("#xlabel6"),
+    ylabel: d3.select("#ylabel6"),
+    zlabel: d3.select("#zlabel6"),
+    xlabelb: d3.select("#xlabel6b"),
+    ylabelb: d3.select("#ylabel6b"),
+    zlabelb: d3.select("#zlabel6b"),
+    xaxis: d3.select("#xaxis6"),
+    yaxis: d3.select("#yaxis6"),
+    zaxis: d3.select("#zaxis6")
   };
   const fig7 = {
     all: d3.select("#fig7"),
     back: d3.select("#back7"),
-    front: d3.select("#front7")
+    front: d3.select("#front7"),
+    xdot: d3.select("#xdot7"),
+    ydot: d3.select("#ydot7"),
+    zdot: d3.select("#zdot7"),
+    xlabel: d3.select("#xlabel7"),
+    ylabel: d3.select("#ylabel7"),
+    zlabel: d3.select("#zlabel7"),
+    xlabelb: d3.select("#xlabel7b"),
+    ylabelb: d3.select("#ylabel7b"),
+    zlabelb: d3.select("#zlabel7b"),
+    xaxis: d3.select("#xaxis7"),
+    yaxis: d3.select("#yaxis7"),
+    zaxis: d3.select("#zaxis7")
   };
+
+  const s13 = Math.sqrt(1/3);
+  const s12 = Math.sqrt(0.5);
+  const s34 = 0.5 / s13;  // sqrt(3/4)
+  const s16 = s13 * s12;  // sqrt(1/6)
+  const s18 = 0.5 * s12;  // sqrt(1/8)
+  const s23 = 2 * s16;    // sqrt(2/3)
+  const s38 = s34 * s12;  // sqrt(3/8)
+
+  const dtheta = 0.01;  // animation step for (c, s)
+  // orientation transforms body coordinates to screen coordinates
+  let orientation = {
+    mat: [[-s12,  s12, 0],    // columns are body x, y, z axes...
+          [-s16, -s16, s23],  // ... initialized to "normal view"
+          [ s13,  s13, s13]],
+    axis: "",  // 'x', 'y', or 'z' if in an axis view or moving to one
+    cs: [s13, s23],  // current (cos(theta), sin(theta)
+    dtheta: -dtheta  // animation step <0 toward axis view, >0 toward normal
+  };
+
+  const stepTheta = () => {
+    let [c, s] = orientation.cs;
+    let dtheta = orientation.dtheta;
+    [c, s] = [c - s*dtheta, s + c*dtheta];
+    let r = Math.sqrt(c**2 + s**2);
+    c /= r;
+    s /= r;
+    let done;
+    if (dtheta < 0) {
+      done = (s <= 0);
+      if (done) [c, s] = [1, 0];
+    } else {
+      done = (s >= s23);
+      if (done) [c, s] = [s13, s23];
+    }
+    orientation.cs = [c, s];
+    if (done) orientation.dtheta = -dtheta;
+    return done;
+  }
+
+  const reorient = {
+    // (c, s) = (cos(theta), sin(theta))
+    // where "normal view" is s = s23 = sqrt(2/3) and axis view is s = 0
+    x: ([c, s]) => {
+      orientation.mat = [[-s34*s, s38*c+s18, s38*c-s18],
+                         [-0.5*s, s18*c-s38, s18*c+s38],
+                         [ c,     s12*s,     s12*s]];
+      orientation.cs = [c, s];
+    },
+    y: ([c, s]) => {
+      orientation.mat = [[-s18-s38*c, s34*s, s18-s38*c],
+                         [s18*c-s38, -0.5*s, s18*c+s38],
+                         [s12*s,      c,     s12*s]];
+      orientation.cs = [c, s];
+    },
+    z: ([c, s]) => {
+      orientation.mat = [[-s12,    s12,   0],
+                         [-s12*c, -s12*c, s],
+                         [ s12*s,  s12*s, c]];
+      orientation.cs = [c, s];
+    }
+  };
+
+  const resetOrientation = () => {
+    reorient.x([s13, s23]);
+    orientation.axis = "";
+  }
+
+  // Precompute 80 equally spaced values of (cos, sin) around circle.
+  const xyCircle = new Array(80).fill(Math.PI/40).map(
+    (dth, i) => [Math.cos(i*dth), Math.sin(i*dth)]);
+
+  const drawFig = (fig) => {
+    // Erase front and back groups
+    fig.front.selectAll("*").remove();
+    fig.back.selectAll("*").remove();
+
+    const {Jxy, Jyz, Jxz} = rotator;  // -Jyz <= Je <= Jxy
+    // For Je < 0, xy ellipse  Jxz*Lx**2 + Jyz*Ly**2 = Jyz + Je
+    // For Je > 0, yz ellipse  Jxy*Ly**2 + Jxz*Lz**2 = Jxy - Je
+    // For Je = 0, circles Jxy*Lx**2 = Jyz*Lz**2
+
+    // Choose energy levels.
+    // Je=0 is always a level, drawn as circles.  We choose equally
+    // spaced energies from -Jyz to Jxy, a total span of Jxz:
+    const dJe = Jxz / 20;
+    let nlevs = Math.floor(0.99*Jyz / dJe);
+    while (nlevs > 0) {
+      // Draw levels with Je < 0 as xy ellipses around z-axis.
+      let rhs = Jyz - nlevs*dJe;
+      let [a, b] = [Math.sqrt(rhs/Jxz), Math.sqrt(rhs/Jyz)];
+      let xyz = xyCircle.map(
+        ([c, s]) => [a*c, b*s, Math.sqrt(Math.max(1-(a*c)**2-(b*s)**2, 0))]);
+      drawEContour(xyz, fig, "#0cf");
+      xyz = xyCircle.map(
+        ([c, s]) => [a*c, b*s, -Math.sqrt(Math.max(1-(a*c)**2-(b*s)**2, 0))]);
+      drawEContour(xyz, fig, "#0cf");
+      nlevs -= 1;
+    }
+    nlevs = Math.floor(0.99*Jxy / dJe);
+    while (nlevs > 0) {
+      // Draw levels with Je > 0 as yz ellipses around x-axis.
+      let rhs = Jxy - nlevs*dJe;
+      let [a, b] = [Math.sqrt(rhs/Jxy), Math.sqrt(rhs/Jxz)];
+      let xyz = xyCircle.map(
+        ([c, s]) => [Math.sqrt(Math.max(1-(a*c)**2-(b*s)**2, 0)), a*c, b*s]);
+      drawEContour(xyz, fig, "#f60");
+      xyz = xyCircle.map(
+        ([c, s]) => [-Math.sqrt(Math.max(1-(a*c)**2-(b*s)**2, 0)), a*c, b*s]);
+      drawEContour(xyz, fig, "#f60");
+      nlevs -= 1;
+    }
+
+    // Draw the Je=0 circles, which are the asymptotes of the xz hyperbolas.
+    //   Ly = c, Lz = sqrt(Jyz/(Jxy+Jyz))*s, Lx = +-sqrt(Jxy/(Jxy+Jyz))*s
+    //   note that Jxz = Jxy + Jyz
+    drawEContour(xyCircle.map(
+      ([c, s]) => [Math.sqrt(Jyz/Jxz)*s, c, Math.sqrt(Jxy/Jxz)*s]),
+                 fig, "#000");
+    drawEContour(xyCircle.map(
+      ([c, s]) => [-Math.sqrt(Jyz/Jxz)*s, c, Math.sqrt(Jxy/Jxz)*s]),
+                 fig, "#000");
+
+    // Draw axis dots and labels.
+    [["xdot", "xlabel", "xlabelb", "xaxis", [1, 0, 0], [-s34, 0.5]],
+     ["ydot", "ylabel", "ylabelb", "yaxis", [0, 1, 0], [s34, 0.5]],
+     ["zdot", "zlabel", "zlabelb", "zaxis", [0, 0, 1], [0, -0.5]]].forEach(
+       ([dot, label, labelb, axis, vec, [dirx, diry]]) => {
+         dot = fig[dot];
+         label = fig[label];
+         labelb = fig[labelb];
+         axis = fig[axis];
+        let [x, y] = body2screen(vec);
+        [x, y] = [235*x, 235*y];
+        dot.attr("cx", x).attr("cy", -y);
+        label.attr("x", x+20*dirx).attr("y", -y+20*diry);
+        labelb.attr("x", x+20*dirx).attr("y", -y+20*diry);
+        axis.attr("x2", x).attr("y2", -y);
+       });
+  }
+
+  // mat*vec matrix multiply in ugly javascript syntax!
+  const body2screen =
+        vec => orientation.mat.map(
+          row => row.reduce((dot, mij, j) => dot + mij*vec[j], 0));
+  // compare mat.dot(vec) in numpy...
+
+  // Draw contour of constant energy on unit sphere in angular momentum space.
+  const drawEContour = (xyz, fig, color) => {
+    // xyz given in body fixed coordinates, convert to screen coordinates
+    let [zmin, zmax, zprev, ia, ib] = [0, 0, -2, -1, -1];
+    xyz = xyz.map((vec, i, a) => {
+      vec = body2screen(vec);
+      let znow = vec[2];
+      if (znow < zmin) zmin = znow;
+      else if (znow > zmax) zmax = znow;
+      if (znow == 0) {
+        if (ia < 0) ia = i;
+        else if (ib < 0) ib = i;
+      } else if (i && (zprev*znow < 0)) {
+        // mark second point of segment crossing z=0
+        if (ia < 0) ia = i;
+        else if (ib < 0) ib = i;
+        else throw "impossible loop crosses z=0 more than twice";
+      }
+      zprev = znow;
+      return vec;
+    });
+    let r = 235;
+    let d3p;
+    let front = (zmin >= 0);
+    if (front || (zmax <= 0)) {
+      // xyz is closed loop entirely in front or back half
+      d3p = d3.path();
+      d3p.moveTo(r*xyz[0][0], -r*xyz[0][1]);
+      xyz.slice(1).forEach(vec => d3p.lineTo(r*vec[0], -r*vec[1]));
+      d3p.closePath();
+      fig[front? "front" : "back"].append("path").attr("fill", "none")
+        .attr("stroke", color).attr("stroke-width", 2).attr("d", d3p);
+    } else {
+      // must split xyz into front and back open curves
+      // first split between ia-1 and ia, second split between ib-1 and ib
+      // - except: ia=0 or ib=-1 if split between final and first points
+      if (ia == 0) [ia, ib] = [ib, -1];
+      if (ib < 0) ib = xyz.length;
+      let ab = xyz.slice(ia, ib);
+      let ba = xyz.slice(ib).concat(xyz.slice(0, ia));
+      // Interpolate to add points exactly at zero crossings.
+      // Note that exact z=0 values are always at ab[0] or ba[0].
+      let v1, frac;
+      let v0 = ab[0];
+      zprev = v0[2];
+      if (zprev != 0) {
+        v1 = ba[ba.length-1];
+        frac = zprev / (zprev - v1[2]);
+        v0 = [v0[0]*(1-frac)+v1[0]*frac, v0[1]*(1-frac)+v1[1]*frac, 0];
+        ab.unshift(v0);
+      }
+      ba.push(v0);
+      v0 = ba[0];
+      zprev = v0[2];
+      if (zprev != 0) {
+        v1 = ab[ab.length-1];
+        frac = zprev / (zprev - v1[2]);
+        v0 = [v0[0]*(1-frac)+v1[0]*frac, v0[1]*(1-frac)+v1[1]*frac, 0];
+        ba.unshift(v0);
+      }
+      ab.push(v0);
+      // Swap if necessary so that ab is the front curve and ba the back.
+      if (ab[1][2] < 0) [ab, ba] = [ba, ab];
+      d3p = d3.path();
+      d3p.moveTo(r*ba[0][0], -r*ba[0][1]);
+      ba.slice(1).forEach(vec => d3p.lineTo(r*vec[0], -r*vec[1]));
+      fig.back.append("path").attr("fill", "none")
+        .attr("stroke", color).attr("stroke-width", 2).attr("d", d3p);
+      d3p = d3.path();
+      d3p.moveTo(r*ab[0][0], -r*ab[0][1]);
+      ab.slice(1).forEach(vec => d3p.lineTo(r*vec[0], -r*vec[1]));
+      fig.front.append("path").attr("fill", "none")
+        .attr("stroke", color).attr("stroke-width", 2).attr("d", d3p);
+    }
+  }
+
+  drawFig(fig6);
+  drawFig(fig7);
+
+  const nodStep = () => {
+    if (!orientation.axis) {
+      animatorStop(true);
+      resetOrientation();
+      return;
+    }
+    const done = stepTheta();
+    reorient[orientation.axis](orientation.cs);
+    drawFig(fig6);
+    if (done) {
+      if (orientation.cs[1] > 0.01) orientation.axis = "";
+      animatorStop();
+    }
+  }
+
+  const timeoutPromise = (ms) => {
+    animatorStop(true);
+    return new Promise(resolve => {
+      animator = {
+        timer: d3.timeout(() => animatorStop(), ms),
+        resolve: resolve
+      };
+    });
+  }
+
+  const nodStart = (axis) => {
+    animatorStop(true);
+    return new Promise(resolve => {
+      orientation.axis = axis;
+      animator = {
+        timer: d3.timer(() => nodStep()),
+        resolve: resolve
+      };
+    }).then((cancel) => {
+      return cancel? cancel : timeoutPromise(2500)})
+      .then((cancel) =>
+            cancel? cancel : new Promise(resolve => {
+              orientation.axis = axis;
+              animator = {
+                timer: d3.timer(() => nodStep()),
+                resolve: resolve
+              };
+            }))
+      .then(() => resetOrientation());
+  };
+
+  const threeNodStart = () => {
+    return nodStart('z')
+      .then((cancel) => cancel? cancel : timeoutPromise(1000))
+      .then((cancel) => cancel? cancel : nodStart('x'))
+      .then((cancel) => cancel? cancel : timeoutPromise(1000))
+      .then((cancel) => cancel? cancel : nodStart('y'));
+  }
 
   //------------------------------------------------------------------------
   // Rigid Pendulum on final slide
@@ -833,7 +1187,8 @@
   // so  dalpha/dt = sqrt(g/L) * cos(theta/2)
   //               = sqrt(g/L) * sqrt(1 - E/(2*g*L) * sin(alpha)**2)
   // This is an elliptic integral with parameter m = E/(2*g*L) < 1.
-  // Here we take g/L = 1
+  // Here we take g/L = 1:
+  //     dalpha/dt = sqrt(1 - m*sin(alpha)**2) = cos(theta/2)
   const pendulum = {
     group: d3.select("#pendulum"),
     alpha: null,  // filled in below
@@ -862,12 +1217,12 @@
   }
 
   const pendulumStart = () => {
-    animatorStop();
+    animatorStop(true);
     return new Promise(resolve => {
       animator = {
         timer: d3.timer(() => pendulumStep()),
         resolve: resolve
-      }
+      };
     });
   };
 
