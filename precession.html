@@ -605,6 +605,12 @@
   font-style="italic"
   font-weight="bold"
   font-size="24">
+  <text style="fill:#000;" x="-212" y="-215">E</text>
+  <rect style="stroke:#000; stroke-width:1; fill:#ccc; pointer-events:none;"
+        x="-241" y="-235" rx="3" width="6" height="120" />
+  <circle id="jeslider"
+          style="fill:#fff;stroke:#892;stroke-width:7;cursor:pointer;"
+          r="7" cx="-238" cy="-145" />
   <g id="back7">
   </g>
   <line id="xaxis7" x2="-160" y2="90"
@@ -614,7 +620,7 @@
   <line id="zaxis7" x2="0" y2="-180"
         style="stroke:#0cf;stroke-width:2;stroke-linecap:round" />
   <circle r="235"
-          style="fill:#ffffffe0;stroke:#666;stroke-width:4;" />
+          style="fill:#ffffffc0;stroke:#666;stroke-width:4;" />
   <g id="front7">
   </g>
   <circle id="zdot7" r="5" cx="0" cy="-180"
@@ -730,6 +736,7 @@
       if (index == 6) {
         threeNodStart();
       } else if (index == 7) {
+        fig7Start();
       } else if (index == 9) {
         pendulumStart();
       }
@@ -783,7 +790,7 @@
     Jxy: 1/3, Jyz: 1/5, Jxz: 8/15,
     Lx: null, Ly: null, Lz: null,
     Je: null,  // = 2E-1 = Jxy*Lx**2 - Jyz*Lz**2,  -Jyz <= Je <= Jxy
-    tstep: 0.01  // animation timestep
+    tstep: 0.08  // animation timestep
   }
 
   const rotatorInit = (Lx, Ly, Lz) => {
@@ -794,6 +801,7 @@
     if (rotator.Jxz == 0) {  // avoid singularities later
       rotator.Iz = 1.0001;
       rotator.Jyz = rotator.Jxy = 1 - 1/rotator.Iz;
+      rotator.Jxz = rotator.Jxy + rotator.Jyz;
     }
     if (Lx === undefined) [Lx, Ly, Lz] = [0.6, 0.8, 0];
     let Lx2 = Lx**2;
@@ -897,7 +905,8 @@
     zlabelb: d3.select("#zlabel7b"),
     xaxis: d3.select("#xaxis7"),
     yaxis: d3.select("#yaxis7"),
-    zaxis: d3.select("#zaxis7")
+    zaxis: d3.select("#zaxis7"),
+    jeslider: d3.select("#jeslider")
   };
 
   const s13 = Math.sqrt(1/3);
@@ -971,7 +980,7 @@
   const xyCircle = new Array(80).fill(Math.PI/40).map(
     (dth, i) => [Math.cos(i*dth), Math.sin(i*dth)]);
 
-  const drawFig = (fig) => {
+  const drawFig = (fig, thick=1.3, lpath=false) => {
     // Erase front and back groups
     fig.front.selectAll("*").remove();
     fig.back.selectAll("*").remove();
@@ -992,10 +1001,10 @@
       let [a, b] = [Math.sqrt(rhs/Jxz), Math.sqrt(rhs/Jyz)];
       let xyz = xyCircle.map(
         ([c, s]) => [a*c, b*s, Math.sqrt(Math.max(1-(a*c)**2-(b*s)**2, 0))]);
-      drawEContour(xyz, fig, "#0cf");
+      drawEContour(xyz, fig, "#0cf", thick);
       xyz = xyCircle.map(
         ([c, s]) => [a*c, b*s, -Math.sqrt(Math.max(1-(a*c)**2-(b*s)**2, 0))]);
-      drawEContour(xyz, fig, "#0cf");
+      drawEContour(xyz, fig, "#0cf", thick);
       nlevs -= 1;
     }
     nlevs = Math.floor(0.99*Jxy / dJe);
@@ -1005,11 +1014,36 @@
       let [a, b] = [Math.sqrt(rhs/Jxy), Math.sqrt(rhs/Jxz)];
       let xyz = xyCircle.map(
         ([c, s]) => [Math.sqrt(Math.max(1-(a*c)**2-(b*s)**2, 0)), a*c, b*s]);
-      drawEContour(xyz, fig, "#f60");
+      drawEContour(xyz, fig, "#f60", thick);
       xyz = xyCircle.map(
         ([c, s]) => [-Math.sqrt(Math.max(1-(a*c)**2-(b*s)**2, 0)), a*c, b*s]);
-      drawEContour(xyz, fig, "#f60");
+      drawEContour(xyz, fig, "#f60", thick);
       nlevs -= 1;
+    }
+
+    if (lpath) {
+      let {Lx, Ly, Lz, Je} = rotator;
+      let [x, y, z] = body2screen([Lx, Ly, Lz]);
+      let xyz;
+      if (Je < 0) {
+        let rhs = Jyz + Je;
+        let [a, b] = [Math.sqrt(rhs/Jxz), Math.sqrt(rhs/Jyz)];
+        let sign = (Lz >= 0)? 1 : -1;
+        xyz = xyCircle.map(
+          ([c, s]) => [a*c, b*s,
+                       sign*Math.sqrt(Math.max(1-(a*c)**2-(b*s)**2, 0))]);
+      } else {
+        let rhs = Jxy - Je;
+        let [a, b] = [Math.sqrt(rhs/Jxy), Math.sqrt(rhs/Jxz)];
+        let sign = (Lx >= 0)? 1 : -1;
+        xyz = xyCircle.map(
+          ([c, s]) => [sign*Math.sqrt(Math.max(1-(a*c)**2-(b*s)**2, 0)),
+                       a*c, b*s]);
+      }
+      drawEContour(xyz, fig, "#892", 2);
+      fig[(z >= 0)? "front" : "back"].append("circle")
+        .style("fill", "#892").style("stroke", "none")
+        .attr("r", 5).attr("cx", 235*x).attr("cy", -235*y);
     }
 
     // Draw the Je=0 circles, which are the asymptotes of the xz hyperbolas.
@@ -1017,10 +1051,10 @@
     //   note that Jxz = Jxy + Jyz
     drawEContour(xyCircle.map(
       ([c, s]) => [Math.sqrt(Jyz/Jxz)*s, c, Math.sqrt(Jxy/Jxz)*s]),
-                 fig, "#000");
+                 fig, "#000", 2);
     drawEContour(xyCircle.map(
       ([c, s]) => [-Math.sqrt(Jyz/Jxz)*s, c, Math.sqrt(Jxy/Jxz)*s]),
-                 fig, "#000");
+                 fig, "#000", 2);
 
     // Draw axis dots and labels.
     [["xdot", "xlabel", "xlabelb", "xaxis", [1, 0, 0], [-s34, 0.5]],
@@ -1047,7 +1081,7 @@
   // compare mat.dot(vec) in numpy...
 
   // Draw contour of constant energy on unit sphere in angular momentum space.
-  const drawEContour = (xyz, fig, color) => {
+  const drawEContour = (xyz, fig, color, thick) => {
     // xyz given in body fixed coordinates, convert to screen coordinates
     let [zmin, zmax, zprev, ia, ib] = [0, 0, -2, -1, -1];
     xyz = xyz.map((vec, i, a) => {
@@ -1077,7 +1111,7 @@
       xyz.slice(1).forEach(vec => d3p.lineTo(r*vec[0], -r*vec[1]));
       d3p.closePath();
       fig[front? "front" : "back"].append("path").attr("fill", "none")
-        .attr("stroke", color).attr("stroke-width", 2).attr("d", d3p);
+        .attr("stroke", color).attr("stroke-width", thick).attr("d", d3p);
     } else {
       // must split xyz into front and back open curves
       // first split between ia-1 and ia, second split between ib-1 and ib
@@ -1113,17 +1147,17 @@
       d3p.moveTo(r*ba[0][0], -r*ba[0][1]);
       ba.slice(1).forEach(vec => d3p.lineTo(r*vec[0], -r*vec[1]));
       fig.back.append("path").attr("fill", "none")
-        .attr("stroke", color).attr("stroke-width", 2).attr("d", d3p);
+        .attr("stroke", color).attr("stroke-width", thick).attr("d", d3p);
       d3p = d3.path();
       d3p.moveTo(r*ab[0][0], -r*ab[0][1]);
       ab.slice(1).forEach(vec => d3p.lineTo(r*vec[0], -r*vec[1]));
       fig.front.append("path").attr("fill", "none")
-        .attr("stroke", color).attr("stroke-width", 2).attr("d", d3p);
+        .attr("stroke", color).attr("stroke-width", thick).attr("d", d3p);
     }
   }
 
   drawFig(fig6);
-  drawFig(fig7);
+  drawFig(fig7, 0.6, true);
 
   const nodStep = () => {
     if (!orientation.axis) {
@@ -1185,7 +1219,8 @@
     dragOffset: 0,
     cancelled: false
   };
-  const istarter = (event, d) => {
+
+  const istarter6 = (event, d) => {
     // There is a terrible conflict between the way that docSlider.js works
     // and the way event coordinates get translated into svg coordinates.
     // This appears to affect different browsers differently.
@@ -1199,7 +1234,8 @@
     iSliders.dragOffset = iSliders[d].y - event.y;
     iSliders.cancelled = false;
   }
-  const idragger = (event, d) => {
+
+  const idragger6 = (event, d) => {
     if (iSliders.cancelled) return;
     let slider = iSliders[d];
     let y = event.y + iSliders.dragOffset;
@@ -1214,7 +1250,7 @@
       frac = reset? ((d=="Ix")? 0.75 : 0.25) : 1;
       y = slider.ylo - frac*iSliders.height;
     }
-    iSliders[d].y = y;
+    slider.y = y;
     let {Ix, Iz} = rotator;
     if (d == "Ix") {
       fig6.ixslider.attr("cy", y);
@@ -1257,13 +1293,83 @@
     rotatorInit();
     drawFig(fig6);
   }
+
   {
     fig6.ixslider.datum("Ix")
-      .call(d3.drag().on("start", istarter).on("drag", idragger))
-      .on("touchstart", istarter).on("touchmove", idragger);
+      .call(d3.drag().on("start", istarter6).on("drag", idragger6))
+      .on("touchstart", istarter6).on("touchmove", idragger6);
     fig6.izslider.datum("Iz")
-      .call(d3.drag().on("start", istarter).on("drag", idragger))
-      .on("touchstart", istarter).on("touchmove", idragger);
+      .call(d3.drag().on("start", istarter6).on("drag", idragger6))
+      .on("touchstart", istarter6).on("touchmove", idragger6);
+  }
+
+  const fig7Step = () => {
+    rotatorStep();
+    drawFig(fig7, 0.6, true);
+  }
+
+  const fig7Start = () => {
+    animatorStop(true);
+    return new Promise(resolve => {
+      animator = {
+        timer: d3.timer(() => fig7Step()),
+        resolve: resolve
+      };
+    });
+  }
+
+  const istarter7 = (event, d) => {
+    // There is a terrible conflict between the way that docSlider.js works
+    // and the way event coordinates get translated into svg coordinates.
+    // This appears to affect different browsers differently.
+    // However, the only consequence is that the dragOffset computed here
+    // has an enormous value (roughly 6 times full page height).
+    iSliders.dragOffset = iSliders[d].y - event.y;
+    iSliders.cancelled = false;
+  }
+
+  const idragger7 = (event, d) => {
+    if (iSliders.cancelled) return;
+    let slider = iSliders.Iz;
+    let y = event.y + iSliders.dragOffset;
+    let frac = (slider.ylo - y)/iSliders.height;
+    if (frac < 0.001) {
+      frac = 0.001;
+      y = slider.ylo;
+    } else if (frac > 0.999) {
+      frac = 0.999;
+      y = slider.ylo - iSliders.height;
+    }
+    slider.y = y;
+    fig7.jeslider.attr("cy", y);
+
+    let {Lx, Ly, Lz, Jxy, Jyz, Jxz} = rotator;
+    // frac is fraction of way between Je = -Jyz and Je = +Jxy
+    let Je = -Jyz*(1 - frac) + Jxy*frac;
+    if (Je < 0) {
+      // renormalize L to new xy-plane energy ellipse
+      let rhs = Jyz + Je;
+      let [a, b] = [Math.sqrt(rhs/Jxz), Math.sqrt(rhs/Jyz)];
+      let r = Math.sqrt((Lx/a)**2 + (Ly/b)**2);
+      [Lx, Ly] = [Lx/r, Ly/r];
+      Lz = Math.sqrt(Math.max(1 - Lx**2 - Ly**2, 0));
+    } else {
+      // renormalize L to new yz-plane energy ellipse
+      let rhs = Jxy - Je;
+      let [a, b] = [Math.sqrt(rhs/Jxy), Math.sqrt(rhs/Jxz)];
+      let r = Math.sqrt((Ly/a)**2 + (Lz/b)**2);
+      [Ly, Lz] = [Ly/r, Lz/r];
+      Lx = Math.sqrt(Math.max(1 - Ly**2 - Lz**2, 0));
+    }
+    rotatorInit(Lx, Ly, Lz);
+
+    drawFig(fig7, 0.6, true);
+  }
+
+  {
+    fig7.jeslider.datum("Iz")
+      .call(d3.drag().on("start", istarter7).on("drag", idragger7))
+      .on("touchstart", istarter7).on("touchmove", idragger7);
   }
 
   //------------------------------------------------------------------------
