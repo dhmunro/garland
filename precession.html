@@ -529,10 +529,22 @@
   font-style="italic"
   font-weight="bold"
   font-size="24">
-  <text style="line-height:1.25;fill:#000;" x="-210" y="-230">
-    I<tspan style="font-size:65%;baseline-shift:sub;">z</tspan></text>
-  <text style="line-height:1.25;fill:#000;" x="-210" y="240">
-    I<tspan style="font-size:65%;baseline-shift:sub;">x</tspan></text>
+  <text style="fill:#000;" x="-200" y="-225">
+    I<tspan style="font-size:65%;baseline-shift:sub;">z</tspan>=</text>
+  <text style="fill:#000;" x="-200" y="240">
+    I<tspan style="font-size:65%;baseline-shift:sub;">x</tspan>=</text>
+  <text id="ixvalue" style="fill:#000;" x="-150" y="240">0.75</text>
+  <text id="izvalue" style="fill:#000;" x="-150" y="-225">1.25</text>
+  <rect style="stroke:#000; stroke-width:1; fill:#ccc; pointer-events:none;"
+        x="-241" y="-235" rx="3" width="6" height="120" />
+  <rect style="stroke:#000; stroke-width:1; fill:#ccc; pointer-events:none;"
+        x="-241" y="115" rx="3" width="6" height="120" />
+  <circle id="izslider"
+          style="fill:#fff;stroke:#0cf;stroke-width:7;cursor:pointer;"
+          r="7" cx="-238" cy="-145" />
+  <circle id="ixslider"
+          style="fill:#fff;stroke:#f60;stroke-width:7;cursor:pointer;"
+          r="7" cx="-238" cy="145" />
   <g id="back6">
   </g>
   <line id="xaxis6" x2="-160" y2="90"
@@ -850,7 +862,7 @@
   //   Clicking on an axis in normal view animates to that axis view.
   //   Clicking on an axis in axis view animates back to normal view.
   const fig6 = {
-    all: d3.select("#fig6"),
+    svg: d3.select("#fig6"),
     back: d3.select("#back6"),
     front: d3.select("#front6"),
     xdot: d3.select("#xdot6"),
@@ -864,10 +876,14 @@
     zlabelb: d3.select("#zlabel6b"),
     xaxis: d3.select("#xaxis6"),
     yaxis: d3.select("#yaxis6"),
-    zaxis: d3.select("#zaxis6")
+    zaxis: d3.select("#zaxis6"),
+    ixslider: d3.select("#ixslider"),
+    izslider: d3.select("#izslider"),
+    ixvalue: d3.select("#ixvalue"),
+    izvalue: d3.select("#izvalue")
   };
   const fig7 = {
-    all: d3.select("#fig7"),
+    svg: d3.select("#fig7"),
     back: d3.select("#back7"),
     front: d3.select("#front7"),
     xdot: d3.select("#xdot7"),
@@ -1142,8 +1158,7 @@
         timer: d3.timer(() => nodStep()),
         resolve: resolve
       };
-    }).then((cancel) => {
-      return cancel? cancel : timeoutPromise(2500)})
+    }).then((cancel) => cancel? cancel : timeoutPromise(2500))
       .then((cancel) =>
             cancel? cancel : new Promise(resolve => {
               orientation.axis = axis;
@@ -1152,7 +1167,7 @@
                 resolve: resolve
               };
             }))
-      .then(() => resetOrientation());
+      .then((cancel) => { resetOrientation(); drawFig(fig6); return cancel; });
   };
 
   const threeNodStart = () => {
@@ -1161,6 +1176,94 @@
       .then((cancel) => cancel? cancel : nodStart('x'))
       .then((cancel) => cancel? cancel : timeoutPromise(1000))
       .then((cancel) => cancel? cancel : nodStart('y'));
+  }
+
+  const iSliders = {
+    Iz: { y: -145, ylo: -115, Ilo: 1 },
+    Ix: { y: 145, ylo: 235, Ilo: 0 },
+    height: 120,
+    dragOffset: 0,
+    cancelled: false
+  };
+  const istarter = (event, d) => {
+    // There is a terrible conflict between the way that docSlider.js works
+    // and the way event coordinates get translated into svg coordinates.
+    // This appears to affect different browsers differently.
+    // However, the only consequence is that the dragOffset computed here
+    // has an enormous value (roughly 6 times full page height).
+    if (animator) {
+      animatorStop(true);
+      resetOrientation();
+      drawFig(fig6);
+    }
+    iSliders.dragOffset = iSliders[d].y - event.y;
+    iSliders.cancelled = false;
+  }
+  const idragger = (event, d) => {
+    if (iSliders.cancelled) return;
+    let slider = iSliders[d];
+    let y = event.y + iSliders.dragOffset;
+    let frac = (slider.ylo - y)/iSliders.height;
+    let reset;
+    if (frac < 0) {
+      reset = (frac < -0.6);
+      frac = reset? ((d=="Ix")? 0.75 : 0.25) : 0;
+      y = slider.ylo - frac*iSliders.height;
+    } else if (frac > 1) {
+      reset = (frac > 1.6);
+      frac = reset? ((d=="Ix")? 0.75 : 0.25) : 1;
+      y = slider.ylo - frac*iSliders.height;
+    }
+    iSliders[d].y = y;
+    let {Ix, Iz} = rotator;
+    if (d == "Ix") {
+      fig6.ixslider.attr("cy", y);
+      Ix = frac;
+      fig6.ixvalue.text(Ix.toFixed(2));
+      if (Iz > 1 + Ix) {
+        Iz = 1 + Ix;
+        y = iSliders.Iz.ylo - frac*iSliders.height;
+        fig6.izslider.attr("cy", y);
+        iSliders.Iz.y = y;
+        fig6.izvalue.text(Iz.toFixed(2));
+      } else if (reset) {
+        Iz = 1.25;
+        y = iSliders.Iz.ylo - 0.25*iSliders.height;
+        fig6.izslider.attr("cy", y);
+        iSliders.Iz.y = y;
+        fig6.izvalue.text(Iz.toFixed(2));
+      }
+    } else {
+      fig6.izslider.attr("cy", y);
+      Iz = 1 + frac;
+      fig6.izvalue.text(Iz.toFixed(2));
+      if (Ix < Iz - 1) {
+        Ix = Iz - 1;
+        y = iSliders.Ix.ylo - frac*iSliders.height;
+        fig6.ixslider.attr("cy", y);
+        iSliders.Ix.y = y;
+        fig6.ixvalue.text(Ix.toFixed(2));
+      } else if (reset) {
+        Ix = 0.75;
+        y = iSliders.Ix.ylo - 0.75*iSliders.height;
+        fig6.ixslider.attr("cy", y);
+        iSliders.Ix.y = y;
+        fig6.ixvalue.text(Ix.toFixed(2));
+      }
+    }
+    if (Ix < 0.001) Ix = 0.001;
+    rotator.Ix = Ix;
+    rotator.Iz = Iz;
+    rotatorInit();
+    drawFig(fig6);
+  }
+  {
+    fig6.ixslider.datum("Ix")
+      .call(d3.drag().on("start", istarter).on("drag", idragger))
+      .on("touchstart", istarter).on("touchmove", idragger);
+    fig6.izslider.datum("Iz")
+      .call(d3.drag().on("start", istarter).on("drag", idragger))
+      .on("touchstart", istarter).on("touchmove", idragger);
   }
 
   //------------------------------------------------------------------------
