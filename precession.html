@@ -608,7 +608,7 @@
         x="-241" y="-235" rx="3" width="6" height="120" />
   <circle id="jeslider"
           style="fill:#fff;stroke:#892;stroke-width:7;cursor:pointer;"
-          r="7" cx="-238" cy="-145" />
+          r="7" cx="-238" cy="-187" />
   <g id="back7">
   </g>
   <line id="xaxis7" x2="-160" y2="90"
@@ -734,7 +734,7 @@
       if (index == 6) {
         threeNodStart();
       } else if (index == 7) {
-        fig7Start();
+        fig7AfterChange();
       } else if (index == 9) {
         pendulumStart();
       }
@@ -815,7 +815,7 @@
   const rotatorReset = () => {
     rotator.Ix = 0.75;
     rotator.Iz = 1.25;
-    rotatorInit();
+    rotatorInit(0.6, 0.8, 0);
   };
 
   rotatorReset();
@@ -1213,6 +1213,7 @@
   const iSliders = {
     Iz: { y: -145, ylo: -115, Ilo: 1 },
     Ix: { y: 145, ylo: 235, Ilo: 0 },
+    Je: { y: -187, ylo: -115, Ilo: 1 },
     height: 120,
     dragOffset: 0,
     cancelled: false
@@ -1288,7 +1289,9 @@
     if (Ix < 0.001) Ix = 0.001;
     rotator.Ix = Ix;
     rotator.Iz = Iz;
-    rotatorInit();
+    rotatorInit(0.6, 0.8, 0);
+    frac = (rotator.Jyz + rotator.Je) / rotator.Jxz;
+    iSliders.Je.y = iSliders.Je.ylo - frac*iSliders.height;
     drawFig(fig6);
   }
 
@@ -1316,6 +1319,12 @@
     });
   }
 
+  const fig7AfterChange = () => {
+    let frac = (rotator.Jyz + rotator.Je) / rotator.Jxz;
+    iSliders.Je.y = iSliders.Je.ylo - frac*iSliders.height;
+    fig7Start();
+  }
+
   const istarter7 = (event, d) => {
     // There is a terrible conflict between the way that docSlider.js works
     // and the way event coordinates get translated into svg coordinates.
@@ -1328,7 +1337,7 @@
 
   const idragger7 = (event, d) => {
     if (iSliders.cancelled) return;
-    let slider = iSliders.Iz;
+    let slider = iSliders.Je;
     let y = event.y + iSliders.dragOffset;
     let frac = (slider.ylo - y)/iSliders.height;
     if (frac < 0.001) {
@@ -1365,7 +1374,7 @@
   }
 
   {
-    fig7.jeslider.datum("Iz")
+    fig7.jeslider.datum("Je")
       .call(d3.drag().on("start", istarter7).on("drag", idragger7))
       .on("touchstart", istarter7).on("touchmove", idragger7);
   }
