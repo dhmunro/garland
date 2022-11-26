@@ -1291,8 +1291,6 @@
     rotator.Ix = Ix;
     rotator.Iz = Iz;
     rotatorInit(0.6, 0.8, 0);
-    frac = (rotator.Jyz + rotator.Je) / rotator.Jxz;
-    iSliders.Je.y = iSliders.Je.ylo - frac*iSliders.height;
     drawFig(fig6);
   }
 
@@ -1323,6 +1321,7 @@
   const fig7AfterChange = () => {
     let frac = (rotator.Jyz + rotator.Je) / rotator.Jxz;
     iSliders.Je.y = iSliders.Je.ylo - frac*iSliders.height;
+    fig7.jeslider.attr("cy", iSliders.Je.y);
     fig7Start();
   }
 
