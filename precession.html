@@ -971,6 +971,7 @@
 
   const resetOrientation = () => {
     reorient.x([s13, s23]);
+    orientation.dtheta = -dtheta;  // Always start negative!
     orientation.axis = "";
   }
 
