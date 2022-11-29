@@ -33,7 +33,7 @@
       </div>
     </section>
     <section>
-      <div class="slide-title">The case of the spinning T-handle</div>
+      <div class="slide-title">The case of the spinning T-handle in zero-g</div>
       <div class="page-half">
         <ul>
     <li>The unexpected behavior of this T-handle is a striking example
@@ -45,9 +45,6 @@
     <li>A simple and more correct explanation using conservation of
       energy and angular momentum leads to a quantitative
       model of the dynamics.</li>
-    <li>The answer turns out to be elliptic functions - relatives
-      of the circular trigonometric functions - which pop up in many
-      wonderful bits of math and physics.</li>
         </ul>
   </div>
   <div class="page-half">
@@ -577,15 +574,15 @@
       <div class="page-thin">
         <p>Plan (many other possibilities!):</p>
         <ol>
+          <li>Choose units so $I_y=||\vb{L}||=1$.
           <li>If $2E \ge L^2/I_y$, choose $k$ to be $z$, otherwise
             $x$, so that
             \[ |J_{ik}|L_i^2 + |J_{jk}|L_j^2 = |2E - L^2/I_k| \]</li>
           <li>Step $(L_i, L_j)$ forward in time to second order:
             \[ \Delta L_i = (\dot{L_i} +
             \tfrac{1}{2}\ddot{L_i}\Delta t)\Delta t \]</li>
-          <li>Renormalize $(L_i, L_j)$ back onto its ellipse to avoid slowly
-            accumulating numerical error.</li>
-          <li>Update $L_k$ so that $L^2$ remains unchanged.</li>
+          <li>Renormalize $(L_i, L_j)$ back onto its ellipse.</li>
+          <li>Update $L_k$ to keep $||\vb{L}||=1$.</li>
         </ol>
       </div>
       <div class="page-wide">
@@ -648,26 +645,24 @@
           $2E-L^2/I_y$.</li>
         <li>In addition to being positive, the moments of inertia of
           any real body must satisfy the triangle inequalities
-          $I_i \le I_j+I_k$ for all permutations $ijk$ of $xyz$.</li>
-        <li>Pay attention to scaling.  For example, you can change your
-          mass and length units to make, say, $I_y=1$.  When you do that,
-          $E$ and $L$ scale by the same factor.  You can now change
-          your time units to make, say, $L=1$.  That doesn't affect
-          any of the $I_i$, but it changes $E$ by the square of that
-          factor.</li>
+          $I_i \le I_j+I_k$ for all permutations $ijk$ of $xyz$.
+          Can you see why?</li>
         <li>No real body is perfectly rigid.  When the angular
           velocity vector changes in body fixed (rotating)
           coordinates, changing stresses cause the body to flex
           slightly.  This flexing generates a small amount of heat
-          which slowly reduces $E$.  You can add ad hoc energy loss
-          terms (say proportional to $|\dot{\vb*{\omega}}|$) to
-          explore how energy loss changes the dynamics.
-        </li>
+          which slowly reduces $E$.  Drag the $E$ slider slowly
+          downward to watch what happens.</li>
+        <li>Does this numerical model quantitatively explain the
+          T-handle video?  How much can you check with and without
+          more detailed knowledge about the T-handle
+          construction?</li>
       </ol>
       </div>
     </section>
     <section>
-      <div class="slide-title">Elliptic functions crop up in other places</div>
+      <div class="slide-title">Math connects a surprising variety of
+        phenomena</div>
       <div class="page-full">
         <p>There is an elegant solution to the equations for $\vb{L}$
           involving the Jacobi elliptic functions - doubly periodic
