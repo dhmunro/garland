@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Diffraction</title>
+  <meta name="description"
+    content="An image tells you about the camera as well as the scene.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>MathJax = {
+  loader: {load: ['[tex]/physics']},
+  tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]],
+         packages: {'[+]': ['physics']}, processEscapes: true}};
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+          id="MathJax-script">
+  </script>
+  <link rel="stylesheet" href="niftour.css">
+  <!-- https://prjct-samwest.github.io/docSlider -->
+  <link rel="stylesheet" href="docSlider.css">
+</head>
+
+<body>
+
+  <div class="docSlider">
+    <section>
+      <div class="title-page">
+        <a href="https://github.com/dhmunro/garland">
+          <img decoding="async" loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+        <h1>Diffraction</h1>
+        <p style="width:50%; text-align:center;">
+          What an image tells you about the camera (or telescope or
+          your eye)</p>
+      </div>
+    </section>
+    <section>
+      <div class="slide-title">Diffraction causes star pattern around
+        bright lights</div>
+      <div class="page-thin">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Fusion_target_implosion_on_NOVA_laser.jpg"
+             style="display:block; width:90%; margin:auto;"
+             alt="Nova exploding pusher target" />
+      </div>
+      <div class="page-wide">
+        <ul>
+          <li>The first target I designed for the
+            <a href="https://en.wikipedia.org/wiki/Nova_(laser)">
+              Nova laser</a>!</li>
+          <li>Photo taken by a National Geographic photographer with
+            an ordinary (nice) camera, not a Nova diagnostic.</li>
+          <li>The ten pointed stars have nothing to do with the fact that
+            Nova had ten laser beams.</li>
+          <li>Instead, this camera had a five sided lens iris, visible
+            in the reflections below and to the right of the
+            target.</li>
+          <li>I don't understand many things about this image (e.g.-
+            the red color of the chamber port behind the target), but
+            the ten pointed stars are caused by diffraction from the
+            pentagonal lens iris.</li>
+        </ul>
+        <img src="https://improvephotography.com/wp-content/uploads/2014/07/different-apertures.jpg"
+             style="display:block; width:90%; margin:auto;"
+             alt="Five and eight bladed irises" />
+      </div>
+    </section>
+
+    <section>
+      <div class="slide-title">You can guess telescope from its
+        diffraction pattern</div>
+      <div class="page-half">
+        <p style="text-align: center;">Hubble telescope image</p>
+        <img src="https://i0.wp.com/illuminateduniverse.org/wp-content/uploads/2021/02/stsci-h-p2001a-m-2000x1500-1.png"
+             style="display:block; width:100%; margin:auto;"
+             alt="Hubble telescope image" />
+      </div>
+      <div class="page-half">
+        <p style="text-align: center;">Webb telescope image</p>
+        <img src="https://live.staticflickr.com/65535/52212049510_73fbea9957_b.jpg"
+             style="display:block; width:81%; margin:auto;"
+             alt="Webb telescope image" />
+      </div>
+      <div class="page-full">
+        <p style="text-align: center;">
+          (Beware, however, that published telescope images are usually
+          <a href="https://illuminateduniverse.org/2021/04/01/image-artifacts/">
+            "cleaned up"</a> to more accurately present the object in
+          the image.)
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="slide-title">Diffraction spikes are 2D Fourier transform
+        of pupil</div>
+      <div class="page-half">
+        <p style="text-align: center;">Hubble telescope pupil shows supports
+          for secondary mirror</p>
+        <img src="hst-pupil.png"
+             style="display:inline-block; width:45%;"
+             alt="Hubble telescope pupil" />
+        <img src="hst-pupil-ft.png"
+             style="display:inline-block; width:45%;"
+             alt="Hubble telescope pupil FT" />
+      </div>
+      <div class="page-half">
+        <p style="text-align: center;">Webb telescope pupil shows secondary
+          supports plus hexagonal segment edges</p>
+        <img src="webb-pupil.png"
+             style="display:inline-block; width:45%;"
+             alt="Webb telescope pupil" />
+        <img src="webb-pupil-ft.png"
+             style="display:inline-block; width:45%;"
+             alt="Webb telescope pupil FT" />
+      </div>
+      <div class="page-full">
+        <ul>
+          <li>Straight edges produce perpendicular diffraction spikes</li>
+          <li>Hubble: Spikes are from secondary mirror struts</li>
+          <li>Webb: Six spikes from hex segment edges, horizontal spikes
+            from vertical mirror strut</li>
+          <li>Pentagonal lens iris: Ten spikes!</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="slide-title">What does a lens have to do with
+        Fourier transforms?</div>
+      <div class="page-half">
+        <ul>
+          <li>An approximate (small angle) modern formulation of
+            <a href="https://www.gutenberg.org/ebooks/14725">Huygen's
+              Principle</a>.</li>
+          <li>Imagine a field of stars at various angles $\theta$
+            relative to optical axis.</li>
+          <li class="button" onclick="animateMulti()">
+            Each star angle $\theta$ corresponds to a given transverse
+            wavenumber $k_x$ in the plane of the primary mirror (or lens).
+            Wave amplitude is brightness.</li>
+          <li>The lens (or mirror) maps $\theta \approx k_x/k$ in
+            the lens plane into position $x$ in the focal plane
+            according to $\theta=x/f$, where $f$ is focal length.</li>
+          <li>Thus each position $x$ in the image plane gets only the light
+            with a particular transverse wavenumber $k_x$ in the lens
+            plane.  A lens Fourier transforms incident light
+            waves!</li>
+        </ul>
+      </div>
+      <div class="page-half">
+<svg
+   style="display:block; width: 80%; margin: auto"
+   viewBox="50 10 500 570"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="cliphi">
+      <rect width="600" height="200" x="0" y="10" />
+    </clipPath>
+    <clipPath id="cliplo">
+      <rect width="400" height="300" x="100" y="255" />
+    </clipPath>
+  </defs>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:8;"
+     d="M 0,250 H 150 M 450,250 H 600"
+     id="aperture" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1;"
+     d="M 150,250 H 450"
+     id="lens" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;"
+     d="M 0,550 H 600"
+     id="focal" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;"
+     d="M 300,600 V 10"
+     id="opaxis" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1;"
+     d="M 244,10 370,550"
+     id="kdir" />
+  <path
+     style="display:none;fill:none;stroke:#000000;stroke-width:1;"
+     d="M 150,250 370,550 450,250"
+    id="converge" />
+  <g id="crest0" clip-path="url(#cliphi)">
+    <path style="fill:none;stroke:#06f;stroke-width:3;"
+          d="M 600,180 0,320" />
+  </g>
+  <g id="crest1" clip-path="url(#cliplo)">
+  <path style="fill:none;stroke:#06f;stroke-width:3;"
+    d="M 282.70233,429.75548 A 149.4359,149.4359 0 0 1 408.53195,405.24356" />
+  </g>
+  <path id="wave" style="fill:none;stroke:#06f;stroke-width:3;" />
+  <text style="font-size:16;" x="55" y="280">lens</text>
+  <text style="font-size:16;" x="55" y="310">plane</text>
+  <text style="font-size:16;" x="55" y="540">image</text>
+  <text style="font-size:16;" x="55" y="575">plane</text>
+  <g id="kdiagram" style="display:block;">
+    <text style="font-size:16;font-family:MathJax_Math;font-style:italic;
+                 fill:#a40;"
+          x="325" y="575">x</text>
+    <text style="font-size:16;font-family:MathJax_Math;font-style:italic;
+                 stroke-width:10;stroke:#e6e9ea;fill:none"
+          x="272" y="405">f</text>
+    <text style="font-size:16;font-family:MathJax_Math;font-style:italic;
+                 fill:#a40;"
+          x="272" y="405">f</text>
+    <text style="font-size:16;font-family:MathJax_Math;font-style:italic;
+                 stroke-width:10;stroke:#e6e9ea;fill:none"
+          x="268" y="50">θ</text>
+    <text style="font-size:16;font-family:MathJax_Math;font-style:italic;
+                 fill:#a40;"
+          x="268" y="50">θ</text>
+    <rect style="stroke:none;fill:#e6e9ea;" width="200" height="30"
+          x="320" y="95" rx="10" />
+    <rect style="stroke:none;fill:#e6e9ea;" width="35" height="30"
+          x="360" y="170" rx="10" />
+    <path style="fill:none;stroke:#e6e9ea;stroke-width:40;stroke-linejoin:round;"
+          d="M 360,15 360,165 395,165 Z" />
+    <path style="fill:none;stroke:#a40;stroke-width:3;stroke-linejoin:round;"
+          d="M 360,15 360,165 395,165 Z" />
+    <text style="font-size:16;font-family:MathJax_Math;fill:#a40;"
+          x="325" y="119">k<tspan style="font-size:65%;baseline-shift:sub;">z</tspan></text>
+    <text style="font-size:16;font-family:MathJax_Math;fill:#a40;"
+          x="365" y="194">k<tspan style="font-size:65%;baseline-shift:sub;">x</tspan></text>
+    <text style="font-size:16;font-family:MathJax_Math;fill:#a40;"
+          x="390" y="119">k = 2π/λ</text>
+  </g>
+</svg>
+      </div>
+    </section>
+
+    <section>
+      <div class="slide-title">How do Fourier transforms cause
+        diffraction spikes?</div>
+      <div class="page-half">
+        <ul>
+          <li>Sharp edges of pupil or shadow of support struts contain
+            high spatial frequencies - large $k_x$ in lens plane
+            means large extent in $x$ in image plane.</li>
+          <li>Fourier transform of a top hat (like strut shadow) is a
+            sinc function ($\sin x/x$), which you can use to make rough models of
+            diffraction spikes.</li>
+          <li class="button" onclick="animateSpike(0.01)">
+            Spike width $\Delta x$ and period of bands in image is
+            directly proportional to light wavelength $\lambda$ and
+            inversely proportional to shadow width $D$ in lens plane
+            $\Delta\theta = \Delta x/f = \lambda/D$.</li>
+          <li>Note that spike amplitude a given distance from center is
+            roughly independent of the shadow width - only band period
+            changes.</li>
+        </ul>
+      </div>
+      <div class="page-half">
+<svg
+  style="display:block; margin:auto; width:70%"
+  viewBox="100 50 400 550"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <path
+    style="fill:#ffffff;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;"
+    d="m 0,500 c 2.5316511,-1.165 5.0632928,-2.342 7.5949438,-2.979 2.5316512,-0.638 5.0632562,-0.706 7.5949532,-0.15 2.531604,0.557 5.063302,1.726 7.594907,2.984 2.531698,1.257 5.063302,2.56 7.594907,3.297 2.531697,0.736 5.063302,0.874 7.595,0.319 2.531604,-0.554 5.063301,-1.789 7.594906,-3.154 2.531697,-1.366 5.063299,-2.815 7.594904,-3.668 2.531698,-0.853 5.063303,-1.073 7.595,-0.522 2.531605,0.55 5.063302,1.86 7.594908,3.352 2.531604,1.492 5.063301,3.113 7.594906,4.106 2.531696,0.992 5.063303,1.312 7.595001,0.768 2.531605,-0.544 5.063302,-1.942 7.594907,-3.584 2.531512,-1.642 5.062839,-3.472 7.595093,-4.634 2.531324,-1.163 5.063574,-1.606 7.594904,-1.073 2.53133,0.533 5.06358,2.036 7.59491,3.862 2.53133,1.826 5.06358,3.913 7.5949,5.287 2.53133,1.374 5.06359,1.975 7.59491,1.459 2.53132,-0.516 5.06359,-2.147 7.59491,-4.203 2.53133,-2.056 5.06358,-4.469 7.59491,-6.116 2.53132,-1.648 5.06357,-2.457 7.5949,-1.968 2.53132,0.488 5.06358,2.28 7.59491,4.634 2.53131,2.355 5.06357,5.199 7.5949,7.213 2.53132,2.014 5.06358,3.11 7.5949,2.666 2.53226,-0.444 5.06359,-2.442 7.59491,-5.203 2.53225,-2.76 5.06358,-6.2 7.5949,-8.734 2.53226,-2.533 5.06359,-4.052 7.5949,-3.688 2.53227,0.365 5.0636,2.642 7.59493,5.988 2.53224,3.347 5.06357,7.671 7.5949,11.003 2.53225,3.332 5.06357,5.532 7.5949,5.327 2.53227,-0.206 5.06358,-2.876 7.59491,-7.148 2.53226,-4.272 5.06358,-10.052 7.5949,-14.771 2.53226,-4.72 5.06359,-8.197 7.59492,-8.378 2.53225,-0.182 5.06358,3.047 7.5949,9.009 2.53225,5.962 5.06358,14.585 7.59584,22.331 2.53132,7.747 5.06264,14.387 7.59491,15.975 2.53132,1.589 5.06265,-2.091 7.5949,-12.092 2.53132,-10.001 5.06265,-26.346 7.5949,-45.727 2.53133,-19.38 5.06266,-41.588 7.59492,-60.751 2.53132,-19.163 5.06264,-34.987 7.5949,-42.973 2.53133,-7.987 5.06265,-7.972 7.5949,0 2.53133,7.971 5.06267,23.816 7.59491,42.973 2.53133,19.157 5.06266,41.366 7.59491,60.751 2.53132,19.386 5.06265,35.715 7.59491,45.727 2.53132,10.013 5.06265,13.671 7.59491,12.092 2.53132,-1.578 5.06357,-8.23 7.5949,-15.975 2.53133,-7.744 5.06357,-16.364 7.5949,-22.331 2.53134,-5.967 5.06359,-9.184 7.59491,-9.009 2.53133,0.175 5.06359,3.66 7.59491,8.378 2.53133,4.717 5.06358,10.496 7.59491,14.771 2.53133,4.275 5.06358,6.937 7.5949,7.148 2.53133,0.21 5.06358,-1.997 7.59491,-5.327 2.53132,-3.33 5.06358,-7.655 7.59492,-11.003 2.53131,-3.348 5.06357,-5.62 7.5949,-5.988 2.53132,-0.368 5.06357,1.157 7.5949,3.688 2.53225,2.532 5.06358,5.973 7.59491,8.734 2.53226,2.762 5.06357,4.757 7.5949,5.203 2.53226,0.447 5.06359,-0.654 7.59491,-2.666 2.53225,-2.012 5.06359,-4.857 7.59491,-7.213 2.53225,-2.355 5.06358,-4.143 7.5949,-4.634 2.53225,-0.491 5.06358,0.322 7.59491,1.968 2.53226,1.645 5.06359,4.06 7.59491,6.116 2.53226,2.057 5.06358,3.685 7.59491,4.203 2.53225,0.518 5.06357,-0.087 7.5949,-1.459 2.53226,-1.373 5.06358,-3.461 7.59491,-5.287 2.53226,-1.826 5.06358,-3.327 7.59583,-3.862 2.53133,-0.535 5.06266,-0.088 7.59491,1.073 2.53133,1.16 5.06266,2.991 7.59491,4.634 2.53132,1.642 5.06265,3.039 7.5949,3.584 2.53132,0.545 5.06265,0.223 7.59492,-0.768 2.53132,-0.991 5.06264,-2.614 7.5949,-4.106 2.53133,-1.492 5.06265,-2.8 7.5949,-3.352 2.53133,-0.552 5.06265,-0.33 7.59491,0.522 2.53133,0.852 5.06265,2.302 7.59491,3.668 2.53132,1.365 5.06265,2.598 7.5949,3.154 2.53133,0.556 5.06359,0.416 7.59492,-0.319 2.53132,-0.736 5.06357,-2.039 7.5949,-3.297 2.53132,-1.258 5.06357,-2.426 7.5949,-2.984 2.53132,-0.557 5.06359,-0.486 7.59492,0.15 2.53131,0.636 5.06357,1.814 7.5949,2.979"
+    id="sincx"/>
+  <path
+    style="fill:#ffffff;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;vector-effect:non-scaling-stroke;"
+    d="M 0,200 H 270 V 100 h 60 V 200 h 270"
+    id="tophat" />
+  <text style="font-size:16;" x="105" y="192">lens</text>
+  <text style="font-size:16;" x="105" y="228">plane</text>
+  <text style="font-size:16;" x="290" y="228">D</text>
+  <text style="font-size:16;" x="105" y="470">image</text>
+  <text style="font-size:16;" x="105" y="545">plane</text>
+  </g>
+</svg>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="slide-title">Diffraction has many uses in modern
+        optical design</div>
+      <div class="page-full">
+        <ul>
+          <li>Diffraction spikes are a nuisance (for scientific
+            instruments), but the effect can be extremely useful
+            too!</li>
+          <li>Diffraction gratings are used to separate colors, bend beams,
+            and amplify very short pulse laser beams.</li>
+          <li>Most integrated optics work by diffraction - so
+            transmitting your phone conversations often relies on
+            diffractive optics.</li>
+          <li>NIF laser has diffractive phase plate in its final optics
+            to produce a smooth laser spot on the target.</li>
+        </ul>
+      </div>
+    </section>
+
+</div>
+
+  <script src="docSlider.min.js"></script>
+<!-- Load d3 library.  Later should grab only pieces used.
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.4.4/d3.min.js"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.4.4/d3.min.js"></script>
+<script>
+  docSlider.init({
+    afterChange: (index, page) => {
+      if (index == 4) {
+        animateMulti();
+      } else if (index == 5) {
+        animateSpike(0.01);
+      }
+    },
+    beforeChange: (index, page) => {
+      animatorStop(true);
+    }
+  });
+
+  let animator = {
+    timer: undefined,
+    resolve: undefined
+  };
+
+  const animatorStop = (cancel) => {
+    if (animator.timer) {
+      animator.timer.stop();
+      delete animator.timer;
+    }
+    if (animator.resolve) {
+      animator.resolve(cancel);
+      delete animator.resolve;
+    }
+  }
+
+  const animateWait = (ms) => {
+    animatorStop(true);
+    return new Promise(resolve => {
+      animator.resolve = resolve;
+      animator.timer = d3.timeout(() => animatorStop(), ms);
+    });
+  }
+
+  // Wave animation on slide 5
+
+  const dstate = {
+    crest0: d3.select("#crest0"),
+    crest1: d3.select("#crest1"),
+    kdir: d3.select("#kdir"),
+    wave: d3.select("#wave"),
+    kdiagram: d3.select("#kdiagram"),
+    lcen: {x: 300, y: 250},  // lens center
+    icen: {x: 300, y: 550},  // image center
+    hwid: 200,  // half width of lens
+    ampl: 20,  // +- wave amplitude around lcen.y
+    lambda: 30,  // wavelength (crest-to-crest)
+    tana: 7/30,  // tangent of wavefront angle
+    zoff: 0  // 0 <= zoff < lambda
+  };
+
+  const animateWaves = (nwaves, ds) => {
+    animatorStop(true);
+    let stot = nwaves * dstate.lambda;
+    dstate.zoff = 0;
+    drawWaves();
+    const step = () => {
+      if (!animator.timer) return;
+      stot -= ds;
+      if (stot < 0.1*ds) {
+        stot = 0;
+        animatorStop();
+      }
+      dstate.zoff = stot % dstate.lambda;
+      drawWaves();
+    }
+    return new Promise(resolve => {
+      animator.resolve = resolve;
+      animator.timer = d3.timer(() => step());
+    }).then((cancel) => { dstate.zoff = 0; drawWaves(); return cancel; });
+  }
+
+  const animateMulti = () => {
+    dstate.kdiagram.style("display", "none");
+    dstate.tana = 7/30;
+    animateWaves(4, 0.5).then((cancel) => {
+      if (cancel) return cancel;
+      dstate.tana = 0.5;
+      return animateWaves(4, 0.5);
+    }).then((cancel) => {
+      if (cancel) return cancel;
+      dstate.tana = 0.1;
+      return animateWaves(4, 0.5);
+    }).then((cancel) => {
+      if (cancel) return cancel;
+      dstate.tana = -0.3;
+      return animateWaves(4, 0.5);
+    }).then((cancel) => {
+      if (cancel) return cancel;
+      dstate.tana = -0.1;
+      return animateWaves(4, 0.5);
+    }).then(() => {
+      dstate.zoff = 0;
+      dstate.tana = 7/30;
+      drawWaves();
+      dstate.kdiagram.style("display", "block");
+    });
+  }
+
+  const drawWaves = () => {
+    let {crest0, crest1, wave, lambda, tana, zoff} = dstate;
+
+    // wave crests go from x = 0 to 600 with slope -tana
+    // n-th one goes through (300, 250-zoff+n*lambda), so from
+    // (0, 250-zoff-n*lambda+300*tana) to (600, 250-zoff-n*lambda-300*tana)
+    // clipped to y=10 to 230, so 250-zoff+300*abs(tana)-n*lambda > 10
+    //   and 250-zoff-300*abs(tana)-n*lambda < 230
+    //   20-zoff-300*abs(tana) < n*lambda < 240-zoff+300*abs(tana)
+    let n0 = Math.ceil((20 - zoff - 300*Math.abs(tana))/lambda);
+    let n1 = Math.floor((240 - zoff + 300*Math.abs(tana))/lambda);
+    dstate.crest0.selectAll("path")
+      .data(d3.range(n0, n1+1))
+      .join("path")
+      .style("fill", "none").style("stroke", "#06f").style("stroke-width", 3)
+      .attr("d", n => {
+        let y0 = 250 - zoff - n*lambda + 300*tana;
+        let y1 = y0 - 600*tana;
+        return `M 0,${y0} 600,${y1}`});
+    let x0 = 300 - 240*tana;
+    let x1 = 300 + 300*tana;
+    dstate.kdir.attr("d", `M ${x0},10 ${x1},550`);
+
+    // M x0,y0 A rx,ry xaxis_angle 0 1 x1,y1
+    //   arc from x0,y0 to x1,y1 with radii rx,ry   (x=cx+rx*cos, y=cy+ry*sin)
+    // lens endpoints (150, 250) and (450, 250)
+    //   x = xc + m1*(yc-y)  and  x = xc + m2*(yc-y)
+    //   m1 = (xc - 150)/300   and   m2 = (xc - 450)/300
+    let xc = 300 + 300*tana;
+    let yc = 550;
+    let m1 = (xc - 150)/300;
+    let c1 = 1. / Math.sqrt(1 + m1**2);
+    let s1 = m1 * c1;
+    let m2 = (xc - 450)/300;
+    let c2 = 1. / Math.sqrt(1 + m2**2);
+    let s2 = m2 * c2;
+    let rmax = xc + ((tana>0)? m1 : -m2)*280;
+    rmax = Math.sqrt(rmax**2 + 280**2);
+    let ra = Math.max(zoff, 0.001);
+    let na = Math.floor((rmax - ra)/lambda);
+    dstate.crest1.selectAll("path")
+      .data(d3.range(0, na+1))
+      .join("path")
+      .style("fill", "none").style("stroke", "#06f").style("stroke-width", 3)
+      .attr("d", n => {
+        let r = ra + n*lambda;
+        return `M ${xc-r*s1},${yc-r*c1} A ${r},${r} 0 0 1 ${xc-r*s2},${yc-r*c2}`
+        // M x0,y0 A rx,ry xaxis_angle 0 1 x1,y1
+        //   arc from x0,y0 to x1,y1 with radii rx,ry (x=cx+rx*cos, y=cy+ry*sin)
+      });
+
+    // (0, 250-zoff-n*lambda+300*tana) to (600, 250-zoff-n*lambda-300*tana)
+    // at what x values to these lines reach y = 210?
+    // y = 250-zoff-n*lambda+300*tana - tana*x = 210
+    // x = 300 + (40-zoff-n*lambda) / tana
+    // Bezier curve 0,0 0.5,0.5, 1,1, 1.5,1.5 is visually a quarter sine
+    // wave with quarter period 1.5 (instead of pi/2).
+    let rtana;
+    if (tana < -0.001) rtana = 1./tana;
+    else if (tana < 0) rtana = -1000.;
+    else if (tana < 0.001) rtana = 1000.;
+    else rtana = 1./tana;
+    let dx = lambda * rtana;
+    x0 = 300 + (40 - zoff)*rtana;  // crests at x = x0 - n*dx
+    // locate crests in or adjacent to x = (0, 600)
+    [n0, n1] = [x0/dx, (x0-600)/dx];
+    if (n0 > n1) [n0, n1] = [n1, n0];
+    [n0, n1] = [Math.floor(n0), Math.ceil(n1)];
+    let dtext = `M ${x0-n0*dx},210`;
+    dx /= -12;
+    d3.range(n0+1, n1+1).forEach(n => {
+      dtext += ` c ${dx},0 ${2*dx},10 ${3*dx},20 c ${dx},10 ${2*dx},20 ${3*dx},20`;
+      dtext += ` c ${dx},0 ${2*dx},-10 ${3*dx},-20 c ${dx},-10 ${2*dx},-20 ${3*dx},-20`;
+    });
+    wave.attr("d", dtext);
+  }
+
+  drawWaves();
+
+  // Spike animation on slide 6
+  // Scientific programming environments like scipy or matlab have
+  // built in Fourier transform functions (usually called fft for Fast
+  // Fourier Transform).  Javascript unfortunately does not, so here
+  // the Fourier transform of a tophat - sinc(x) = sin(x)/x - has been
+  // precomputed.  Changing the width of the tophat by factor changes
+  // the horizontal scale of its Fourier transform by 1/factor.  Since
+  // the Fourier transform preserves the integral of the square of
+  // a function, which changes by factor for the tophat, the vertical
+  // scale of the sinc must change by factor (vertical scale of sinc**2
+  // changes by factor**2 while horizontal scale changes by 1/factor).
+
+  const spike = {
+    sincx: d3.select("#sincx"),
+    tophat: d3.select("#tophat"),
+    time: 0
+  };
+
+  // reasonable factor range from 0.33 to 2.0
+  const drawSpike = (factor) => {
+    if (!factor) factor = 1;
+    spike.tophat.attr(
+      "transform",
+      `translate(300 200) scale(${factor} 1) translate(-300 -200)`);
+    spike.sincx.attr(
+      "transform",
+      `translate(300 500) scale(${1/factor} ${factor}) translate(-300 -500)`);
+  }
+
+  // Animation idea: map one period of sine wave to run from 1 up to 2 then
+  // down to 1/3, then back to 1, using factor = 1 + y*(5+y)/6 where y = sin(t)
+  
+  const animateSpike = (dt) => {
+    animatorStop(true);
+    spike.time = 0;
+    drawSpike(1);
+    const step = () => {
+      if (!animator.timer) return;
+      let t = spike.time + dt;
+      if (t >= 2*Math.PI) {
+        t = 0;
+        animatorStop();
+      }
+      spike.time = t;
+      let y = Math.sin(t);
+      drawSpike(1 + y*(5+y)/6);
+    }
+    return new Promise(resolve => {
+      animator.resolve = resolve;
+      animator.timer = d3.timer(() => step());
+    }).then((cancel) => { spike.time = 0; drawSpike(1); return cancel; });
+  }
+
+</script>
+
+</body>
+</html>

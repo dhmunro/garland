@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="11in"
+   height="8.5in"
+   viewBox="0 0 792 612"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (1:1.2.2+202212051550+b0a8486541)"
+   sodipodi:docname="diffract1.svg"
+   inkscape:export-filename="diffract1p.svg"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     showgrid="true"
+     inkscape:zoom="0.80871212"
+     inkscape:cx="484.10304"
+     inkscape:cy="407.43794"
+     inkscape:window-width="1432"
+     inkscape:window-height="1017"
+     inkscape:window-x="243"
+     inkscape:window-y="32"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid897"
+       units="pt"
+       spacingx="1"
+       spacingy="1" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 100,250 H 500.00002"
+       id="lens"
+       inkscape:label="#lens" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 99.999998,550 H 489.99999"
+       id="focal"
+       inkscape:label="#focal" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 300,600 V 9.9999998"
+       id="opaxis"
+       inkscape:label="#opaxis" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.750001px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 249.99999,39.999999 371.42856,549.99999"
+       id="kdir"
+       inkscape:label="#kdir" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 590.67885,180.75172 1.5973059,321.5222"
+       id="crest0"
+       inkscape:label="#crest0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 150,250 371.42856,549.99999 450,250"
+       id="converge"
+       sodipodi:nodetypes="ccc"
+       inkscape:label="#converge" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="crest1"
+       sodipodi:type="arc"
+       sodipodi:cx="371.42856"
+       sodipodi:cy="550"
+       sodipodi:rx="149.4359"
+       sodipodi:ry="149.4359"
+       sodipodi:start="4.0766888"
+       sodipodi:end="4.9633032"
+       sodipodi:arc-type="arc"
+       d="M 282.70233,429.75548 A 149.4359,149.4359 0 0 1 408.53195,405.24356"
+       sodipodi:open="true"
+       inkscape:label="#crest1" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="cliphi"
+       width="400"
+       height="220"
+       x="100"
+       y="10"
+       inkscape:label="#cliphi" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="cliplow"
+       width="400"
+       height="280"
+       x="100"
+       y="270"
+       inkscape:label="#cliplow" />
+  </g>
+</svg>
