@@ -370,7 +370,12 @@
        id="pulse"
        cx="90.623299"
        cy="108.16043"
-       r="2.1910594" /></g>
+       r="2.1910594" />
+    <rect style="display:none;fill:none;stroke:#00ffff;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;"
+          id="pepcon"
+          width="9" height="14.2"
+          x="41" y="112.32"
+          /></g>
 <!-- crazy hack to cover flickering id=pulse during animation -->
   <circle
        style="fill:#fff;fill-opacity:1;stroke:none;"
@@ -613,6 +618,10 @@
     });
     s = 0;
     const pulse = d3.select("#pulse");
+    const pepcon = d3.select("#pepcon");
+    const turnon = sPulse[3] + 25;
+    const turnoff = sPulse[5] + 33.9;
+    let sturn = turnon;
     pulse.attr("cx", "90.6200").attr("cy", "117.6800");
     pulse.style("display", "block");
     let next = 1;
@@ -635,11 +644,24 @@
       let x = xyprev[0]*f0 + xynext[0]*f1;
       let y = xyprev[1]*f0 + xynext[1]*f1;
       pulse.attr("cx", x).attr("cy", y);
+      if (s > sturn) {
+        if (s > turnoff) {
+          pepcon.style("display", "none");
+          sturn = 1000000;
+        } else {
+          pepcon.style("display", "block");
+          sturn = turnoff;
+        }
+      }
     }
     return new Promise(resolve => {
       animator.resolve = resolve;
       animator.timer = d3.timer(() => step());
-    }).then(() => pulse.style("display", "none"));
+    }).then((cancel) => {
+      pulse.style("display", "none");
+      pepcon.style("display", "none");
+      return cancel;
+    });
   }
 
   const animateComponents = (ms) => {
