@@ -401,7 +401,7 @@
       simultaneous.  The events which are simultaneous with $(0,0)$
       are where $t=0$ according to the first observer, but where
       $t'=0$ according to the second.  Plugging $t'=0$ into the primed
-      version of equations (2) gives $u_+/u_-=-T'_-/T'_+,$ the negative
+      version of equations (1) gives $u_+/u_-=-T'_-/T'_+,$ the negative
       of the beacon coordinate equation for $x'=0.$ When you
       substitute this into equations (2), you just reverse the
       signs of the second terms on the right hand sides relative to
@@ -411,7 +411,7 @@
       \begin{equation} ct/x=v/c. \end{equation}
 
       The points with $t'=0$ are not simultaneous for the first
-      observer!</p>
+      observer: $t$ depends on $x$!</p>
 
     <img style="width:50%;margin:1em;float:right;"
          src="space04.svg" alt="x'-t' axis symmetry" />
@@ -622,15 +622,15 @@
       quantity is called the spacetime interval between events (the
       second event is the origin $(0,0)$).</p>
     <p>The Pythogorean theorem follows from the invariance of area in
-      the plane under rotation.  The fact that the formulas involve
-      the squares of the coordinates in both cases reflects their
-      connection to area invariance.  The only difference - and it is
-      a huge difference - is that in spacetime, the Pythagorean plus
-      sign becomes a minus sign.  This is the same sign difference
-      that appears in the rule for orthogonality.  (Orthogonal is the
-      word for both the relation between a world line and its line of
-      simultaneity in spacetime, and for perpendicular in Euclidean
-      geometry.)</p>
+      the plane under rotation.  The fact that the interval and
+      distance formulas both involve the squares of the coordinates
+      reflects their connection to area invariance.  The only
+      difference - and it is a huge difference - is that in spacetime,
+      the Pythagorean plus sign becomes a minus sign.  This is the
+      same sign difference that appears in the rule for orthogonality.
+      (Orthogonal is the word for both the relation between a world
+      line and its line of simultaneity in spacetime, and for
+      perpendicular in Euclidean geometry.)</p>
     <p>The minus sign in the spacetime interval formula (6) has
       profound consequences which cause some confusion interpreting
       spacetime diagrams.  Although areas in a spacetime diagram work
@@ -1097,13 +1097,13 @@
 
     <p>The spacetime plane distinguishes two fundamentally different
       kinds of directions $(a,b)$ (again relative to some origin event
-      $(0,0)$): Directions with positive interval $a^2-b^2\gt 0$ are
+      $(0,0)$): Directions with positive interval $b^2-a^2\gt 0$ are
       called <em>timelike</em>, and may serve as your $t'$-axis.
-      Conversely, directions with negative interval $a^2-b^2\lt 0$ are
+      Conversely, directions with negative interval $b^2-a^2\lt 0$ are
       called <em>spacelike</em>, and may serve as your $x'$-axis.  A
       spacelike $(a,b)$ as a time axis would imply an observer moving
       faster than light, which you know never happens.  If $(a,b)$ is
-      any spacetime vector with unit interval $a^2-b^2=1,$ it is
+      any spacetime vector with unit interval $b^2-a^2=1,$ it is
       timelike and can be the $t'$-axis of a moving observer.  The
       space direction for this observer will be $(b,a),$ so the moving
       observer&apos;s $(x',t')$ coordinates are related to the
@@ -1125,7 +1125,7 @@
 
       \begin{equation}\gamma = 1/\sqrt{1-v^2}, \end{equation}
 
-      because $a^2-b^2=1,$ the timelike unit spacetime vector is
+      because $b^2-a^2=1,$ the timelike unit spacetime vector is
       $(a,b)=(\gamma v,\gamma)$.  A spacetime vector is called
       a <em>4-vector</em> because in general it will have three
       spatial components and one time component.</p>
@@ -1356,9 +1356,7 @@
       simplest of all shapes, circles nevertheless have a fantastic
       number of properties, taking up a large fraction of everything
       you learn in geometry.  Much of this structure has analogies in
-      spacetime geometry.  Here we will work out some consequences of
-      the simple fact that circles are invariant under rotations about
-      their center.</p>
+      spacetime geometry.</p>
     <p>The events which are a constant interval from a center in
       spacetime lie on a hyperbola.  For example, events with
       $t^2-x^2=\tau^2$ all lie at the same timelike interval $\tau^2$
@@ -1558,13 +1556,25 @@
       increasing distance between you and everything to your left!
       And that is true for any event at a proper distance less than
       $\chi$ (which is extremely large for any reasonable
-      acceleration).  However, the relativistic length contraction
-      implicit in the boost transform eventually takes over.</p>
-    <p>(A central feature of general relativity - the gravitational
+      acceleration).  However, the &ldquo;relativistic length
+      contraction&rdquo; implicit in the boost transform (9)
+      eventually takes over.</p>
+    <p>When you change your velocity, you are changing which distant
+      events you consider simultaneous.  Distances do not really
+      contract.  Instead what happens is that distant events you used
+      to consider as happening long in the past you now consider to be
+      simultaneous, and your relative positions have changed in that
+      disputed time interval.  When you accelerate, that&apos;s how
+      the center of your spacetime hyperbola can remain simultaneous
+      with you.  Once again, the only really confusing feature of
+      spacetime is that simultaneity depends on your motion.</p>
+    <p>A central feature of general relativity - the gravitational
       redshift - falls out immediately from this hyperbola of constant
       acceleration.  Consider a second hyperbola with the same center
-      but a slightly different fixed proper distance $\chi+d\chi,$
-      and you can work it out.)</p>
+      but a slightly different fixed proper distance $\chi+d\chi,$ and
+      you can work it out.  (Hint: Proper time along the hyperbola is
+      the analog of arc length around a circle which is proportional
+      to radius, the analog of proper distance.)</p>
     <p>You can also use this constant acceleration hyperbola to
       compute how long it takes to reach a distant star or galaxy if
       you accelerate at a constant rate for half the journey, then
@@ -1601,18 +1611,19 @@
       time.</p>
     <p>In our common sense world, time is a completely independent
       dimension from space.  Yet when we build elaborate equipment to
-      test this common sense notion, we find that what one observer
-      calls time another will call position.  No matter what your
-      state of motion, you always find that light travels in every
-      direction with the same speed $c.$ The only way (or at least by
-      far the simplest way) to make sense of that experimental fact is
-      if time and position are both just directions in a unified
-      spacetime, and those directions both change according to your
-      state of motion.  Spacetime orthogonality specifies way the time
-      and space axes tilt for a moving observer, just as
-      perpendicularity specifies how Cartesian axes tilt for a rotated
-      observer.  In spacetime, the invariant interval plays the role
-      of invariant distance in the Euclidean plane.</p>
+      test this common sense notion, we find that part of what one
+      observer calls time another will call position.  No matter what
+      your state of motion, you always find that light travels in
+      every direction with the same speed $c.$ The only way (or at
+      least by far the simplest way) to make sense of that
+      experimental fact is if time and position are both just
+      directions in a unified spacetime, and those directions both
+      change according to your state of motion.  Spacetime
+      orthogonality specifies way the time and space axes tilt for a
+      moving observer, just as perpendicularity specifies how
+      Cartesian axes tilt for a rotated observer.  In spacetime, the
+      invariant interval plays the role of invariant distance in the
+      Euclidean plane.</p>
     <p>This rich spacetime geometry neatly explains why you just
       can&apos;t make anything move faster than light: When an object
       undergoes a constant acceleration, its world line through
