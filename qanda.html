@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Questions and Answers</title>
+  <meta name="description"
+    content="Questions and Answers from AP Physics Field Day">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>MathJax = {
+  loader: {load: ['[tex]/physics']},
+  tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]],
+         packages: {'[+]': ['physics']}, processEscapes: true}};
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+          id="MathJax-script">
+  </script>
+  <style>
+    body {
+        max-width: 60em;
+        margin: auto;
+        padding: 0 4em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Questions and Answers</h1>
+
+  <h2>What is the difference between chemical energy and nuclear energy?</h2>
+
+  <p>Chemical energy is stored in the bonds between atoms.  There are
+    about 90 different kinds of naturally occuring atoms in the
+    <a href="https://inl.gov/periodic-table/">periodic table of the
+    elements</a>, and there are an enormous number of different ways
+    they can bond together into molecules and solids.</p>
+
+  <p>Nuclear energy is stored in the bonds between nucleons in the
+    atomic nucleus.  There are only two kinds of nucleons - protons
+    and neutrons, and they can bond together in only about 250 stable
+    configurations in the
+    <a href="https://www-nds.iaea.org/relnsd/vcharthtml/VChartHTML.html">
+      table of isotopes</a>.  Essentially all of the ways nucleons can
+    bond together have been explored using particle accelerators,
+    although there is still active research adding a few more very
+    heavy isotopes and refining measurements of excited states of
+    nuclei.</p>
+
+  <p>In the US, Brookhaven National Lab produces,
+    <a href="https://www.nndc.bnl.gov/nudat3/">collects</a>, and archives
+    data about nuclei and all their properties.</p>
+
+  <p>Incidentally, you often see the statement that nuclear energy
+    comes from converting small amounts of mass into energy according
+    to $E=mc^2.$ While this is not false, it is also true of
+    chemical energy or any other form of energy storage.  That was
+    Einstein's whole point when he wrote the formula!  For example,
+    two hydrogen molecules plus an oxygen molecule weigh slightly more
+    than two water molecules, by exactly the amount of energy released
+    in the chemical reaction.  A charged battery will weigh ever so
+    slightly more than a discharged one, and so on.  For chemical
+    bonds or energy levels in atoms, the mass difference is just
+    barely on the edge of detectability - roughly parts per billion.
+    Nuclear bonds store of order a million times more energy than
+    chemical bonds, so mass differences between reactants and products
+    are of order parts per thousand.  Weighing atomic nuclei (usually
+    with a mass spectrometer) with an accuracy better than a tenth of
+    a percent is therefore a viable technique for measuring nuclear
+    bonding energies, which is doubtless where the misleading idea
+    that $E=mc^2$ has anything to do with nuclear energy arose.</p>
+
+  <h2>What are nuclear fission and nuclear fusion?</h2>
+
+  <p>Nuclear fission refers to the splitting of a heavy atomic nucleus
+    into lighter pieces.  Heavy nuclei need more and more neutrons to
+    keep them stable.  (The attractive forces between nucleons are
+    very strong but have a very short range compared to the electrical
+    repulsive force between protons, so to keep a bigger nucleus
+    stable it needs a larger proportion of uncharged neutrons.)  The
+    two smaller pieces each have a smaller ratio of neutrons to
+    protons than the original heavy nucleus, so a few neutrons are
+    left over after each fission reaction.  Thus, a single neutron
+    falling into a heavy nucleus (most famously Uranium 235 or
+    Plutonium 239) causes it to fission, producing several more
+    neutrons.  The neutrons have to slow down by pinballing off other
+    nuclei, but if there is a big enough lump of fissionable material
+    for them to do so, those second generation neutrons can produce
+    several more fission events, with the number of fissions growing
+    exponentially with the number of generations since the original
+    fission event.  This is the famous nuclear chain reaction that
+    leveled Hiroshima and Nagasaki and which is used by all nuclear
+    power plants.</p>
+
+  <p>There is no real analog for the nuclear fission chain reaction in
+    ordinary chemistry.  The closest thing is probably a laser, where
+    one photon can trigger an excited atom to decay and release a
+    second photon without destroying the original photon, causing a
+    similar exponentially growing cascade of photons.  A fission chain
+    reaction has no activation energy (the nucleus actually sucks the
+    neutron in) so the temperature of the material does not matter -
+    it can happen even if the material starts at cryogenic
+    temperatures.</p>
+
+  <p>Nuclear fusion, on the other hand, has an activation energy which
+    is extremely large by chemical standards, since the reactants have
+    to hit with enough energy to overcome the very large electrical
+    repulsion from their positive charges.  However, if the reactants
+    are hot enough that thermal collisions can overcome this barrier,
+    and if the reaction is exothermic, then it should be possible for
+    the energy of the reaction (the product nuclei have more kinetic
+    energy than the reactant nuclei) to heat the reactants even more,
+    and to heat new reactant material to a high enough temperature for
+    it to react.  This thermonuclear fusion is analogous to a burning
+    mixture of chemical fuel.</p>
+
+  <p>The temperature required for even a tiny thermal tail of
+    especially fast moving reactant nuclei to fuse is of order 5 keV.
+    The unit of temperature here is the kilo-electron-Volt (keV),
+    where one electron-Volt (eV) is 11,600 Kelvin, so this is a
+    whopping 50 million Kelvin.  If you can get it hotter, the
+    reactivity goes up.  Each different fusion reaction has its own
+    reactivity curve.  This reactivity has units of volume per time,
+    so that multiplying it by the density of reactant nuclei produces
+    the rate at which the reactants are being used up.  That is,
+    reactivity times density is the probability per unit time that any
+    given nucleus will react.  Thus, if you want a significant
+    fraction (one e-th!) of the fuel to react, the reactivity times
+    the density times the confinement time has to be at least one.
+    (The probability to <em>not</em> react in time $t$ is $e^{-\alpha
+    t}$ if $\alpha$ is the probabilty per unit time to react.)
+    Density times confinement time is called the Lawson criterion.
+    The Lawson criterion and the temperature are the main figures of
+    merit for any thermonuclear fusion scheme.</p>
+
+  <p>The <a href="./niftour.html#reactivities">final slide</a> of the
+    NIF tour presentation shows the reactivities of all of the
+    commonly mentioned fusion reactions as a function of temperature.
+    You can see that the DT reaction $(D+T\rightarrow\alpha+n)$ has
+    about 100 times higher reactivity than the second most reactive
+    possibility, DD (actually two reactions, $D+D\rightarrow
+    ^3\!\!He+n$ and $D+D\rightarrow T+p$).  This means to burn a DD
+    plasma, you have to confine it 100 times longer than you need to
+    confine DT at the same density and temperature.  Given that
+    magnetic fusion has been trying for 70 years and laser fusion has
+    been trying for 50 years to achieve the confinement time needed
+    for DT fusion, every other fusion reaction is way out of reach and
+    will remain so for a very long time - quite possibly forever.</p>
+
+  <p>Fusion power therefore requires that you make tritium (T), since
+    it is half the fuel you need for the DT fusion reaction.  You make
+    tritium by bombarding lithium with neutrons.  The other half of
+    the fuel, deuterium (D), is the nucleus of about one in every 6000
+    hydrogen atoms in nature.  Water (H2O) is the usual source for
+    manufacturing deuterium, but if you want pure deuterium you need
+    to separate the one (D2O) molecule you will find in every 36
+    million water molecules, which makes pure deuterium one of the
+    most expensive natural substances in the world.  You often see the
+    false claim that seawater fuels fusion reactors - even in places
+    which you would expect to be trustworthy.  The truth is that
+    fusion fuel is half lithium and half heavy water.  The notion that
+    heavy water alone suffices or that heavy water is merely seawater
+    assumes that fusion energy will come from the DD reaction, which
+    burns 100 times slower than the DT reaction we have been
+    struggling to confine for half a century already.</p>
+  <p>I remember when I first arrived at Livermore Lab in 1980, John
+    Nuckolls - my boss at the time and the inventor of laser fusion -
+    was having lunch with me and the three other new hires.  Us four
+    newbies were chattering away about how "practical" fusion reactors
+    would use DD - or even better the proton-boron triple alpha
+    reaction which produces only charged particles.  Nuckolls listened
+    to us blither for a few minutes, then smiled and shut us down with
+    the comment, "What's the matter boys?  DT isn't hard enough for
+    you?"  Considering that a crew of several hundred of us worked our
+    tails off for the next 42 years (and spent about five billion
+    dollars) to barely begin to burn just a tiny bit of DT, Nuckolls
+    obviously knew what he was talking about from the beginning.</p>
+  <p>Canada has the largest supply of heavy water (D2O) in the world
+    because their nuclear power plant design uses heavy water unlike
+    essentially everyone else.  A large fraction of the heavy water
+    supply in the US is tied up in the NIF laser because many of its
+    optics are made from deuterated potasium dihydrogen phosphate
+    (dKDP), a special salt crystal, and the several tons of heavy
+    water required comprise a significant fraction of all the heavy
+    water in the US.  When the laser is eventually decomissioned, we
+    have to carefully redissolve those optics in heavy water and give
+    it back - NIF obtained the use of this much extremely expensive
+    deuterium on loan!  (Canada declined NIF's request to part with
+    any of their considerably larger supply, incidentally, to give you
+    an idea of just how rare and expesive heavy water is.)</p>
+
+  <h2>Does fusion power the Sun?</h2>
+
+  <p>Yes, but using a very different set of nuclear reactions than any
+    proposed fusion power reactor on Earth.  The key difference is
+    that essentially all the hydrogen in the Sun is the lightest
+    isotope, so that the only nucleus that can react is just a proton.
+    But the fusion reaction product, the helium nucleus (or alpha
+    particle), has two neutrons in addition to two protons.  Where did
+    the neutrons come from?  The answer is that the rate determining
+    step in the Sun's fusion reaction is mediated by the weak nuclear
+    force, which can convert protons into neutrons and vice versa, but
+    which is spectacularly weaker than either the strong nuclear force
+    that binds protons and neutrons together in nuclei or the
+    electromagnetic force.  This very slow weak reaction in the Sun
+    converts two protons into a proton, a neutron, a positron, and an
+    electron neutrino (look up the famous solar neutrino problem), and
+    its reactivity is so low that it takes billions of years for the
+    Sun to fuse its protons into helium.  If the Sun were made of DT
+    or just deuterium (or any of the other fusion reactions proposed
+    for reactors), it would burn all its fuel in a few billionths or
+    millionths of a second, producing a pretty impressive explosion.
+    (Oddly enough, however, it's probably not as big a blast as a
+    supernova, which gets most of its energy from gravitational
+    collapse, making the full $E=mc^2$ available instead of just a
+    fraction of a percent of it.)</p>
+
+  <p>By contrast, all of the fusion reactions in hydrogen bombs or any
+    proposed fusion power reactor only involve the strong nuclear
+    force.  That is, the number of protons and neutrons are separately
+    conserved, and there aren't any leptons involved (neutrinos,
+    electrons, or positrons).</p>
+
+  <h2>What is inertial confinement fusion?</h2>
+
+  <p>The keV is actually a measure of energy - the potential energy of
+    a single electron at 1000 Volts electrical potential.  When used
+    as a temperature, it means that a typical particle has a random
+    kinetic energy of one keV.  (Actually, the rule in statistical
+    physics is "one half keV per degree of freedom on average", which
+    is 3/2 keV for a single electron or ion moving in 3D.)  Chemical
+    bonds all break at energies of a few eV; indeed you can rip the
+    valence electrons completely off of atoms with that much energy.
+    At the DT fusion ignition temperature of 5 keV, every material
+    will be a highly ionized plasma.</p>
+
+  <p>A plasma behaves like a gas, except it has a very high electrical
+    conductivity.  Because of the high conductivity, you can induce
+    large electrical currents in the plasma and attempt to make a
+    "magnetic bottle" to confine the hot plasma for long enough to
+    burn.  This is the idea behind magnetic confinement fusion.  The
+    problem is that magnetic bottles are always unstable and
+    leaky.</p>
+
+  <p>An alternative strategy is the one used in hydrogen bombs (which
+    are powered by thermonuclear fusion): Heat the fusion fuel rapidly
+    enough for it to burn before it has time to blow apart, just like
+    a chemical explosive reacts faster than it can blow apart.  This
+    is called inertial confinement fusion.  Since that is how hydrogen
+    bombs work, inertial confinement is the only demonstrated
+    technology for achieving thermonuclear fusion on Earth.  Modeling
+    inertial fusion is in many ways simpler than modeling magnetic
+    fusion, because for the most part you can ignore the electrical
+    and magnetic properties of the fuel and model it as you would any
+    other compressible fluid.  (The exception is how a material
+    interacts with laser light, which very much involves the
+    electrical properties of the plasma.)</p>
+
+  <p>Imagine a sphere of DT fusion fuel that you've somehow
+    instantaneously heated to 5 keV.  A rough estimate of how long it
+    takes to blow apart is the time it takes for a sound wave to
+    propagate from its surface to its center.  Assuming a sphere of
+    radius $r$, that is $r/c,$ where $c$ is the speed of sound.  Like
+    the reactivity in the Lawson criterion, the speed of sound is
+    mostly a function of temperature.  Thus, the density-confinement
+    time product in the Lawson criterion is equivalent to the
+    density-radius product $\rho r$ in inertial confinement fusion.
+    For the DT reaction, the number you need to exceed to burn half
+    the fuel before it blows apart turns out to be about
+    6&nbsp;g/cm&sup2;.  In fact, the very rough approximate formula we
+    use in ICF (inertial confinement fusion) taget design is that the
+    fraction of DT fuel that will burn up before disassembly is $\rho
+    r/(\rho r + 6\,\textnormal{g/cm}^2)$.  (For any other fusion
+    reaction, you need a $\rho r$ product of at least a few hundred
+    g/cm&sup2;.)</p>
+
+  <p>We usually shoot for $\rho r=3$&nbsp;g/cm&sup2;, which is enough
+    to burn up about a third of the fuel according to the formula.
+    The energy content of DT fuel is $3.4\times 10^{11}$&nbsp;J/g
+    (17.6&nbsp;MeV/reaction), and at $\rho r=3$&nbsp;g/cm&sup2; you'll
+    burn a third of the fuel, so you'll get a little over
+    $10^{11}$&nbsp;J/g.  The NIF laser was designed for a maximum DT
+    yield of about 20&nbsp;MJ (or 10 pounds of TNT equivalent), which
+    means the mass of DT fuel at NIF must be about 200&micro;g.  To
+    get $\rho r=3$&nbsp;g/cm&sup2; with 200&micro;g of fuel, you can
+    work out that you need a DT fuel radius of about 40&micro;m and a
+    density a bit over 700&nbsp;g/cc.</p>
+
+  <p>That 700&nbsp;g/cc required DT fuel density is pretty daunting -
+    the densest element is osmium with a density of 22.5&nbsp;g/cc,
+    and more importantly the density of solid DT ice is only
+    0.25&nbsp;g/cc.  That is, if you start with solid DT fuel, you
+    need to crush it into a volume 3000 times smaller than its initial
+    volume.  If you want to use a lower density, you need to be able
+    to withstand more than a 20&nbsp;MJ explosion, with the output
+    energy scaling inversely as the square of the fuel density.  The
+    laser energy you need to ignite the lower density target also
+    scales inversely as the square of the fuel density - the 2&nbsp;MJ
+    NIF laser size was chosen because we thought we had a fighting
+    chance of acheiving a factor of 3000 fuel compression.  If you
+    want a lower fuel compression, you need to build a bigger, more
+    expensive laser to drive it.  Note that the scientific breakeven
+    shot produced only 3&nbsp;MJ yield, not 20, because we haven't yet
+    managed to get the full factor of 3000 fuel compression.</p>
+
+  <p>The only convincing way to both compress the fuel to
+    700&nbsp;g/cc density and simultaneously heat it to 5&nbsp;keV
+    temperature is to begin with a hollow spherical shell of DT ice
+    and apply a huge pressure to the outside of it in order to implode
+    the shell to a very high speed.  For example, you can start with a
+    DT ice shell 1&nbsp;mm in radius and 64&nbsp;&micro;m thick it
+    will weigh 200&nbsp;&micro;g, which is pretty close to the DT fuel
+    dimensions of an actual NIF ignition target.  If you can
+    accelerate this shell inward to a speed of about 350&nbsp;km/s, it
+    will hit center in a few nanoseconds, and the force of that train
+    wreck can be enough to both compress and heat the fuel to
+    thermonuclear ignition.  In order to get to 700&nbsp;g/cc, you
+    have to be very careful to keep the imploding shell at a
+    relatively low temperature while you are accelerating it - a hot
+    shell will be too stiff (a high temperature gas is less
+    compressible than a low temperature gas) and you won't get the
+    required density.</p>
+
+  <p>You need to apply several hundred million atmospheres of pressure
+    to the outside of the fuel shell (as you can work out from the
+    numbers in the previous couple of paragraphs).  To do that, you
+    surround the DT fuel shell with a shell of ablator material - it
+    was pure carbon in the form of diamond in the NIF shot that
+    ignited.  (Actually, it was a thin shell of pure diamond followed
+    by a diamond shell with a fraction of a percent tungsten doping to
+    shield the fuel from x-rays that would otherwise preheat it,
+    followed by an outermost shell of pure diamond.)  You can either
+    shoot the lasers at the outside of this ablator, called direct
+    drive, or you can put the capsule inside a little oven you heat
+    with the lasers and let the thermal radiation from the oven drive
+    the ablator.  We chose the latter scheme, called indirect drive,
+    for most of the NIF ignition experiments, because even though it
+    is less efficient, you can get much more spherically symmetric
+    abaltion pressure that way.  Since you have to crush that
+    1&nbsp;mm fuel shell down to 0.04&nbsp;mm for it to ignite,
+    keeping everything perfectly symmetric is of paramount
+    importance.</p>
+
+  <h2>When will we have fusion energy?</h2>
+
+  <p>My personal best guess, after spending 40 years working on
+    inertial confinement fusion, is never.</p>
+  <p>Paradoxically, after actually acheiving scientific breakeven, I'd
+    say the main lesson learned is that imploding a fuel capsule is
+    every bit as difficult as it sounds: You have to start with a
+    perfectly spherical shell of cryogenic DT ice and implode it with
+    near perfect symmetry by a factor of at least 25 in radius.  The
+    slightest imperfections do indeed cause it to fail.  This is
+    expensive but - finally - barely possible to maybe a few times a
+    year with a lot of hard work by several hundred scientists and
+    engineers.</p>
+  <p>But in order to build a typical 1&nbsp;GW power plant, you would
+    need to build and shoot roughly a million of these capsules per
+    day (say 10 per second producing 100&nbsp;MJ each, and not
+    allowing for any inefficiency in converting the explosion energy
+    to electricity).  The total world usage of electricity is
+    3000&nbsp;GW, which means you need to shoot a billion of these
+    perfect capsules a day to provide even a third of the world's
+    electricity.  Even the scaling up of the semiconductor industry in
+    the past six decades to its current level of about a trillion
+    chips a year pales in comparison to what it would take to build
+    and shoot a billion ICF capsules a year.  It's just not
+    practical.</p>
+  <p>It's almost as obvious that magnetic confinement fusion will
+    never produce economical electrical power.  The ITER test reactor
+    under construction in France will have cost tens of billions of
+    dollars and taken decades to build before it begins operation in
+    the latter half of this decade.  It has only a fraction of the
+    systems which would be necessary for an actual fusion power
+    reactor.  In particular, it will be the first tests of the
+    extremely difficult lithium blanket necessary to breed tritium
+    fuel for any fusion reactor.  Again personally, I think that will
+    turn out to be an extremely difficult and expensive
+    technology.</p>
+  <p>A single 1&nbsp;GW DT fusion power reactor of any sort burns at
+    least 50&nbspg of tritium a day, or 20&nbsp;kg every year.  (The
+    US consumes 500&nbsp;GW of electricity.)  The total amount of
+    tritium ever produced in the US (nearly all of it for nuclear
+    weapons use) is about 250&nbsp;kg.  Tritium is extremely
+    radioactive and requires special handling even in microscopic
+    quantities.  It is also a "special nuclear material" which is
+    carefully controlled and monitored because of its use in nuclear
+    weapons.</p>
+  <p>A fusion power plant of any sort will produce large quantities of
+    radioactive material in addition to its tritium fuel, created by
+    the intense neutron radiation.  The single 3&nbsp;MJ NIF shot
+    created enough radiation to force the target chamber area to
+    remain evacuated for several days (that is, workers could only
+    enter the area around the target chamber for a few minutes at a
+    time).  A 1&nbsp;GW reactor would shoot a million targets each
+    with 30 times the NIF yield every day, creating a constant
+    radiation level at least a million times larger than this near the
+    reaction chamber.  The same would be true of a magnetic fusion
+    reactor.  The only advantage of fusion over fission as far as
+    radioactivity is concerned is that by carefully selecting the
+    materials you use to build the reaction chamber, you can arrange
+    for most of the induced radioactivity to consist of relatively
+    short half-life isotopes.  During operation, the area near the
+    fusion reactor will be inaccessible due to high radiation
+    levels.</p>
+  <p>In summary, if you want nuclear power at any price remotely
+    competitive with what you now pay for electricity, your only
+    practical option is fission.  Solving its safety and waste
+    problems is almost certainly easier than developing fusion energy.
+    Personally, I think renewable energy is the only long term
+    solution, with fission energy being a possible short term
+    necessity.</p>
+
+  <h2>Why did we build the NIF laser?</h2>
+
+  <p>Achieving thermonuclear fusion at laboratory scale has become
+    a grand scientific challenge.  It is a spectacularly difficult
+    engineering problem which pushes us to and beyond the limits
+    of what is possible.  As John F. Kennedy said in a famous speech
+    about the Apollo moon program:
+    <blockquote>We choose to go to the moon. We choose to go to the
+      moon in this decade and do the other things, not because they
+      are easy, but because they are hard, because that goal will
+      serve to organize and measure the best of our energies and
+      skills, because that challenge is one that we are willing to
+      accept, one we are unwilling to postpone, and one which we
+      intend to win, and the others, too.
+    </blockquote>
+  </p>
+  <p>Unlike magnetic fusion, laser fusion at the NIF does have an
+    immediate practical benefit in addition to "organizing and
+    measuring the best of our energies and skills".  That is, the NIF
+    laser enables us to study the physics of materials at pressures
+    and temperatures important for the operation of nuclear weapons.
+    The ability to ignite thermonuclear fusion reactions with similar
+    burn rates as in weapons provides neutron fluxes which occur
+    nowhere else.  This unique capability of NIF is one of the main
+    reasons the US can maintain our nuclear stockpile without doing
+    underground nuclear tests.  The US has not set off a nuclear
+    explosion since 1993, and NIF plays an important role in our
+    ability to continue adhering to the comprehensive test ban.
+    Without the experimental tests we can perform at the NIF, we have
+    no way to verify new computer models that take advantage of modern
+    hardware, or to test new theories about things we never understood
+    about old nuclear explosions.</p>
+
+</body>
+</html>
